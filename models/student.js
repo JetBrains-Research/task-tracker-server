@@ -5,8 +5,7 @@ const mongoose_sequence = require("mongoose-sequence")(mongoose);
 const StudentSchema = new Schema({
     username: { type: String, unique: true },
     age: { type: Number },
-    experience: { type: String, enum : ['LESS_YEAR','ONE_TWO_YEARS', 'TWO_FOUR_YEARS', 'MORE_FOUR_YEARS'],
-        default: 'user' }
+    experience: { type: String, enum : ['LESS_YEAR','ONE_TWO_YEARS', 'TWO_FOUR_YEARS', 'MORE_FOUR_YEARS'] }
 });
 
 StudentSchema.plugin(mongoose_sequence, { inc_field: "externalStudentId" });
