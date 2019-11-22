@@ -1,0 +1,79 @@
+{
+  "validation": {
+    "dataItem": {
+      "alreadyTaken": {
+        "content": {
+          "error": {
+            "key": "DATA_ITEM_ALREADY_EXISTS",
+            "description": "Data item already taken.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      },
+      "notExists": {
+        "content": {
+          "error": {
+            "key": "DATA_ITEM_NOT_EXISTS",
+            "description": "Data item does not exists.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      }
+    },
+    "task": {
+      "alreadyTaken": {
+        "content": {
+          "error": {
+            "key": "TASK_ALREADY_EXISTS",
+            "description": "Task already taken.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      },
+      "notExists": {
+        "content": {
+          "error": {
+            "key": "TASK_NOT_EXISTS",
+            "description": "Task does not exists.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      }
+    },
+    "student": {
+      "alreadyTaken": {
+        "content": {
+          "error": {
+            "key": "STUDENT_ALREADY_EXISTS",
+            "description": "Student already taken.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      },
+      "notExists": {
+        "content": {
+          "error": {
+            "key": "STUDENT_NOT_EXISTS",
+            "description": "Student does not exists.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      }
+    }
+  },
+  "internalServer": {
+    "content": {
+      "error": {
+        "key": "INTERNAL_SERVER_ERROR",
+        "description": "An internal server error ouccured.",
+        "message": "Internal server error."
+      }
+    }
+  }
+}
