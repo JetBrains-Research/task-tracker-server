@@ -6,13 +6,5 @@
   {
     "name": "TaskDAO",
     "path": "task-dao"
-  },
-  {
-    "name": "StudentDAO",
-    "path": "student-dao"
-  },
-  {
-    "name": "TaskSolutionItemDAO",
-    "path": "task-solution-item-dao"
   }
 ]

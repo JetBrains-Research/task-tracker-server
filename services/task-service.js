@@ -18,11 +18,14 @@ const getTaskByExternalId = async (externalId) => {
     return await taskDAO.getTaskByExternalId(externalId);
 };
 
+const deleteTask = async (task) => {
+    return await taskDAO.deleteTask(task);
+};
+
 module.exports = {
     createTask,
     getTaskByKey,
     getAllTasks,
-    getTaskByExternalId
+    getTaskByExternalId,
+    deleteTask
 };
-
-

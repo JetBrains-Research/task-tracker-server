@@ -3,16 +3,14 @@ const Schema = mongoose.Schema;
 const mongoose_sequence = require("mongoose-sequence")(mongoose);
 
 const DataItemSchema = new Schema({
-    userId: { type: Number },
-    codePaths: [{ type: String }]
+    codePath: { type: String }
 });
 
 DataItemSchema.plugin(mongoose_sequence, { inc_field: "externalDataItemId" });
 
 DataItemSchema.methods.getPublicData = function () {
     return {
-        userId: this.userId,
-        codePaths: this.codePaths,
+        codePath: this.codePath,
         id: this.externalDataItemId
     };
 };

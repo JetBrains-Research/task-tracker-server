@@ -43,28 +43,6 @@
         },
         "code": 406
       }
-    },
-    "student": {
-      "alreadyTaken": {
-        "content": {
-          "error": {
-            "key": "STUDENT_ALREADY_EXISTS",
-            "description": "Student already taken.",
-            "message": "Validation failed."
-          }
-        },
-        "code": 406
-      },
-      "notExists": {
-        "content": {
-          "error": {
-            "key": "STUDENT_NOT_EXISTS",
-            "description": "Student does not exists.",
-            "message": "Validation failed."
-          }
-        },
-        "code": 406
-      }
     }
   },
   "internalServer": {

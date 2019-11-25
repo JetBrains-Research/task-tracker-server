@@ -4,19 +4,7 @@
     "path": "data-item-service"
   },
   {
-      "name": "FileService",
-      "path": "file-service"
-  },
-  {
-      "name": "TaskService",
-      "path": "task-service"
-  },
-  {
-       "name": "StudentService",
-       "path": "student-service"
-  },
-  {
-      "name": "TaskSolutionItemService",
-      "path": "task-solution-item-service"
-   }
+    "name": "TaskService",
+    "path": "task-service"
+  }
 ]

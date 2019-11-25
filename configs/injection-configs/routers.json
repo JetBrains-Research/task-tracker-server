@@ -4,15 +4,7 @@
     "path": "data-item-router"
   },
   {
-    "name": "StudentRouter",
-    "path": "student-router"
-  },
-  {
     "name": "TaskRouter",
     "path": "task-router"
-  },
-  {
-    "name": "TaskSolutionItemRouter",
-    "path": "task-solution-item-router"
   }
 ]

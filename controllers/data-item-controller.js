@@ -3,9 +3,9 @@ const injector = require(require("path").dirname(require.main.filename) + "/inje
 const dataItemService = injector.inject_service("DataItemService");
 const errorsConsts = injector.inject_const_file("Errors");
 
-const createDataItem = async (projectId, codePath) => {
+const createDataItem = async (codePath) => {
     try {
-        return await dataItemService.createDataItem(projectId, codePath);
+        return await dataItemService.createDataItem(codePath);
     } catch (e) {
         return {
             error: errorsConsts['internalServer']
@@ -13,8 +13,8 @@ const createDataItem = async (projectId, codePath) => {
     }
 };
 
-const addPathToDataItem = async (projectId, codePath) => {
-    const dataItem = await dataItemService.getDataItemByProjectId(projectId);
+const getDataItemByExternalId = async (externalId) => {
+    const dataItem = await dataItemService.getDataItemByExternalId(externalId);
 
     if (!dataItem) {
         return {
@@ -22,10 +22,15 @@ const addPathToDataItem = async (projectId, codePath) => {
         }
     }
 
-    return await dataItemService.addPathToDataItem(dataItem, codePath);
+    return dataItem;
+};
+
+const getAllDataItems = async () => {
+    return await dataItemService.getAllDataItems();
 };
 
 module.exports = {
     createDataItem,
-    addPathToDataItem
+    getDataItemByExternalId,
+    getAllDataItems
 };

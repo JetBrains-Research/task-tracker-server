@@ -41,4 +41,17 @@ module.exports = (app, injector, upload) => {
         }
     });
 
+    app.route("/api/task/:key").delete(async (req, res, next) => {
+        const response = await taskController.deleteTaskByKey(req.params.key);
+        if (response.error) {
+            res.status(response.error.code);
+            res.json(response.error.content);
+            res.end();
+        } else {
+            res.json({
+                task: response.getPublicData()
+            })
+        }
+    });
+
 };

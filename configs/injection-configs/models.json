@@ -6,13 +6,5 @@
   {
     "name": "Task",
     "path": "task"
-  },
-  {
-    "name": "Student",
-    "path": "student"
-  },
-  {
-    "name": "TaskSolutionItem",
-    "path": "task-solution-item"
   }
 ]

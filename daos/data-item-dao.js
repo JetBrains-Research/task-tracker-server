@@ -1,18 +1,11 @@
 const mongoose = require("mongoose");
 const DataItem = mongoose.model("DataItem");
 
-const createDataItem = async (projectId, codePath) => {
+const createDataItem = async (codePath) => {
     const dataItem = new DataItem({
-        projectId: projectId,
-        codePaths: [codePath]
+        codePath: codePath
     });
     return await dataItem.save();
-};
-
-const getDataItemByProjectId = async (projectId) => {
-    return await DataItem.findOne({
-        projectId: projectId
-    })
 };
 
 const getDataItemByExternalId = async (externalId) => {
@@ -21,13 +14,12 @@ const getDataItemByExternalId = async (externalId) => {
     })
 };
 
-const addPathToDataItem = async (dataItem, codePath) => {
-    dataItem.codePaths.push(codePath);
+const getAllDataItems = async () => {
+    return await DataItem.find();
 };
 
 module.exports = {
     createDataItem,
-    getDataItemByProjectId,
     getDataItemByExternalId,
-    addPathToDataItem
+    getAllDataItems
 };

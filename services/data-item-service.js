@@ -2,25 +2,20 @@ const injector = require(require("path").dirname(require.main.filename) + "/inje
 
 const dataItemDAO = injector.inject_dao("DataItemDAO");
 
-const createDataItem = async (projectId, codePath) => {
-    return await dataItemDAO.createDataItem(projectId, codePath);
-};
-
-const getDataItemByProjectId = async (projectId) => {
-    return await dataItemDAO.getDataItemByProjectId(projectId);
+const createDataItem = async (codePath) => {
+    return await dataItemDAO.createDataItem( codePath);
 };
 
 const getDataItemByExternalId = async (externalId) => {
     return await dataItemDAO.getDataItemByExternalId(externalId);
 };
 
-const addPathToDataItem = async (dataItem, codePath) => {
-    return await dataItemDAO.addPathToDataItem(dataItem, codePath);
+const getAllDataItems = async () => {
+    return await dataItemDAO.getAllDataItems();
 };
 
 module.exports = {
     createDataItem,
-    getDataItemByProjectId,
-    getDataItemByExternalId,
-    addPathToDataItem
+    getAllDataItems,
+    getDataItemByExternalId
 };

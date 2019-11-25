@@ -6,13 +6,5 @@
   {
     "name": "TaskController",
     "path": "task-controller"
-  },
-  {
-    "name": "StudentController",
-    "path": "student-controller"
-  },
-  {
-    "name": "TaskSolutionItemController",
-    "path": "task-solution-item-controller"
   }
 ]

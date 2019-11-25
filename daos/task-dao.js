@@ -30,9 +30,14 @@ const getAllTasks = async () => {
     return await Task.find();
 };
 
+const deleteTask = async (task) => {
+    return await task.remove();
+};
+
 module.exports = {
     createTask,
     getTaskByKey,
     getAllTasks,
-    getTaskByExternalId
+    getTaskByExternalId,
+    deleteTask
 };

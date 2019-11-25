@@ -33,6 +33,18 @@ const getTaskByKey = async (key) => {
     return await taskService.getTaskByKey(key);
 };
 
+const deleteTaskByKey = async (key) => {
+    const task = await taskService.getTaskByKey(key);
+
+    if (!task) {
+        return {
+            error: errorsConsts['validation']['task']['notExists']
+        }
+    }
+
+    return await taskService.deleteTask(task);
+};
+
 const getAllTasks = async () => {
     return await taskService.getAllTasks();
 };
@@ -40,5 +52,6 @@ const getAllTasks = async () => {
 module.exports = {
     createTask,
     getTaskByKey,
-    getAllTasks
+    getAllTasks,
+    deleteTaskByKey
 };
