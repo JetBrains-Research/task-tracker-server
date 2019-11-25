@@ -26,6 +26,13 @@ mongoose.connect(MONGODB, {
   useNewUrlParser: true
 });
 
+const fs = require('fs');
+const dir = './uploads';
+
+if (!fs.existsSync(dir)){
+  fs.mkdirSync(dir);
+}
+
 const injector = require("./injector");
 const upload = injector.inject_configuration("MulterConfiguration", multer);
 

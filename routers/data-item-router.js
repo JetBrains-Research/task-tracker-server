@@ -5,6 +5,7 @@ module.exports = (app, injector, upload) => {
 
     app.route("/api/data-item").post(upload.single("code"), async (req, res, next) => {
         const absolute_path = req.protocol + "://" + req.headers["host"] + "/" + req.file.path;
+        console.log(absolute_path);
         const response = await dataItemController.createDataItem(absolute_path);
         if (response.error) {
             await fileService.deleteFile(req.file.path);
