@@ -9,9 +9,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                task: response.getPublicData()
-            })
+            res.json(response.getPublicData())
         }
     });
 
@@ -22,9 +20,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                tasks: response.map(task => task.getPublicData())
-            })
+            res.json(response.map(task => task.getPublicData()))
         }
     });
 
@@ -35,9 +31,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                task: response.getPublicData()
-            })
+            res.json(response.getPublicData())
         }
     });
 
@@ -48,9 +42,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                task: response.getPublicData()
-            })
+            res.json(response.getPublicData())
         }
     });
 

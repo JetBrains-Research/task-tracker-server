@@ -12,9 +12,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                dataItem: response.getPublicData()
-            })
+            res.json(response.getPublicData())
         }
     });
 
@@ -25,9 +23,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                dataItems: response.map(x => x.getPublicData())
-            })
+            res.json(response.map(x => x.getPublicData()))
         }
     });
 
@@ -38,9 +34,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json({
-                dataItem: response.getPublicData()
-            })
+            res.json(response.getPublicData())
         }
     });
 };
