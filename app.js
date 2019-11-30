@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const app = express();
+const intelLogger = require('intel');
+const fs = require('fs');
 
 const multer = require("multer");
 const body_parser = require("body-parser");
@@ -26,12 +28,21 @@ mongoose.connect(MONGODB, {
   useNewUrlParser: true
 });
 
-const fs = require('fs');
 const dir = './uploads';
 
 if (!fs.existsSync(dir)){
   fs.mkdirSync(dir);
 }
+
+const loggerDir = './logs';
+if (!fs.existsSync(loggerDir)){
+  fs.mkdirSync(loggerDir);
+}
+
+const logger = intelLogger.getLogger('logger');
+logger.addHandler(new intelLogger.handlers.File(loggerDir + '/logs.log'));
+
+// app.use(fileUpload());
 
 const injector = require("./injector");
 const upload = injector.inject_configuration("MulterConfiguration", multer);
@@ -42,5 +53,5 @@ injector.inject_routers(app, injector, upload);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+  logger.info(`${new Date()}: Server is listening on port ${PORT}`);
 });

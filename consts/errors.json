@@ -43,6 +43,18 @@
         },
         "code": 406
       }
+    },
+    "file": {
+      "notReceived": {
+        "content": {
+          "error": {
+            "key": "FILE_NOT_RECEIVED",
+            "description": "File is not received.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      }
     }
   },
   "internalServer": {
