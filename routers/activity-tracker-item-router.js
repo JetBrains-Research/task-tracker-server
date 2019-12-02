@@ -14,7 +14,7 @@ module.exports = (app, injector, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json(response.getPublicData())
+            res.json(response.getPublicData().id)
         }
     });
 
