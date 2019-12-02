@@ -2,8 +2,8 @@ const injector = require(require("path").dirname(require.main.filename) + "/inje
 
 const dataItemDAO = injector.inject_dao("DataItemDAO");
 
-const createDataItem = async (codePath) => {
-    return await dataItemDAO.createDataItem( codePath);
+const createDataItem = async (codePath, activityTrackerKey) => {
+    return await dataItemDAO.createDataItem( codePath, activityTrackerKey);
 };
 
 const getDataItemByExternalId = async (externalId) => {

@@ -6,5 +6,9 @@
   {
     "name": "TaskController",
     "path": "task-controller"
+  },
+  {
+    "name": "ActivityTrackerItemController",
+    "path": "activity-tracker-item-controller"
   }
 ]

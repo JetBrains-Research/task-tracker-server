@@ -6,5 +6,9 @@
   {
     "name": "Task",
     "path": "task"
+  },
+  {
+    "name": "ActivityTrackerItem",
+    "path": "activity-tracker-item"
   }
 ]

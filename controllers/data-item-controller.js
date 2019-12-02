@@ -12,9 +12,9 @@ const createArchive = async () => {
     return archiveService.createArchive(dataItems);
 };
 
-const createDataItem = async (codePath) => {
+const createDataItem = async (codePath, activityTrackerKey) => {
     try {
-        const dataItem = await dataItemService.createDataItem(codePath);
+        const dataItem = await dataItemService.createDataItem(codePath, activityTrackerKey);
         logger.info(`${new Date()}: Data item was created successfully`);
         return dataItem;
     } catch (e) {

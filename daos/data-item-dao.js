@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
 const DataItem = mongoose.model("DataItem");
 
-const createDataItem = async (codePath) => {
+const createDataItem = async (codePath, activityTrackerKey) => {
     const dataItem = new DataItem({
-        codePath: codePath
+        codePath: codePath,
+        activityTrackerKey: activityTrackerKey
     });
     return await dataItem.save();
 };
 
 const getDataItemByExternalId = async (externalId) => {
-    return await DataItem.find({
-        external_data_item_id: externalId
+    return await DataItem.findOne({
+        externalDataItemId: externalId
     })
 };
 

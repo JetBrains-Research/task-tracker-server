@@ -10,5 +10,9 @@
   {
      "name": "ArchiveService",
      "path": "archive-service"
+  },
+  {
+     "name": "ActivityTrackerItemService",
+     "path": "activity-tracker-item-service"
   }
 ]

@@ -1,10 +1,14 @@
 [
   {
-      "name": "DataItemDAO",
-      "path": "data-item-dao"
+    "name": "DataItemDAO",
+    "path": "data-item-dao"
   },
   {
     "name": "TaskDAO",
     "path": "task-dao"
+  },
+  {
+    "name": "ActivityTrackerItemDAO",
+    "path": "activity-tracker-item-dao"
   }
 ]

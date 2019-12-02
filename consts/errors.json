@@ -55,6 +55,28 @@
         },
         "code": 406
       }
+    },
+    "activityTrackerItemItem": {
+      "alreadyTaken": {
+        "content": {
+          "error": {
+            "key": "ACTIVITY_TRACKER_ITEM_ALREADY_EXISTS",
+            "description": "Activity tracker item already taken.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      },
+      "notExists": {
+        "content": {
+          "error": {
+            "key": "ACTIVITY_TRACKER_ITEM_NOT_EXISTS",
+            "description": "Activity tracker item does not exists.",
+            "message": "Validation failed."
+          }
+        },
+        "code": 406
+      }
     }
   },
   "internalServer": {

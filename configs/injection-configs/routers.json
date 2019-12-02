@@ -6,5 +6,9 @@
   {
     "name": "TaskRouter",
     "path": "task-router"
+  },
+  {
+    "name": "ActivityTrackerItemRouter",
+    "path": "activity-tracker-item-router"
   }
 ]
