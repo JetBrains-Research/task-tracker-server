@@ -6,5 +6,9 @@
   {
     "name": "TaskService",
     "path": "task-service"
+  },
+  {
+     "name": "ArchiveService",
+     "path": "archive-service"
   }
 ]
