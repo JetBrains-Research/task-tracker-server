@@ -12,6 +12,7 @@ DataItemSchema.plugin(mongoose_sequence, { inc_field: "externalDataItemId" });
 DataItemSchema.methods.getPublicData = function () {
     return {
         codePath: this.codePath,
+        activityTrackerKey: this.activityTrackerKey,
         id: this.externalDataItemId
     };
 };
