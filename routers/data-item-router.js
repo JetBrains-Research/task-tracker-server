@@ -17,7 +17,12 @@ module.exports = (app, injector, upload) => {
         } else {
             const absolute_path = req.protocol + '://' + req.headers['host'] + '/' + req.file.path;
 
-            const response = await dataItemController.createDataItem(absolute_path, req.body.activityTrackerKey);
+            let activityTrackerKey = -1;
+            if (req.body && req.body.activityTrackerKey) {
+                activityTrackerKey = req.body.activityTrackerKey;
+            }
+
+            const response = await dataItemController.createDataItem(absolute_path, activityTrackerKey);
             if (response.error) {
                 await fileService.deleteFile(req.file.path);
                 res.status(response.error.code);
