@@ -14,5 +14,9 @@
   {
      "name": "ActivityTrackerItemService",
      "path": "activity-tracker-item-service"
-  }
+  },
+  {
+      "name": "FileService",
+      "path": "file-service"
+   }
 ]

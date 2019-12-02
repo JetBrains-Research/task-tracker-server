@@ -28,7 +28,7 @@ module.exports = (app, injector, upload) => {
         } else {
             const absolute_path = req.protocol + '://' + req.headers['host'] + '/' + req.file.path;
 
-            const response = await activityTrackerItemController.addCodePath(absolute_path, req.params.id);
+            const response = await activityTrackerItemController.replaceCodePath(absolute_path, req.params.id);
             if (response.error) {
                 res.status(response.error.code);
                 res.json(response.error.content);

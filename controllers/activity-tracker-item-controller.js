@@ -40,14 +40,14 @@ const getAllActivityTrackerItems = async () => {
     return activityTrackerItems;
 };
 
-const addCodePath = async (codePath, externalId) => {
+const replaceCodePath = async (codePath, externalId) => {
     let activityTrackerItem = await getActivityTrackerItemByExternalId(externalId);
     if (activityTrackerItem.error) {
         return activityTrackerItem;
     }
 
     try {
-        activityTrackerItem = await activityTrackerItemService.addCodePath(codePath, activityTrackerItem);
+        activityTrackerItem = await activityTrackerItemService.replaceCodePath(codePath, activityTrackerItem);
         logger.info(`${new Date()}: Activity tracker item was updated successfully`);
         return activityTrackerItem;
     }catch (e) {
@@ -63,5 +63,5 @@ module.exports = {
     createActivityTrackerItem,
     getActivityTrackerItemByExternalId,
     getAllActivityTrackerItems,
-    addCodePath
+    replaceCodePath
 };
