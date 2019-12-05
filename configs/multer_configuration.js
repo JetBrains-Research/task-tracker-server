@@ -13,7 +13,7 @@ module.exports = (params) => {
             const hashed_name = crypto.createHmac("sha1", crypto.createHmac("sha256", "0")
                 .update(file.mimetype).digest("hex").toString())
                 .update(filename).digest("hex");
-            cb(null, hashed_name + "." + file.mimetype.split("/")[1]);
+            cb(null, filename + "-" + hashed_name + "." + file.mimetype.split("/")[1]);
         }
     });
 
