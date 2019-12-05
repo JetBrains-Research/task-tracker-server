@@ -8,13 +8,13 @@ module.exports = (params) => {
         },
 
         filename: function (req, file, cb) {
+            const path = require('path')
             const current_date = Date.now();
             const filename = current_date + "-" + file.originalname;
-            const hashed_name = crypto.createHmac("sha1", crypto.createHmac("sha256", "0")
-                .update(file.mimetype).digest("hex").toString())
+            const hashed_name = file.originalname.split(' ').join('_').split('.').slice(0, -1).join('.') + "_" +
+                crypto.createHmac("sha1", crypto.createHmac("sha256", "0").update(file.mimetype).digest("hex").toString())
                 .update(filename).digest("hex");
-            cb(null, file.originalname.split(' ').join('_').split('.').slice(0, -1).join('.')
-                + "_" + hashed_name + "." + file.mimetype.split("/")[1]);
+            cb(null, hashed_name + path.extname(file.originalname));
         }
     });
 
