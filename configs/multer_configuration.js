@@ -8,13 +8,16 @@ module.exports = (params) => {
         },
 
         filename: function (req, file, cb) {
-            const path = require('path')
-            const current_date = Date.now();
-            const filename = current_date + "-" + file.originalname;
-            const hashed_name = file.originalname.split(' ').join('_').split('.').slice(0, -1).join('.') + "_" +
+            const path = require('path');
+            const currentDate = Date.now();
+            const min = 0;
+            const randomNumber = Math.random() * (currentDate - min) + min;
+            const filename = randomNumber + "-" + currentDate + "-" + file.originalname;
+            const hashedName = file.originalname.split(' ').join('_').split('.').slice(0, -1).join('.') + "_"
+                + randomNumber + "_" +
                 crypto.createHmac("sha1", crypto.createHmac("sha256", "0").update(file.mimetype).digest("hex").toString())
                 .update(filename).digest("hex");
-            cb(null, hashed_name + path.extname(file.originalname));
+            cb(null, hashedName + path.extname(file.originalname));
         }
     });
 
