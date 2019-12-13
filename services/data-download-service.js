@@ -27,6 +27,7 @@ const dataDownload = async () => {
             }
             if (atiPath !== null) {
                 countATR += 1;
+                console.log("atiPath: " + atiPath);
                 if (await copyFile(atiPath, path)) {
                     countCopy += 1;
                 }
