@@ -47,18 +47,6 @@ module.exports = (app, injector, upload) => {
         }
     });
 
-    app.route('/api/data-item/archive').get(async (req, res, next) => {
-        const response = await dataItemController.createArchive();
-        if (response.error) {
-            res.status(response.error.code);
-            res.json(response.error.content);
-            res.end();
-        } else {
-            const absolute_path = req.protocol + '://' + req.headers['host'];
-            res.json(absolute_path + response)
-        }
-    });
-
     app.route('/api/data-item/:id').get(async (req, res, next) => {
         const response = await dataItemController.getDataItemByExternalId(req.params.id);
         if (response.error) {

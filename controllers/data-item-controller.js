@@ -1,16 +1,10 @@
 const injector = require(require("path").dirname(require.main.filename) + "/injector");
 
 const dataItemService = injector.inject_service("DataItemService");
-const archiveService = injector.inject_service("ArchiveService");
 const errorsConsts = injector.inject_const_file("Errors");
 
 const intelLogger = require('intel');
 const logger = intelLogger.getLogger('logger');
-
-const createArchive = async () => {
-    const dataItems = await getAllDataItems();
-    return archiveService.createArchive(dataItems);
-};
 
 const createDataItem = async (codePath, activityTrackerKey) => {
     try {
@@ -49,6 +43,5 @@ const getAllDataItems = async () => {
 module.exports = {
     createDataItem,
     getDataItemByExternalId,
-    getAllDataItems,
-    createArchive
+    getAllDataItems
 };
