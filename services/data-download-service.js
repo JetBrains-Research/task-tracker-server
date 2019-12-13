@@ -23,25 +23,25 @@ const dataDownload = async () => {
         if (di.codePath) {
             logger.info(`${new Date()}: ...starting handle data item with id ${di.externalDataItemId}`);
             countDI += 1;
-            logger.info(`${new Date()}: ...starting get activity tracker item`);
+            logger.debug(`${new Date()}: ...starting get activity tracker item`);
             const ati = await getATI(di);
             let atiPath = null;
             if (ati) {
-                logger.info(`${new Date()}: activity tracker item with id ${ati.externalActivityTrackerItemId} was received successfully`);
+                logger.debug(`${new Date()}: activity tracker item with id ${ati.externalActivityTrackerItemId} was received successfully`);
                 if (ati.codePath)
                     atiPath = ati.codePath;
             } else {
-                logger.info(`${new Date()}: activity tracker item was not received`);
+                logger.debug(`${new Date()}: activity tracker item was not received`);
             }
             const path = await createResultDirectory(DIR, di.externalDataItemId, di.activityTrackerKey, atiPath);
-            logger.info(`${new Date()}: result directory was created successfully`);
-            logger.info(`${new Date()}: ...is copying data item file with path ${di.codePath}`);
+            logger.debug(`${new Date()}: result directory was created successfully`);
+            logger.debug(`${new Date()}: ...is copying data item file with path ${di.codePath}`);
             if (await copyFile(di.codePath, path)) {
                 countCopy += 1;
             }
             if (atiPath !== null) {
                 countATR += 1;
-                logger.info(`${new Date()}: ...is copying activity tracker item file with path ${atiPath}`);
+                logger.debug(`${new Date()}: ...is copying activity tracker item file with path ${atiPath}`);
                 if (await copyFile(atiPath, path)) {
                     countCopy += 1;
                 }
