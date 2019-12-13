@@ -1,5 +1,4 @@
 const fs = require("fs");
-const archiver = require('archiver');
 const zipFolder = require('zip-folder');
 
 const deleteFile = (path) => {
