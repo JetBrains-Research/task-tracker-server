@@ -11,6 +11,7 @@ const body_parser = require("body-parser");
 app.use(body_parser.json({limit: '50mb'}));
 app.use(body_parser.urlencoded({extended:true, limit:'50mb'}));
 app.use("/uploads", express.static("uploads"));
+app.use("/download", express.static("download"));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

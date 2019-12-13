@@ -10,5 +10,9 @@
   {
     "name": "ActivityTrackerItemRouter",
     "path": "activity-tracker-item-router"
+  },
+  {
+    "name": "DataDownloadRouter",
+    "path": "data-download-router"
   }
 ]

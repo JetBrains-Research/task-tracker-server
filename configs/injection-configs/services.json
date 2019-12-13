@@ -18,5 +18,9 @@
   {
       "name": "FileService",
       "path": "file-service"
-   }
+  },
+  {
+      "name": "DataDownloadService",
+      "path": "data-download-service"
+  }
 ]
