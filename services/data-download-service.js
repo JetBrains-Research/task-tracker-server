@@ -6,28 +6,41 @@ const fileService = injector.inject_service("FileService");
 
 const APP_DIR = require("path").dirname(require.main.filename) + "/";
 
+const intelLogger = require('intel');
+const logger = intelLogger.getLogger('logger');
+
 const dataDownload = async () => {
     const DIR = './data';
     await fileService.initDirectory(DIR);
 
+    logger.info(`${new Date()}: ...starting get all data items`);
     const dataItems = await dataItemService.getAllDataItems();
+    logger.info(`${new Date()}: ${dataItems.length} was received successfully`);
     let countCopy = 0;
     let countATR = 0;
     let countDI = 0;
     for(const di of dataItems) {
         if (di.codePath) {
+            logger.info(`${new Date()}: ...starting handle data item with id ${di.externalDataItemId}`);
             countDI += 1;
+            logger.info(`${new Date()}: ...starting get activity tracker item`);
             const ati = await getATI(di);
             let atiPath = null;
-            if (ati)
+            if (ati) {
+                logger.info(`${new Date()}: activity tracker item with id ${ati.externalActivityTrackerItemId} was received successfully`);
                 atiPath = ati.codePath;
+            } else {
+                logger.info(`${new Date()}: activity tracker item was not received`);
+            }
             const path = await createResultDirectory(DIR, di.externalDataItemId, di.activityTrackerKey, atiPath);
+            logger.info(`${new Date()}: result directory was created successfully`);
+            logger.info(`${new Date()}: ...is copying data item file with path ${di.codePath}`);
             if (await copyFile(di.codePath, path)) {
                 countCopy += 1;
             }
             if (atiPath !== null) {
                 countATR += 1;
-                console.log("atiPath: " + atiPath);
+                logger.info(`${new Date()}: ...is copying activity tracker item file with path ${atiPath}`);
                 if (await copyFile(atiPath, path)) {
                     countCopy += 1;
                 }
@@ -38,7 +51,9 @@ const dataDownload = async () => {
     if (countATR + countDI === countCopy) {
         isAll = true;
     }
+    logger.info(`${new Date()}: ...is creating archive`);
     const resultPath = await fileService.createArchive(APP_DIR + DIR.substr(2));
+    logger.info(`${new Date()}: ...is deleting tmp folder`);
     await fileService.deleteFolder(APP_DIR + DIR.substr(2));
 
     return {
