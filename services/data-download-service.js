@@ -28,7 +28,8 @@ const dataDownload = async () => {
             let atiPath = null;
             if (ati) {
                 logger.info(`${new Date()}: activity tracker item with id ${ati.externalActivityTrackerItemId} was received successfully`);
-                atiPath = ati.codePath;
+                if (ati.codePath)
+                    atiPath = ati.codePath;
             } else {
                 logger.info(`${new Date()}: activity tracker item was not received`);
             }
