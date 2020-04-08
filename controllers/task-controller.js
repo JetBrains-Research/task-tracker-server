@@ -6,7 +6,7 @@ const errorsConsts = injector.inject_const_file("Errors");
 const intelLogger = require('intel');
 const logger = intelLogger.getLogger('logger');
 
-const createTask = async (key, description, name) => {
+const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
     const task = await taskService.getTaskByKey(key);
 
     if (task) {
@@ -17,7 +17,7 @@ const createTask = async (key, description, name) => {
     }
 
     try {
-        const task = await taskService.createTask(key, description, name);
+        const task = await taskService.createTask(key, description, name, input, output, example_1, example_2, example_3);
         logger.info(`${new Date()}: Task ${key} was created successfully`);
         return task;
     } catch (e) {

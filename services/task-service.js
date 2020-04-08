@@ -2,8 +2,8 @@ const injector = require(require("path").dirname(require.main.filename) + "/inje
 
 const taskDAO = injector.inject_dao("TaskDAO");
 
-const createTask = async (key, description, name) => {
-    return await taskDAO.createTask(key, description, name);
+const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
+    return await taskDAO.createTask(key, description, name, input, output, example_1, example_2, example_3);
 };
 
 const getTaskByKey = async (key) => {

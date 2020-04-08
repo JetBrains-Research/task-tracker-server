@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Task = mongoose.model("Task");
 
-const createTask = async (key, description, name) => {
+const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
     const task = new Task({
         key: key
     });
@@ -10,6 +10,21 @@ const createTask = async (key, description, name) => {
     }
     if (name) {
         task.name = name;
+    }
+    if (input) {
+        task.input = input;
+    }
+    if (output) {
+        task.input = output;
+    }
+    if (example_1) {
+        task.example_1 = example_1;
+    }
+    if (example_2) {
+        task.example_2 = example_2;
+    }
+    if (example_3) {
+        task.example_3 = example_3;
     }
     return await task.save();
 };
