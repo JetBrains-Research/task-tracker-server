@@ -15,7 +15,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
         task.input = input;
     }
     if (output) {
-        task.input = output;
+        task.output = output;
     }
     if (example_1) {
         task.example_1 = example_1;
