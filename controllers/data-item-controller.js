@@ -1,6 +1,6 @@
 const intelLogger = require('intel');
 
-const errors = require('../consts/errors');
+const ERRORS = require('../consts/errors').ERRORS;
 const diService = require('../services/data-item-service');
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
@@ -14,7 +14,7 @@ const createDI = async (codePath, activityTrackerKey) => {
     } catch (e) {
         logger.error(`${new Date()}: Data item was not created`, e);
         return {
-            error: errors['internalServer']
+            error: ERRORS.INTERNAL_SERVER
         };
     }
 };
@@ -23,10 +23,9 @@ const getDiByExternalId = async (externalId) => {
     const dataItem = await diService.getDiByExternalId(externalId);
     if (!dataItem) {
         const message = `Data item with id ${externalId} is not exists`;
-        logger.error(`${new Date()}: ${message}`,
-            new Error(message));
+        logger.error(`${new Date()}: ${message}`, new Error(message));
         return {
-            error: errors['validation']['dataItem']['notExists']
+            error: ERRORS.VALIDATION.DATA_ITEM.NOT_EXISTS
         }
     }
     logger.info(`${new Date()}: Data item with id ${externalId} was received successfully`);

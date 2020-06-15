@@ -1,7 +1,7 @@
 const intelLogger = require('intel');
 
-const errors = require('../consts/errors');
 const consts = require('../consts/consts');
+const ERRORS = require('../consts/errors').ERRORS;
 const BASE_URL = require('../consts/consts').BASE_URL;
 const fileService = require('../services/file-service');
 const dataItemController = require('../controllers/data-item-controller');
@@ -12,7 +12,7 @@ module.exports = (app, upload) => {
 
     app.route(`${BASE_URL.DI}`).post(upload.single(consts.DI_UPLOADED_FILE), async (req, res, next) => {
             if (!req.file) {
-                const error = errors['validation']['file']['notReceived'];
+                const error = ERRORS.VALIDATION.FILE.NOT_RECEIVED;
                 logger.error(`${new Date()}: file was not received`, new Error('File was not received'));
                 res.status(error.code);
                 res.json(error.content);

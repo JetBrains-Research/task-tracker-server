@@ -1,6 +1,6 @@
 const intelLogger = require('intel');
 
-const errors = require('../consts/errors');
+const ERRORS = require('../consts/errors').ERRORS;
 const taskService = require('../services/task-service');
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
@@ -12,7 +12,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
     if (task) {
         logger.error(`${new Date()}: Task ${key} was not created`, new Error(`Task ${key} is already taken`));
         return {
-            error: errors['validation']['task']['alreadyTaken']
+            error: ERRORS.VALIDATION.TASK.ALREADY_TAKEN
         }
     }
 
@@ -23,7 +23,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
     } catch (e) {
         logger.error(`${new Date()}: Task ${key} was not created`, e);
         return {
-            error: errors['internalServer']
+            error: ERRORS.INTERNAL_SERVER
         };
     }
 };
@@ -34,7 +34,7 @@ const getTaskByKey = async (key) => {
     if (!task) {
         logger.error(`${new Date()}: Task ${key} is not exists`, new Error(`Task ${key} is not exists`));
         return {
-            error: errors['validation']['task']['notExists']
+            error: ERRORS.VALIDATION.TASK.NOT_EXISTS
         }
     }
 
@@ -48,7 +48,7 @@ const deleteTaskByKey = async (key) => {
     if (!task) {
         logger.error(`${new Date()}: Task ${key} is not exists`, new Error(`Task ${key} is not exists`));
         return {
-            error: errors['validation']['task']['notExists']
+            error: ERRORS.VALIDATION.TASK.NOT_EXISTS
         }
     }
 

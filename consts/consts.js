@@ -3,7 +3,7 @@ const BASE_URL = {
     DI: '/api/data-item'
 };
 
-// Todo: in the old version we use code name
+// Todo: in the old version we use CODE name
 const DI_UPLOADED_FILE = 'codetracker';
 const LOGGER_NAME = 'logger';
 

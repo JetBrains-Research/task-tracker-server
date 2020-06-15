@@ -1,6 +1,6 @@
 const intelLogger = require('intel');
 
-const errors = require('../consts/errors');
+const ERRORS = require('../consts/errors').ERRORS;
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 const atiService = require('../services/activity-tracker-item-service');
 
@@ -14,7 +14,7 @@ const createAti = async () => {
     } catch (e) {
         logger.error(`${new Date()}: Activity tracker item was not created`, e);
         return {
-            error: errors['internalServer']
+            error: ERRORS.INTERNAL_SERVER
         };
     }
 };
@@ -23,10 +23,9 @@ const getAtiByExternalId = async (externalId) => {
     const ati = await atiService.getAtiByExternalId(externalId);
     if (!ati) {
         const message = `Activity tracker item with id ${externalId} is not exists`;
-        logger.error(`${new Date()}: ${message}`,
-            new Error(message));
+        logger.error(`${new Date()}: ${message}`, new Error(message));
         return {
-            error: errors['validation']['activityTrackerItemItem']['notExists']
+            error: ERRORS.VALIDATION.ACTIVITY_TRACKER_ITEM.NOT_EXISTS
         }
     }
 
@@ -53,7 +52,7 @@ const replaceCodePath = async (codePath, externalId) => {
     } catch (e) {
         logger.error(`${new Date()}: Activity tracker item was not updated`, e);
         return {
-            error: errors['internalServer']
+            error: ERRORS.INTERNAL_SERVER
         };
     }
 

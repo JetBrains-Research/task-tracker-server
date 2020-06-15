@@ -1,6 +1,21 @@
 const fs = require('fs');
 const zipFolder = require('zip-folder');
 
+// If the directory is exist -> delete it and create new one
+const initDirectory = (path) => {
+    if (fs.existsSync(path)) {
+        deleteDirectory(path);
+    }
+    fs.mkdirSync(path);
+};
+
+// If the directory is not exist -> create it
+const createDirectory = (path) => {
+    if (!fs.existsSync(path)) {
+        fs.mkdirSync(path);
+    }
+};
+
 const deleteFile = (path) => {
     return new Promise((resolve, reject) => {
         fs.unlink(path, (err) => {
@@ -10,33 +25,19 @@ const deleteFile = (path) => {
                 resolve();
             }
         });
-
     });
 };
 
-const deleteFolder = async (path) => {
-    await fs.readdirSync(path).forEach(function (file, index) {
+const deleteDirectory = (path) => {
+    fs.readdirSync(path).forEach(function (file, index) {
         const curPath = path + '/' + file;
-        if (fs.lstatSync(curPath).isDirectory()) { // recurse
-            deleteFolder(curPath);
-        } else { // delete file
+        if (fs.lstatSync(curPath).isDirectory()) {
+            deleteDirectory(curPath);
+        } else {
             fs.unlinkSync(curPath);
         }
     });
-    await fs.rmdirSync(path);
-};
-
-const initDirectory = async (path) => {
-    if (fs.existsSync(path)) {
-        await deleteFolder(path);
-    }
-    fs.mkdirSync(path);
-};
-
-const createDir = (path) => {
-    if (!fs.existsSync(path)) {
-        fs.mkdirSync(path);
-    }
+    fs.rmdirSync(path);
 };
 
 const copyFile = (sourcePath, destinationPath) => {
@@ -55,10 +56,11 @@ const copyFile = (sourcePath, destinationPath) => {
     });
 };
 
+// Todo: send path without waiting
 const createArchive = async (path) => {
-    await initDirectory('./download');
+    initDirectory('./download');
     return new Promise((resolve, reject) => {
-        zipFolder(path,  './download/data.zip', function(err) {
+        zipFolder(path, './download/data.zip', function (err) {
             if (err) {
                 resolve(null);
             } else {
@@ -70,10 +72,10 @@ const createArchive = async (path) => {
 };
 
 module.exports = {
-    deleteFile,
-    initDirectory,
-    createDir,
     copyFile,
+    deleteFile,
+    deleteDirectory,
     createArchive,
-    deleteFolder
+    initDirectory,
+    createDirectory,
 };
