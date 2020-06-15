@@ -4,7 +4,7 @@
   - [Getting started](#getting-started)
   - [Usage](#usage)
     - [Task](#task)    
-    - [Data item](#data item)    
+    - [Data item](#data-item)    
     - [Activity tracker item](#activity-tracker-item)    
 
 
