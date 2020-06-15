@@ -1,13 +1,13 @@
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-const BASE_URL = require('../consts/consts').BASE_URL;
-
 const intelLogger = require('intel');
+
+const errors = require('../consts/errors');
+const BASE_URL = require('../consts/consts').BASE_URL;
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+const atiController = require('../controllers/activity-tracker-item-controller');
+
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
-module.exports = (app, injector, upload) => {
-
-    const atiController = injector.injectObject(injector.objectType.CONTROLLER,'ActivityTrackerItemController');
-    const errors = injector.injectObject(injector.objectType.CONST_FILE,'Errors');
+module.exports = (app, upload) => {
 
     app.route(`${BASE_URL.ATI}`).post(async (req, res, next) => {
         const response = await atiController.createAti();

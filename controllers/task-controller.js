@@ -1,11 +1,9 @@
+const intelLogger = require('intel');
+
+const errors = require('../consts/errors');
+const taskService = require('../services/task-service');
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
-const injector = require(require('path').dirname(require.main.filename) + '/injector');
-
-const taskService = injector.injectObject(injector.objectType.SERVICE,'TaskService');
-const errorsConsts = injector.injectObject(injector.objectType.CONST_FILE, 'Errors');
-
-const intelLogger = require('intel');
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
@@ -14,7 +12,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
     if (task) {
         logger.error(`${new Date()}: Task ${key} was not created`, new Error(`Task ${key} is already taken`));
         return {
-            error: errorsConsts['validation']['task']['alreadyTaken']
+            error: errors['validation']['task']['alreadyTaken']
         }
     }
 
@@ -25,7 +23,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
     } catch (e) {
         logger.error(`${new Date()}: Task ${key} was not created`, e);
         return {
-            error: errorsConsts['internalServer']
+            error: errors['internalServer']
         };
     }
 };
@@ -36,7 +34,7 @@ const getTaskByKey = async (key) => {
     if (!task) {
         logger.error(`${new Date()}: Task ${key} is not exists`, new Error(`Task ${key} is not exists`));
         return {
-            error: errorsConsts['validation']['task']['notExists']
+            error: errors['validation']['task']['notExists']
         }
     }
 
@@ -50,7 +48,7 @@ const deleteTaskByKey = async (key) => {
     if (!task) {
         logger.error(`${new Date()}: Task ${key} is not exists`, new Error(`Task ${key} is not exists`));
         return {
-            error: errorsConsts['validation']['task']['notExists']
+            error: errors['validation']['task']['notExists']
         }
     }
 

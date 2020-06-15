@@ -1,15 +1,12 @@
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-
-const injector = require(require('path').dirname(require.main.filename) + '/injector');
-
-const activityTrackerItemService = injector.injectObject(injector.objectType.SERVICE, 'ActivityTrackerItemService');
-const dataItemService = injector.injectObject(injector.objectType.SERVICE, 'DataItemService');
-const fileService = injector.injectObject(injector.objectType.SERVICE, 'FileService');
-
-const APP_DIR = require('path').dirname(require.main.filename) + '/';
-
 const intelLogger = require('intel');
+
+const fileService = require('../services/file-service');
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+const dataItemService = require('../services/data-item-service');
+const activityTrackerItemService = require('../services/activity-tracker-item-service');
+
 const logger = intelLogger.getLogger(LOGGER_NAME);
+const APP_DIR = require('path').dirname(require.main.filename) + '/';
 
 const dataDownload = async () => {
     const DIR = './data';

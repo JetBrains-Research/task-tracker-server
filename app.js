@@ -34,6 +34,7 @@ const uploadsDir = './uploads';
 if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir);
 }
+const upload = require('./configs/multer_configuration')(multer);
 
 // Set the logger
 const loggerDir = './logs';
@@ -45,10 +46,8 @@ logger.addHandler(new intelLogger.handlers.File(loggerDir + '/logs.log'));
 
 
 const injector = require('./injector');
-const upload = injector.injectConfiguration('MulterConfiguration', multer);
-
-injector.injectObject(injector.objectType.MODELS);
-injector.injectRouters(app, injector, upload);
+injector.injectModels();
+injector.injectRouters(app, upload);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

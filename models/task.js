@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const mongoose_sequence = require('mongoose-sequence')(mongoose);
+
+const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const TaskSchema = new Schema({
     key: {type: String, unique: true},
@@ -22,7 +23,7 @@ const TaskSchema = new Schema({
     name: {type: String}
 });
 
-TaskSchema.plugin(mongoose_sequence, {inc_field: 'externalTaskId'});
+TaskSchema.plugin(mongooseSequence, {inc_field: 'externalTaskId'});
 
 TaskSchema.methods.getPublicData = function () {
     return {

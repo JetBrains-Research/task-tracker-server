@@ -1,12 +1,9 @@
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-
-const injector = require(require('path').dirname(require.main.filename) + '/injector');
-
-const atiService = injector.injectObject(injector.objectType.SERVICE,'ActivityTrackerItemService');
-
-const errors = injector.injectObject(injector.objectType.CONST_FILE,'Errors');
-
 const intelLogger = require('intel');
+
+const errors = require('../consts/errors');
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+const atiService = require('../services/activity-tracker-item-service');
+
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const createAti = async () => {

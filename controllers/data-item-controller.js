@@ -1,11 +1,9 @@
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-
-const injector = require(require('path').dirname(require.main.filename) + '/injector');
-
-const dataItemService = injector.injectObject(injector.objectType.SERVICE,'DataItemService');
-const errorsConsts = injector.injectObject(injector.objectType.CONST_FILE,'Errors');
-
 const intelLogger = require('intel');
+
+const errors = require('../consts/errors');
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+const dataItemService = require('../services/data-item-service');
+
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const createDataItem = async (codePath, activityTrackerKey) => {
@@ -16,7 +14,7 @@ const createDataItem = async (codePath, activityTrackerKey) => {
     } catch (e) {
         logger.error(`${new Date()}: Data item was not created`, e);
         return {
-            error: errorsConsts['internalServer']
+            error: errors['internalServer']
         };
     }
 };
@@ -28,7 +26,7 @@ const getDataItemByExternalId = async (externalId) => {
         logger.error(`${new Date()}: Data item with id ${externalId} is not exists`,
             new Error(`Data item with id ${externalId} is not exists`));
         return {
-            error: errorsConsts['validation']['dataItem']['notExists']
+            error: errors['validation']['dataItem']['notExists']
         }
     }
 

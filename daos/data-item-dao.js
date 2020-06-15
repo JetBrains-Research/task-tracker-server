@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const DataItem = mongoose.model("DataItem");
 
 const createDataItem = async (codePath, activityTrackerKey) => {

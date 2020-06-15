@@ -1,7 +1,5 @@
-const injector = require(require('path').dirname(require.main.filename) + '/injector');
-
-const atiDao = injector.injectObject(injector.objectType.DAO, 'ActivityTrackerItemDAO');
-const fileService = injector.injectObject(injector.objectType.SERVICE, 'FileService');
+const fileService = require('../services/file-service');
+const atiDao = require('../daos/activity-tracker-item-dao');
 
 const createAti = async () => {
     return await atiDao.createAti();
