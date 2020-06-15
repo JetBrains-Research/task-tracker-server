@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const diDao = require('../daos/data-item-dao');
 
 const createDI = async (codePath, activityTrackerKey) => {

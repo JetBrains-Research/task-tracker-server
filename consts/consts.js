@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const BASE_URL = {
     ATI: '/api/activity-tracker-item',
     DI: '/api/data-item'

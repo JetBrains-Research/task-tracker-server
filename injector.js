@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const APP_DIR = require('path').dirname(require.main.filename);
 
 const objectType = {

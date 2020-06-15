@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 module.exports = (multer) => {
 
     const crypto = require('crypto');

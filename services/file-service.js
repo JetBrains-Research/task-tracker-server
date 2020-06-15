@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const fs = require('fs');
 const zipFolder = require('zip-folder');
 

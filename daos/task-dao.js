@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const mongoose = require("mongoose");
 
 const Task = mongoose.model("Task");

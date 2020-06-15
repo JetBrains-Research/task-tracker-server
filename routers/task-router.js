@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const taskController = require('../controllers/task-controller');
 
 module.exports = (app, upload) => {

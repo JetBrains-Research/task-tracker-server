@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const fileService = require('../services/file-service');
 const atiDao = require('../daos/activity-tracker-item-dao');
 

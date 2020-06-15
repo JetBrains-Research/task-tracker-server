@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const ERRORS = {
   VALIDATION: {
     DATA_ITEM: {

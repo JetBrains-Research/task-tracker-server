@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const intelLogger = require('intel');
 
 const ERRORS = require('../consts/errors').ERRORS;

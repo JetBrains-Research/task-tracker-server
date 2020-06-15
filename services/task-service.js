@@ -1,3 +1,5 @@
+// Copyright (c) 2020 Anastasiia Birillo
+
 const taskDao = require('../daos/task-dao');
 
 const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
