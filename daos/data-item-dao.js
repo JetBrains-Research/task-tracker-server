@@ -1,26 +1,28 @@
-const mongoose = require("mongoose");
-const DataItem = mongoose.model("DataItem");
+// Copyright (c) 2020 Anastasiia Birillo
 
-const createDataItem = async (codePath, activityTrackerKey) => {
-    const dataItem = new DataItem({
+const mongoose = require("mongoose");
+const DI = mongoose.model("DataItem");
+
+const createDI = async (codePath, activityTrackerKey) => {
+    const di = new DI({
         codePath: codePath,
         activityTrackerKey: activityTrackerKey
     });
-    return await dataItem.save();
+    return await di.save();
 };
 
-const getDataItemByExternalId = async (externalId) => {
-    return await DataItem.findOne({
-        externalDataItemId: externalId
+const getDiByExternalId = async (externalId) => {
+    return await DI.findOne({
+        externalDiId: externalId
     })
 };
 
-const getAllDataItems = async () => {
-    return await DataItem.find();
+const getAllDi = async () => {
+    return await DI.find();
 };
 
 module.exports = {
-    createDataItem,
-    getDataItemByExternalId,
-    getAllDataItems
+    createDI,
+    getAllDi,
+    getDiByExternalId,
 };

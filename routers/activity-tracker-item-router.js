@@ -1,14 +1,18 @@
-module.exports = (app, injector, upload) => {
+// Copyright (c) 2020 Anastasiia Birillo
 
-    const activityTrackerItemController = injector.inject_controller('ActivityTrackerItemController');
-    const fileService = injector.inject_service('FileService');
-    const errorsConsts = injector.inject_const_file('Errors');
+const intelLogger = require('intel');
 
-    const intelLogger = require('intel');
-    const logger = intelLogger.getLogger('logger');
+const ERRORS = require('../consts/errors').ERRORS;
+const BASE_URL = require('../consts/consts').BASE_URL;
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+const atiController = require('../controllers/activity-tracker-item-controller');
 
-    app.route('/api/activity-tracker-item').post(async (req, res, next) => {
-        const response = await activityTrackerItemController.createActivityTrackerItem();
+const logger = intelLogger.getLogger(LOGGER_NAME);
+
+module.exports = (app, upload) => {
+
+    app.route(`${BASE_URL.ATI}`).post(async (req, res, next) => {
+        const response = await atiController.createAti();
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
@@ -18,17 +22,16 @@ module.exports = (app, injector, upload) => {
         }
     });
 
-    app.route('/api/activity-tracker-item/:id').put(upload.single('code'), async (req, res, next) => {
+    app.route(`${BASE_URL.ATI}/:id`).put(upload.single('code'), async (req, res, next) => {
         if (!req.file) {
-            const error = errorsConsts['validation']['file']['notReceived'];
+            const error = ERRORS.VALIDATION.FILE.NOT_RECEIVED;
             logger.error(`${new Date()}: file was not received`, new Error('File was not received'));
             res.status(error.code);
             res.json(error.content);
             res.end();
         } else {
             const absolute_path = req.protocol + '://' + req.headers['host'] + '/' + req.file.path;
-
-            const response = await activityTrackerItemController.replaceCodePath(absolute_path, req.params.id);
+            const response = await atiController.replaceCodePath(absolute_path, req.params.id);
             if (response.error) {
                 res.status(response.error.code);
                 res.json(response.error.content);
@@ -39,8 +42,8 @@ module.exports = (app, injector, upload) => {
         }
     });
 
-    app.route('/api/activity-tracker-item/all').get(async (req, res, next) => {
-        const response = await activityTrackerItemController.getAllActivityTrackerItems();
+    app.route(`${BASE_URL.ATI}/all`).get(async (req, res, next) => {
+        const response = await atiController.getAllAti();
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
@@ -50,8 +53,8 @@ module.exports = (app, injector, upload) => {
         }
     });
 
-    app.route('/api/activity-tracker-item/:id').get(async (req, res, next) => {
-        const response = await activityTrackerItemController.getActivityTrackerItemByExternalId(req.params.id);
+    app.route(`${BASE_URL.ATI}/:id`).get(async (req, res, next) => {
+        const response = await atiController.getAtiByExternalId(req.params.id);
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);

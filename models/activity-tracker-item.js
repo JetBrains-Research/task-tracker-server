@@ -1,18 +1,21 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const mongoose_sequence = require("mongoose-sequence")(mongoose);
+// Copyright (c) 2020 Anastasiia Birillo
 
-const ActivityTrackerItemSchema = new Schema({
-    codePath: { type: String }
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const mongooseSequence = require('mongoose-sequence')(mongoose);
+
+const AtiSchema = new Schema({
+    codePath: {type: String}
 });
 
-ActivityTrackerItemSchema.plugin(mongoose_sequence, { inc_field: "externalActivityTrackerItemId" });
+AtiSchema.plugin(mongooseSequence, {inc_field: 'externalAtiId'});
 
-ActivityTrackerItemSchema.methods.getPublicData = function () {
+AtiSchema.methods.getPublicData = function () {
     return {
         codePath: this.codePath,
-        id: this.externalActivityTrackerItemId
+        id: this.externalAtiId
     };
 };
 
-module.exports = mongoose.model("ActivityTrackerItem", ActivityTrackerItemSchema);
+module.exports = mongoose.model('ActivityTrackerItem', AtiSchema);

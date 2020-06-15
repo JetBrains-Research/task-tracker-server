@@ -1,10 +1,12 @@
-module.exports = (params) => {
+// Copyright (c) 2020 Anastasiia Birillo
 
-    const crypto = require("crypto");
+module.exports = (multer) => {
 
-    const storage = params[0].diskStorage({
+    const crypto = require('crypto');
+
+    const storage = multer.diskStorage({
         destination: function (req, file, cb) {
-            cb(null, "uploads/")
+            cb(null, 'uploads/')
         },
 
         filename: function (req, file, cb) {
@@ -12,16 +14,16 @@ module.exports = (params) => {
             const currentDate = Date.now();
             const min = 0;
             const randomNumber = Math.random() * (currentDate - min) + min;
-            const filename = randomNumber + "-" + currentDate + "-" + file.originalname;
-            const hashedName = file.originalname.split(' ').join('_').split('.').slice(0, -1).join('.') + "_"
-                + randomNumber + "_" +
-                crypto.createHmac("sha1", crypto.createHmac("sha256", "0").update(file.mimetype).digest("hex").toString())
-                .update(filename).digest("hex");
+            const filename = randomNumber + '-' + currentDate + '-' + file.originalname;
+            const hashedName = file.originalname.split(' ').join('_').split('.').slice(0, -1).join('.') + '_'
+                + randomNumber + '_' +
+                crypto.createHmac('sha1', crypto.createHmac('sha256', '0').update(file.mimetype).digest('hex').toString())
+                .update(filename).digest('hex');
             cb(null, hashedName + path.extname(file.originalname));
         }
     });
 
-    const upload = params[0]({
+    const upload = multer({
         storage: storage
     });
 

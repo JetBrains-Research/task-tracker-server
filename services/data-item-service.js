@@ -1,21 +1,21 @@
-const injector = require(require("path").dirname(require.main.filename) + "/injector");
+// Copyright (c) 2020 Anastasiia Birillo
 
-const dataItemDAO = injector.inject_dao("DataItemDAO");
+const diDao = require('../daos/data-item-dao');
 
-const createDataItem = async (codePath, activityTrackerKey) => {
-    return await dataItemDAO.createDataItem( codePath, activityTrackerKey);
+const createDI = async (codePath, activityTrackerKey) => {
+    return await diDao.createDI( codePath, activityTrackerKey);
 };
 
-const getDataItemByExternalId = async (externalId) => {
-    return await dataItemDAO.getDataItemByExternalId(externalId);
+const getDiByExternalId = async (externalId) => {
+    return await diDao.getDiByExternalId(externalId);
 };
 
-const getAllDataItems = async () => {
-    return await dataItemDAO.getAllDataItems();
+const getAllDi = async () => {
+    return await diDao.getAllDi();
 };
 
 module.exports = {
-    createDataItem,
-    getAllDataItems,
-    getDataItemByExternalId
+    createDI,
+    getAllDi,
+    getDiByExternalId
 };

@@ -1,30 +1,32 @@
-const mongoose = require("mongoose");
-const ActivityTrackerItem = mongoose.model("ActivityTrackerItem");
+// Copyright (c) 2020 Anastasiia Birillo
 
-const createActivityTrackerItem = async () => {
-    const activityTrackerItem = new ActivityTrackerItem({
-    });
-    return await activityTrackerItem.save();
+const mongoose = require('mongoose');
+
+const ATI = mongoose.model('ActivityTrackerItem');
+
+const createAti = async () => {
+    const ati = new ATI({});
+    return await ati.save();
 };
 
-const addCodePath = async (codePath, activityTrackerItem) => {
-    activityTrackerItem.codePath = codePath;
-    return await activityTrackerItem.save();
+const replaceCodePath = async (codePath, ati) => {
+    ati.codePath = codePath;
+    return await ati.save();
 };
 
-const getActivityTrackerItemByExternalId = async (externalId) => {
-    return await ActivityTrackerItem.findOne({
-        externalActivityTrackerItemId: externalId
+const getAtiByExternalId = async (externalId) => {
+    return await ATI.findOne({
+        externalAtiId: externalId
     })
 };
 
-const getAllActivityTrackerItems = async () => {
-    return await ActivityTrackerItem.find();
+const getAllAti = async () => {
+    return await ATI.find();
 };
 
 module.exports = {
-    createActivityTrackerItem,
-    getActivityTrackerItemByExternalId,
-    getAllActivityTrackerItems,
-    addCodePath
+    createAti,
+    getAtiByExternalId,
+    getAllAti,
+    replaceCodePath
 };

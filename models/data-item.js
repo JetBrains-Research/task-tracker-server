@@ -1,20 +1,23 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const mongoose_sequence = require("mongoose-sequence")(mongoose);
+// Copyright (c) 2020 Anastasiia Birillo
 
-const DataItemSchema = new Schema({
-    codePath: { type: String },
-    activityTrackerKey: { type: String }
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const mongooseSequence = require('mongoose-sequence')(mongoose);
+
+const DiSchema = new Schema({
+    codePath: {type: String},
+    activityTrackerKey: {type: String}
 });
 
-DataItemSchema.plugin(mongoose_sequence, { inc_field: "externalDataItemId" });
+DiSchema.plugin(mongooseSequence, {inc_field: 'externalDiId'});
 
-DataItemSchema.methods.getPublicData = function () {
+DiSchema.methods.getPublicData = function () {
     return {
         codePath: this.codePath,
         activityTrackerKey: this.activityTrackerKey,
-        id: this.externalDataItemId
+        id: this.externalDiId
     };
 };
 
-module.exports = mongoose.model("DataItem", DataItemSchema);
+module.exports = mongoose.model('DataItem', DiSchema);

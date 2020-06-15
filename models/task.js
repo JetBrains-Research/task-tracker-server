@@ -1,28 +1,31 @@
-const mongoose = require("mongoose");
+// Copyright (c) 2020 Anastasiia Birillo
+
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const mongoose_sequence = require("mongoose-sequence")(mongoose);
+
+const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const TaskSchema = new Schema({
-    key: { type: String, unique: true },
-    description: { type: String },
-    input: { type: String },
-    output: { type: String },
+    key: {type: String, unique: true},
+    description: {type: String},
+    input: {type: String},
+    output: {type: String},
     example_1: {
-        input: { type: String },
-        output: { type: String }
+        input: {type: String},
+        output: {type: String}
     },
     example_2: {
-        input: { type: String },
-        output: { type: String }
+        input: {type: String},
+        output: {type: String}
     },
     example_3: {
-        input: { type: String },
-        output: { type: String }
+        input: {type: String},
+        output: {type: String}
     },
-    name: { type: String }
+    name: {type: String}
 });
 
-TaskSchema.plugin(mongoose_sequence, { inc_field: "externalTaskId" });
+TaskSchema.plugin(mongooseSequence, {inc_field: 'externalTaskId'});
 
 TaskSchema.methods.getPublicData = function () {
     return {
@@ -38,4 +41,4 @@ TaskSchema.methods.getPublicData = function () {
     };
 };
 
-module.exports = mongoose.model("Task", TaskSchema);
+module.exports = mongoose.model('Task', TaskSchema);

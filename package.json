@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/nbirillo/coding-assistant-server"
   },
   "author": "",
-  "license": "ISC",
-  "homepage": "",
+  "license": "MIT",
+  "homepage": "https://github.com/nbirillo/coding-assistant-server",
   "dependencies": {
     "archiver": "^3.1.1",
     "axios": "^0.18.0",

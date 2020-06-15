@@ -1,10 +1,12 @@
-const injector = require(require("path").dirname(require.main.filename) + "/injector");
-
-const taskService = injector.inject_service("TaskService");
-const errorsConsts = injector.inject_const_file("Errors");
+// Copyright (c) 2020 Anastasiia Birillo
 
 const intelLogger = require('intel');
-const logger = intelLogger.getLogger('logger');
+
+const ERRORS = require('../consts/errors').ERRORS;
+const taskService = require('../services/task-service');
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+
+const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
     const task = await taskService.getTaskByKey(key);
@@ -12,7 +14,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
     if (task) {
         logger.error(`${new Date()}: Task ${key} was not created`, new Error(`Task ${key} is already taken`));
         return {
-            error: errorsConsts['validation']['task']['alreadyTaken']
+            error: ERRORS.VALIDATION.TASK.ALREADY_TAKEN
         }
     }
 
@@ -23,7 +25,7 @@ const createTask = async (key, description, name, input, output, example_1, exam
     } catch (e) {
         logger.error(`${new Date()}: Task ${key} was not created`, e);
         return {
-            error: errorsConsts['internalServer']
+            error: ERRORS.INTERNAL_SERVER
         };
     }
 };
@@ -34,7 +36,7 @@ const getTaskByKey = async (key) => {
     if (!task) {
         logger.error(`${new Date()}: Task ${key} is not exists`, new Error(`Task ${key} is not exists`));
         return {
-            error: errorsConsts['validation']['task']['notExists']
+            error: ERRORS.VALIDATION.TASK.NOT_EXISTS
         }
     }
 
@@ -48,7 +50,7 @@ const deleteTaskByKey = async (key) => {
     if (!task) {
         logger.error(`${new Date()}: Task ${key} is not exists`, new Error(`Task ${key} is not exists`));
         return {
-            error: errorsConsts['validation']['task']['notExists']
+            error: ERRORS.VALIDATION.TASK.NOT_EXISTS
         }
     }
 

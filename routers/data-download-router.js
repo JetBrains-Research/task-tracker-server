@@ -1,6 +1,8 @@
-module.exports = (app, injector) => {
+// Copyright (c) 2020 Anastasiia Birillo
 
-    const dataDownloadService = injector.inject_service('DataDownloadService');
+const dataDownloadService = require('../services/data-download-service');
+
+module.exports = (app) => {
 
     app.route('/api/data/download').get(async (req, res, next) => {
         const response = await dataDownloadService.dataDownload();
