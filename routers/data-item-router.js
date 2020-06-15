@@ -1,11 +1,13 @@
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+
 module.exports = (app, injector, upload) => {
 
-    const dataItemController = injector.inject_controller('DataItemController');
-    const fileService = injector.inject_service('FileService');
-    const errorsConsts = injector.inject_const_file('Errors');
+    const dataItemController = injector.injectObject(injector.objectType.CONTROLLER,'DataItemController');
+    const fileService = injector.injectObject(injector.objectType.SERVICE,'FileService');
+    const errorsConsts = injector.injectObject(injector.objectType.CONST_FILE,'Errors');
 
     const intelLogger = require('intel');
-    const logger = intelLogger.getLogger('logger');
+    const logger = intelLogger.getLogger(LOGGER_NAME);
 
     app.route('/api/data-item').post(upload.single('code'), async (req, res, next) => {
         if (!req.file) {

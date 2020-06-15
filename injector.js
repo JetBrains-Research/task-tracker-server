@@ -1,58 +1,74 @@
-const APP_DIR = require("path").dirname(require.main.filename);
+const APP_DIR = require('path').dirname(require.main.filename);
 
-const inject_models = () => {
-    const models_config = require(`${APP_DIR}/configs/injection-configs/models`);
-    for (const model of models_config)
+const objectType = {
+    MODELS: {
+        configPath: `${APP_DIR}/configs/injection-configs/models`,
+        filePath: `${APP_DIR}/models`
+    },
+    DAO: {
+        configPath: `${APP_DIR}/configs/injection-configs/daos`,
+        filePath: `${APP_DIR}/daos`
+    },
+    SERVICE: {
+        configPath: `${APP_DIR}/configs/injection-configs/services`,
+        filePath: `${APP_DIR}/services`
+    },
+    CONTROLLER: {
+        configPath: `${APP_DIR}/configs/injection-configs/controllers`,
+        filePath: `${APP_DIR}/controllers`
+    },
+    ROUTERS: {
+        configPath: `${APP_DIR}/configs/injection-configs/routers`,
+        filePath: `${APP_DIR}/routers`
+    },
+    CONFIGURATION: {
+        configPath: `${APP_DIR}/configs/injection-configs/configurations`,
+        filePath: `${APP_DIR}/configs`
+    },
+    CONST_FILE: {
+        configPath: `${APP_DIR}/configs/injection-configs/consts`,
+        filePath: `${APP_DIR}/consts`
+    }
+};
+
+const injectRouters = (app, injector, agent) => {
+    const routersConfig = require(objectType.ROUTERS.configPath);
+    for (const router of routersConfig)
+        require(`${objectType.ROUTERS.filePath}/${router.path}`)(app, injector, agent);
+};
+
+const injectConfiguration = (configurationName, ...params) => {
+    const configurationsConfig = require(objectType.CONFIGURATION.configPath);
+    for (const configuration of configurationsConfig)
+        if (configuration.name === configurationName)
+            return require(`${objectType.CONFIGURATION.filePath}/${configuration.path}`)(params);
+};
+
+const injectObject = (currentObjectType, objectName) => {
+    switch(currentObjectType){
+        case objectType.MODELS: {
+            const modelsConfig = require(objectType.MODELS.configPath);
+            for (const model of modelsConfig)
+                require(`${objectType.MODELS.filePath}/${model.path}`);
+            return
+        }
+        default: {
+            const config = require(currentObjectType.configPath);
+            for (const item of config)
+                if (item.name === objectName)
+                    return require(`${currentObjectType.filePath}/${item.path}`);
+        }
+    }
+
+    const modelsConfig = require(`${APP_DIR}/configs/injection-configs/models`);
+    for (const model of modelsConfig)
         require(`${APP_DIR}/models/${model.path}`);
 };
 
-const inject_dao = (dao_name) => {
-    const daos_config = require(`${APP_DIR}/configs/injection-configs/daos`);
-    for (const dao of daos_config)
-        if (dao.name === dao_name)
-            return require(`${APP_DIR}/daos/${dao.path}`);
-};
-
-const inject_service = (service_name) => {
-    const service_config = require(`${APP_DIR}/configs/injection-configs/services`);
-    for (const service of service_config)
-        if (service.name === service_name)
-            return require(`${APP_DIR}/services/${service.path}`);
-};
-
-const inject_controller = (controller_name) => {
-    const controllers_config = require(`${APP_DIR}/configs/injection-configs/controllers`);
-    for (const controller of controllers_config)
-        if (controller.name === controller_name)
-            return require(`${APP_DIR}/controllers/${controller.path}`);
-};
-
-const inject_routers = (app, injector, agent) => {
-    const routers_config = require(`${APP_DIR}/configs/injection-configs/routers`);
-    for (const router of routers_config)
-        require(`${APP_DIR}/routers/${router.path}`)(app, injector, agent);
-};
-
-const inject_configuration = (configuration_name, ...params) => {
-    const configurations_config = require(`${APP_DIR}/configs/injection-configs/configurations`);
-    for (const configuration of configurations_config)
-        if (configuration.name === configuration_name)
-            return require(`${APP_DIR}/configs/${configuration.path}`)(params);
-};
-
-const inject_const_file = (const_file_name) => {
-    const consts_config = require(`${APP_DIR}/configs/injection-configs/consts`);
-    for (const const_file of consts_config)
-        if (const_file.name === const_file_name)
-            return require(`${APP_DIR}/consts/${const_file.path}`);
-};
-
 module.exports = {
-    inject_models,
-    inject_dao,
-    inject_service,
-    inject_controller,
-    inject_routers,
-    inject_configuration,
-    inject_const_file
+    objectType,
+
+    injectObject,
+    injectRouters,
+    injectConfiguration,
 };

@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 const zipFolder = require('zip-folder');
 
 const deleteFile = (path) => {
@@ -16,7 +16,7 @@ const deleteFile = (path) => {
 
 const deleteFolder = async (path) => {
     await fs.readdirSync(path).forEach(function (file, index) {
-        const curPath = path + "/" + file;
+        const curPath = path + '/' + file;
         if (fs.lstatSync(curPath).isDirectory()) { // recurse
             deleteFolder(curPath);
         } else { // delete file

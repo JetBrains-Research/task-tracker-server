@@ -1,6 +1,6 @@
 module.exports = (app, injector, upload) => {
 
-    const taskController = injector.inject_controller("TaskController");
+    const taskController = injector.injectObject(injector.objectType.CONTROLLER,"TaskController");
 
     app.route("/api/task").post(async (req, res, next) => {
         const response = await taskController.createTask(req.body.key, req.body.description, req.body.name,

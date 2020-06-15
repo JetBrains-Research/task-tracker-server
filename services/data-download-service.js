@@ -1,13 +1,15 @@
-const injector = require(require("path").dirname(require.main.filename) + "/injector");
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
-const activityTrackerItemService = injector.inject_service("ActivityTrackerItemService");
-const dataItemService = injector.inject_service("DataItemService");
-const fileService = injector.inject_service("FileService");
+const injector = require(require('path').dirname(require.main.filename) + '/injector');
 
-const APP_DIR = require("path").dirname(require.main.filename) + "/";
+const activityTrackerItemService = injector.injectObject(injector.objectType.SERVICE, 'ActivityTrackerItemService');
+const dataItemService = injector.injectObject(injector.objectType.SERVICE, 'DataItemService');
+const fileService = injector.injectObject(injector.objectType.SERVICE, 'FileService');
+
+const APP_DIR = require('path').dirname(require.main.filename) + '/';
 
 const intelLogger = require('intel');
-const logger = intelLogger.getLogger('logger');
+const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const dataDownload = async () => {
     const DIR = './data';
@@ -64,8 +66,8 @@ const dataDownload = async () => {
 };
 
 const copyFile = (oldPath, newPath) => {
-    const sourcePath = getFileSystemPath(oldPath, "uploads");
-    const destinationPath = sourcePath.replace("/uploads", newPath.substr(1));
+    const sourcePath = getFileSystemPath(oldPath, 'uploads');
+    const destinationPath = sourcePath.replace('/uploads', newPath.substr(1));
     return !!fileService.copyFile(sourcePath, destinationPath);
 };
 
@@ -93,9 +95,9 @@ const createResultDirectory = async (dir, diId, atiId, atiPath) => {
 const getCurrentPathForDiAndAti = (dir, diId, atiId, atiPath) => {
     let currentPath = dir;
     if (atiPath !== null) {
-        currentPath += "/ati_" + atiId;
+        currentPath += '/ati_' + atiId;
     } else {
-        currentPath += "/di_" + diId;
+        currentPath += '/di_' + diId;
     }
     return currentPath
 };

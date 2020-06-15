@@ -1,10 +1,12 @@
-const injector = require(require("path").dirname(require.main.filename) + "/injector");
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
-const taskService = injector.inject_service("TaskService");
-const errorsConsts = injector.inject_const_file("Errors");
+const injector = require(require('path').dirname(require.main.filename) + '/injector');
+
+const taskService = injector.injectObject(injector.objectType.SERVICE,'TaskService');
+const errorsConsts = injector.injectObject(injector.objectType.CONST_FILE, 'Errors');
 
 const intelLogger = require('intel');
-const logger = intelLogger.getLogger('logger');
+const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
     const task = await taskService.getTaskByKey(key);

@@ -1,10 +1,12 @@
-const injector = require(require("path").dirname(require.main.filename) + "/injector");
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
-const dataItemService = injector.inject_service("DataItemService");
-const errorsConsts = injector.inject_const_file("Errors");
+const injector = require(require('path').dirname(require.main.filename) + '/injector');
+
+const dataItemService = injector.injectObject(injector.objectType.SERVICE,'DataItemService');
+const errorsConsts = injector.injectObject(injector.objectType.CONST_FILE,'Errors');
 
 const intelLogger = require('intel');
-const logger = intelLogger.getLogger('logger');
+const logger = intelLogger.getLogger(LOGGER_NAME);
 
 const createDataItem = async (codePath, activityTrackerKey) => {
     try {

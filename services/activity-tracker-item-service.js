@@ -1,37 +1,33 @@
-const injector = require(require("path").dirname(require.main.filename) + "/injector");
+const injector = require(require('path').dirname(require.main.filename) + '/injector');
 
-const activityTrackerItemDAO = injector.inject_dao("ActivityTrackerItemDAO");
-const fileService = injector.inject_service('FileService');
+const atiDao = injector.injectObject(injector.objectType.DAO, 'ActivityTrackerItemDAO');
+const fileService = injector.injectObject(injector.objectType.SERVICE, 'FileService');
 
-const createActivityTrackerItem = async () => {
-    return await activityTrackerItemDAO.createActivityTrackerItem();
+const createAti = async () => {
+    return await atiDao.createAti();
 };
 
-const getActivityTrackerItemByExternalId = async (externalId) => {
-    return await activityTrackerItemDAO.getActivityTrackerItemByExternalId(externalId);
+const getAtiByExternalId = async (externalId) => {
+    return await atiDao.getAtiByExternalId(externalId);
 };
 
-const addCodePath = async (codePath, activityTrackerItem) => {
-    return await activityTrackerItemDAO.addCodePath(codePath, activityTrackerItem);
-};
-
-const replaceCodePath = async (codePath, activityTrackerItem) => {
-    const oldPath = activityTrackerItem.codePath;
-    activityTrackerItem = await activityTrackerItemDAO.addCodePath(codePath, activityTrackerItem);
-    if (activityTrackerItem && oldPath) {
+const replaceCodePath = async (codePath, ati) => {
+    const oldPath = ati.codePath;
+    ati = await atiDao.replaceCodePath(codePath, ati);
+    if (ati && oldPath) {
         await fileService.deleteFile(oldPath.replace(/(.*)uploads/,
-            require("path").dirname(require.main.filename) + '/uploads'));
+            require('path').dirname(require.main.filename) + '/uploads'));
     }
-    return activityTrackerItem;
+    return ati;
 };
 
-const getAllActivityTrackerItems = async () => {
-    return await activityTrackerItemDAO.getAllActivityTrackerItems();
+const getAllAti = async () => {
+    return await atiDao.getAllAti();
 };
 
 module.exports = {
-    createActivityTrackerItem,
-    getActivityTrackerItemByExternalId,
-    getAllActivityTrackerItems,
+    createAti,
+    getAtiByExternalId,
+    getAllAti,
     replaceCodePath
 };

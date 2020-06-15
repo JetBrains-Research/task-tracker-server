@@ -1,6 +1,6 @@
 module.exports = (app, injector) => {
 
-    const dataDownloadService = injector.inject_service('DataDownloadService');
+    const dataDownloadService = injector.injectObject(injector.objectType.SERVICE, 'DataDownloadService');
 
     app.route('/api/data/download').get(async (req, res, next) => {
         const response = await dataDownloadService.dataDownload();
