@@ -3,19 +3,19 @@ const Schema = mongoose.Schema;
 
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
-const DataItemSchema = new Schema({
+const DiSchema = new Schema({
     codePath: {type: String},
     activityTrackerKey: {type: String}
 });
 
-DataItemSchema.plugin(mongooseSequence, {inc_field: 'externalDataItemId'});
+DiSchema.plugin(mongooseSequence, {inc_field: 'externalDiId'});
 
-DataItemSchema.methods.getPublicData = function () {
+DiSchema.methods.getPublicData = function () {
     return {
         codePath: this.codePath,
         activityTrackerKey: this.activityTrackerKey,
-        id: this.externalDataItemId
+        id: this.externalDiId
     };
 };
 
-module.exports = mongoose.model('DataItem', DataItemSchema);
+module.exports = mongoose.model('DataItem', DiSchema);

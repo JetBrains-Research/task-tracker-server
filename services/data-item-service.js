@@ -1,19 +1,19 @@
-const dataItemDao = require('../daos/data-item-dao');
+const diDao = require('../daos/data-item-dao');
 
-const createDataItem = async (codePath, activityTrackerKey) => {
-    return await dataItemDao.createDataItem( codePath, activityTrackerKey);
+const createDI = async (codePath, activityTrackerKey) => {
+    return await diDao.createDI( codePath, activityTrackerKey);
 };
 
-const getDataItemByExternalId = async (externalId) => {
-    return await dataItemDao.getDataItemByExternalId(externalId);
+const getDiByExternalId = async (externalId) => {
+    return await diDao.getDiByExternalId(externalId);
 };
 
-const getAllDataItems = async () => {
-    return await dataItemDao.getAllDataItems();
+const getAllDi = async () => {
+    return await diDao.getAllDi();
 };
 
 module.exports = {
-    createDataItem,
-    getAllDataItems,
-    getDataItemByExternalId
+    createDI,
+    getAllDi,
+    getDiByExternalId
 };

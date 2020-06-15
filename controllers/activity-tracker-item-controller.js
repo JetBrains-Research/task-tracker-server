@@ -61,7 +61,7 @@ const replaceCodePath = async (codePath, externalId) => {
 
 module.exports = {
     createAti,
-    getAtiByExternalId,
     getAllAti,
-    replaceCodePath
+    replaceCodePath,
+    getAtiByExternalId,
 };

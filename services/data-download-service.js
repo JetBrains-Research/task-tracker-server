@@ -20,7 +20,7 @@ const dataDownload = async () => {
     let countDI = 0;
     for(const di of dataItems) {
         if (di.codePath) {
-            logger.info(`${new Date()}: ...starting handle data item with id ${di.externalDataItemId}`);
+            logger.info(`${new Date()}: ...starting handle data item with id ${di.externalDiId}`);
             countDI += 1;
             logger.debug(`${new Date()}: ...starting get activity tracker item`);
             const ati = await getATI(di);
@@ -32,7 +32,7 @@ const dataDownload = async () => {
             } else {
                 logger.debug(`${new Date()}: activity tracker item was not received`);
             }
-            const path = await createResultDirectory(DIR, di.externalDataItemId, di.activityTrackerKey, atiPath);
+            const path = await createResultDirectory(DIR, di.externalDiId, di.activityTrackerKey, atiPath);
             logger.debug(`${new Date()}: result directory was created successfully`);
             logger.debug(`${new Date()}: ...is copying data item file with path ${di.codePath}`);
             if (await copyFile(di.codePath, path)) {

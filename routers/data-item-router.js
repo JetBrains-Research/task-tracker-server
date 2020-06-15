@@ -1,15 +1,16 @@
 const intelLogger = require('intel');
 
 const errors = require('../consts/errors');
+const consts = require('../consts/consts');
+const BASE_URL = require('../consts/consts').BASE_URL;
 const fileService = require('../services/file-service');
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 const dataItemController = require('../controllers/data-item-controller');
 
-const logger = intelLogger.getLogger(LOGGER_NAME);
+const logger = intelLogger.getLogger(consts.LOGGER_NAME);
 
 module.exports = (app, upload) => {
 
-    app.route('/api/data-item').post(upload.single('code'), async (req, res, next) => {
+    app.route(`${BASE_URL.DI}`).post(upload.single(consts.DI_UPLOADED_FILE), async (req, res, next) => {
             if (!req.file) {
                 const error = errors['validation']['file']['notReceived'];
                 logger.error(`${new Date()}: file was not received`, new Error('File was not received'));
@@ -18,13 +19,12 @@ module.exports = (app, upload) => {
                 res.end();
             } else {
                 const absolute_path = req.protocol + '://' + req.headers['host'] + '/' + req.file.path;
-
                 let activityTrackerKey = -1;
                 if (req.body && req.body.activityTrackerKey) {
                     activityTrackerKey = req.body.activityTrackerKey;
                 }
 
-                const response = await dataItemController.createDataItem(absolute_path, activityTrackerKey);
+                const response = await dataItemController.createDI(absolute_path, activityTrackerKey);
                 if (response.error) {
                     await fileService.deleteFile(req.file.path);
                     res.status(response.error.code);
@@ -37,8 +37,8 @@ module.exports = (app, upload) => {
         }
     );
 
-    app.route('/api/data-item/all').get(async (req, res, next) => {
-        const response = await dataItemController.getAllDataItems();
+    app.route(`${BASE_URL.DI}/all`).get(async (req, res, next) => {
+        const response = await dataItemController.getAllDi();
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
@@ -48,8 +48,8 @@ module.exports = (app, upload) => {
         }
     });
 
-    app.route('/api/data-item/:id').get(async (req, res, next) => {
-        const response = await dataItemController.getDataItemByExternalId(req.params.id);
+    app.route(`${BASE_URL.DI}/:id`).get(async (req, res, next) => {
+        const response = await dataItemController.getDiByExternalId(req.params.id);
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
