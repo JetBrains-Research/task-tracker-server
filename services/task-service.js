@@ -1,9 +1,37 @@
 // Copyright (c) 2020 Anastasiia Birillo
 
-const taskDao = require('../daos/task-dao');
+const intelLogger = require('intel');
 
-const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
-    return await taskDao.createTask(key, description, name, input, output, example_1, example_2, example_3);
+const taskDao = require('../daos/task-dao');
+const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
+const taskDescriptionService = require('../services/task-description-service');
+
+const logger = intelLogger.getLogger(LOGGER_NAME);
+
+const createTask = async (key, descriptions, examples) => {
+    let preparedDescriptions = [];
+    for(const description of descriptions){
+        const td = await taskDescriptionService.createTaskDescription(description.info, description.language);
+        if (td) {
+            preparedDescriptions.push({
+                language: description.language,
+                td: td
+            });
+        }
+    }
+    try {
+        const task = await taskDao.createTask(key, preparedDescriptions, examples);
+        logger.info(`${new Date()}: Task ${key} was created successfully`);
+        return task;
+    } catch (e) {
+        logger.error(`${new Date()}: Task ${key} was not created`, e);
+        for(const td of preparedDescriptions){
+            await taskDescriptionService.deleteTaskDescription(td);
+        }
+        return {
+            error: ERRORS.INTERNAL_SERVER
+        };
+    }
 };
 
 const getTaskByKey = async (key) => {
@@ -24,8 +52,8 @@ const deleteTask = async (task) => {
 
 module.exports = {
     createTask,
-    getTaskByKey,
+    deleteTask,
     getAllTasks,
+    getTaskByKey,
     getTaskByExternalId,
-    deleteTask
 };
