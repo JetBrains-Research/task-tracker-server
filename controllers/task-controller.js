@@ -8,27 +8,6 @@ const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
-const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
-    const task = await taskService.getTaskByKey(key);
-
-    if (task) {
-        logger.error(`${new Date()}: Task ${key} was not created`, new Error(`Task ${key} is already taken`));
-        return {
-            error: ERRORS.VALIDATION.TASK.ALREADY_TAKEN
-        }
-    }
-
-    try {
-        const task = await taskService.createTask(key, description, name, input, output, example_1, example_2, example_3);
-        logger.info(`${new Date()}: Task ${key} was created successfully`);
-        return task;
-    } catch (e) {
-        logger.error(`${new Date()}: Task ${key} was not created`, e);
-        return {
-            error: ERRORS.INTERNAL_SERVER
-        };
-    }
-};
 
 const getTaskByKey = async (key) => {
     const task = await taskService.getTaskByKey(key);
@@ -42,6 +21,19 @@ const getTaskByKey = async (key) => {
 
     logger.info(`${new Date()}: Task ${key} was received successfully`);
     return await taskService.getTaskByKey(key);
+};
+
+const createTask = async (key, descriptions, examples) => {
+    const task = await taskService.getTaskByKey(key);
+
+    if (task) {
+        logger.error(`${new Date()}: Task ${key} was not created`, new Error(`Task ${key} is already taken`));
+        return {
+            error: ERRORS.VALIDATION.TASK.ALREADY_TAKEN
+        }
+    }
+
+    return await taskService.createTask(key, descriptions, examples);
 };
 
 const deleteTaskByKey = async (key) => {
@@ -66,7 +58,7 @@ const getAllTasks = async () => {
 
 module.exports = {
     createTask,
-    getTaskByKey,
     getAllTasks,
-    deleteTaskByKey
+    getTaskByKey,
+    deleteTaskByKey,
 };

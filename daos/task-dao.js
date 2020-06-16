@@ -1,33 +1,18 @@
 // Copyright (c) 2020 Anastasiia Birillo
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const Task = mongoose.model("Task");
+const Task = mongoose.model('Task');
+const LANGUAGES = require('../consts/consts').LANGUAGES;
+const taskDescriptionDao = require('../daos/task-description-dao');
 
-const createTask = async (key, description, name, input, output, example_1, example_2, example_3) => {
+const createTask = async (key, descriptions, examples) => {
     const task = new Task({
-        key: key
+        key: key,
+        examples: examples,
     });
-    if (description) {
-        task.description = description;
-    }
-    if (name) {
-        task.name = name;
-    }
-    if (input) {
-        task.input = input;
-    }
-    if (output) {
-        task.output = output;
-    }
-    if (example_1) {
-        task.example_1 = example_1;
-    }
-    if (example_2) {
-        task.example_2 = example_2;
-    }
-    if (example_3) {
-        task.example_3 = example_3;
+    for(const description of descriptions){
+        task[description.language] = description.td._id;
     }
     return await task.save();
 };
@@ -49,13 +34,17 @@ const getAllTasks = async () => {
 };
 
 const deleteTask = async (task) => {
+    for(const language of LANGUAGES){
+        const description = await this.populate(language).execPopulate();
+        await taskDescriptionDao.deleteTaskDescription(description);
+    }
     return await task.remove();
 };
 
 module.exports = {
     createTask,
-    getTaskByKey,
+    deleteTask,
     getAllTasks,
+    getTaskByKey,
     getTaskByExternalId,
-    deleteTask
 };

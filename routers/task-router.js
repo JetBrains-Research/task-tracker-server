@@ -1,51 +1,64 @@
 // Copyright (c) 2020 Anastasiia Birillo
 
+const BASE_URL = require('../consts/consts').BASE_URL;
 const taskController = require('../controllers/task-controller');
 
 module.exports = (app, upload) => {
 
-    app.route("/api/task").post(async (req, res, next) => {
-        const response = await taskController.createTask(req.body.key, req.body.description, req.body.name,
-            req.body.input, req.body.output, req.body.example_1, req.body.example_2, req.body.example_3);
+    app.route(`${BASE_URL.TASK}`).post(async (req, res, next) => {
+        const response = await taskController.createTask(req.body.key, req.body.descriptions, req.body.examples);
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
             res.end();
         } else {
-            res.json(response.getPublicData())
+            res.json(await response.getAsyncPublicData())
         }
     });
 
-    app.route("/api/task/all").get(async (req, res, next) => {
+    app.route(`${BASE_URL.TASK}/all`).get(async (req, res, next) => {
         const response = await taskController.getAllTasks();
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
             res.end();
         } else {
-            res.json(response.map(task => task.getPublicData()))
+            let tasks = [];
+            response.forEach(async item => tasks.push(await item.getAsyncPublicData()));
+            res.json(await tasks);
         }
     });
 
-    app.route("/api/task/:key").get(async (req, res, next) => {
+    app.route(`${BASE_URL.TASK}/:key`).get(async (req, res, next) => {
         const response = await taskController.getTaskByKey(req.params.key);
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
             res.end();
         } else {
-            res.json(response.getPublicData())
+            res.json(await response.getAsyncPublicData())
         }
     });
 
-    app.route("/api/task/:key").delete(async (req, res, next) => {
+    // app.route(`${BASE_URL.TASK}/:key/:language`).put(async (req, res, next) => {
+    //     const response = await taskController.getTaskByKey(req.params.key);
+    //     if (response.error) {
+    //         res.status(response.error.code);
+    //         res.json(response.error.content);
+    //         res.end();
+    //     } else {
+    //         res.json(await response.getAsyncPublicData())
+    //     }
+    // });
+
+    app.route(`${BASE_URL.TASK}/:key`).delete(async (req, res, next) => {
         const response = await taskController.deleteTaskByKey(req.params.key);
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
             res.end();
         } else {
-            res.json(response.getPublicData())
+            res.json(await response.getAsyncPublicData())
         }
     });
 

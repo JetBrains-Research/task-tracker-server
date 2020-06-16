@@ -3,42 +3,36 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const LANGUAGES = require('../consts/consts').LANGUAGES;
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const TaskSchema = new Schema({
     key: {type: String, unique: true},
-    description: {type: String},
-    input: {type: String},
-    output: {type: String},
-    example_1: {
-        input: {type: String},
-        output: {type: String}
-    },
-    example_2: {
-        input: {type: String},
-        output: {type: String}
-    },
-    example_3: {
-        input: {type: String},
-        output: {type: String}
-    },
-    name: {type: String}
+    ru: { type: Schema.ObjectId, ref: 'TaskDescription' },
+    en: { type: Schema.ObjectId, ref: 'TaskDescription' },
+    examples: [{
+            input: {type: String},
+            output: {type: String}
+        }]
 });
 
 TaskSchema.plugin(mongooseSequence, {inc_field: 'externalTaskId'});
 
 TaskSchema.methods.getPublicData = function () {
     return {
+        id: this.externalTaskId,
         key: this.key,
-        description: this.description,
-        name: this.name,
-        input: this.input,
-        output: this.output,
-        example_1: this.example_1,
-        example_2: this.example_2,
-        example_3: this.example_3,
-        id: this.externalTaskId
+        examples: this.examples
     };
+};
+
+TaskSchema.methods.getAsyncPublicData = async function () {
+    let data = this.getPublicData();
+    for(const language of LANGUAGES){
+        const currentLang = await this.populate(language).execPopulate();
+        data[language] = currentLang[language].getPublicData();
+    }
+    return data;
 };
 
 module.exports = mongoose.model('Task', TaskSchema);
