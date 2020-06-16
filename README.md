@@ -32,8 +32,38 @@ The section describes the models and routes in the server.
 
 ### Task
 
+The model stores _tasks_ from the [codetracker](https://github.com/JetBrains-Research/codetracker) plugin.
 
-**TODO: add task**
+#### Model
+
+Field | Type | Description
+---   | --- | ---
+**key**      |  String          | the task key. It must be unique
+**examples** |  List of objects | list of the examples of code. Each item has two fields: **input** (type - `String`) and input (**output** - `String`) 
+**en**       |  Object          | detail description for the task in English
+**...**      |  Object          | detail description for the task in the _different_ languages
+
+Available languages:
+
+- **en** - English
+- **ru** - Russian
+
+**Note**: you can add a new language. See documentation.
+
+**TODO: add a link**
+
+#### Routes
+
+URL | Type | Description
+---   | --- | --- 
+`/api/task`     | `POST`    | create a new task in the database
+`/api/task/all` | `GET`     | get all tasks
+`/api/task/:key`| `GET`     | get task by key
+`/api/task/:key`| `DELETE`  | delete task by key
+
+**Note**: you can see usage examples. See documentation.
+
+**TODO: add a link**
 
 
 ### Data item
@@ -44,7 +74,7 @@ The model stores _user files_ from the [codetracker](https://github.com/JetBrain
 
 Field | Type | Description
 ---   | --- | ---
-**id** |  ObjectId  |  internal [MongoDB id](https://docs.mongodb.com/manual/reference/method/ObjectId/)
+**id** |  [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)  |  internal **MongoDB** id
 **externalDiId** |  Integer | external id
 **codePath** |  String | path for the _user file_
 **activityTrackerKey** |  String | external _activity-tracker id_
