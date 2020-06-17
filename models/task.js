@@ -20,9 +20,13 @@ TaskSchema.plugin(mongooseSequence, {inc_field: 'externalTaskId'});
 
 TaskSchema.methods.getPublicData = function () {
     return {
-        id: this.externalTaskId,
         key: this.key,
-        examples: this.examples
+        examples: this.examples.map(function(example) {
+            return {
+                input: example.input,
+                output: example.output
+            }
+        })
     };
 };
 
@@ -30,7 +34,9 @@ TaskSchema.methods.getAsyncPublicData = async function () {
     let data = this.getPublicData();
     for(const language of LANGUAGES){
         const currentLang = await this.populate(language).execPopulate();
-        data[language] = currentLang[language].getPublicData();
+        if (currentLang[language]) {
+            data[language] = currentLang[language].getPublicData();
+        }
     }
     return data;
 };

@@ -40,17 +40,6 @@ module.exports = (app, upload) => {
         }
     });
 
-    // app.route(`${BASE_URL.TASK}/:key/:language`).put(async (req, res, next) => {
-    //     const response = await taskController.getTaskByKey(req.params.key);
-    //     if (response.error) {
-    //         res.status(response.error.code);
-    //         res.json(response.error.content);
-    //         res.end();
-    //     } else {
-    //         res.json(await response.getAsyncPublicData())
-    //     }
-    // });
-
     app.route(`${BASE_URL.TASK}/:key`).delete(async (req, res, next) => {
         const response = await taskController.deleteTaskByKey(req.params.key);
         if (response.error) {

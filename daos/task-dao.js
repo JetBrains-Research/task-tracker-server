@@ -35,8 +35,8 @@ const getAllTasks = async () => {
 
 const deleteTask = async (task) => {
     for(const language of LANGUAGES){
-        const description = await this.populate(language).execPopulate();
-        await taskDescriptionDao.deleteTaskDescription(description);
+        const description = await task.populate(language).execPopulate();
+        await taskDescriptionDao.deleteTaskDescription(description[language]);
     }
     return await task.remove();
 };

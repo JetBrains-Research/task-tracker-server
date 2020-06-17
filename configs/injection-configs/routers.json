@@ -14,5 +14,9 @@
   {
     "name": "DataDownloadRouter",
     "path": "data-download-router"
+  },
+  {
+    "name": "SettingsRouter",
+    "path": "settings-router"
   }
 ]
