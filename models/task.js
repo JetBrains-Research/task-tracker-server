@@ -20,7 +20,6 @@ TaskSchema.plugin(mongooseSequence, {inc_field: 'externalTaskId'});
 
 TaskSchema.methods.getPublicData = function () {
     return {
-        id: this.externalTaskId,
         key: this.key,
         examples: this.examples
     };

@@ -2,6 +2,7 @@
 
 const intelLogger = require('intel');
 
+const consts = require('../consts/consts');
 const ERRORS = require('../consts/errors').ERRORS;
 const BASE_URL = require('../consts/consts').BASE_URL;
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
@@ -22,7 +23,7 @@ module.exports = (app, upload) => {
         }
     });
 
-    app.route(`${BASE_URL.ATI}/:id`).put(upload.single('code'), async (req, res, next) => {
+    app.route(`${BASE_URL.ATI}/:id`).put(upload.single(consts.ATI_UPLOADED_FILE), async (req, res, next) => {
         if (!req.file) {
             const error = ERRORS.VALIDATION.FILE.NOT_RECEIVED;
             logger.error(`${new Date()}: file was not received`, new Error('File was not received'));
