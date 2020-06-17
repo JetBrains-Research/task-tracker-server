@@ -6,7 +6,7 @@ const taskController = require('../controllers/task-controller');
 module.exports = (app, upload) => {
 
     app.route(`${BASE_URL.TASK}`).post(async (req, res, next) => {
-        const response = await taskController.createTask(req.body.key, req.body.descriptions, req.body.examples);
+        const response = await taskController.createTask(req.body.key.toLowerCase(), req.body.descriptions, req.body.examples);
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
@@ -30,7 +30,7 @@ module.exports = (app, upload) => {
     });
 
     app.route(`${BASE_URL.TASK}/:key`).get(async (req, res, next) => {
-        const response = await taskController.getTaskByKey(req.params.key);
+        const response = await taskController.getTaskByKey(req.params.key.toLowerCase());
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);
@@ -41,7 +41,7 @@ module.exports = (app, upload) => {
     });
 
     app.route(`${BASE_URL.TASK}/:key`).delete(async (req, res, next) => {
-        const response = await taskController.deleteTaskByKey(req.params.key);
+        const response = await taskController.deleteTaskByKey(req.params.key.toLowerCase());
         if (response.error) {
             res.status(response.error.code);
             res.json(response.error.content);

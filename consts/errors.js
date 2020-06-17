@@ -1,50 +1,44 @@
 // Copyright (c) 2020 Anastasiia Birillo
 
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
+};
+
+const getAlreadyTakenError = (object) => {
+  return {
+    content: {
+      error: {
+        key: `${object.toUpperCase()}_ALREADY_EXISTS`,
+        description: `${capitalizeFirstLetter(object)} already taken.`,
+        message: 'Validation failed.'
+      }
+    },
+    code: 406
+  }
+};
+
+const getNotExistsError = (object) => {
+  return {
+    content: {
+      error: {
+        key: `${object.toUpperCase()}_NOT_EXISTS`,
+        description: `${capitalizeFirstLetter(object)} does not exists.`,
+        message: 'Validation failed.'
+      }
+    },
+    code: 406
+  }
+};
+
 const ERRORS = {
   VALIDATION: {
     DATA_ITEM: {
-      ALREADY_TAKEN: {
-        content: {
-          error: {
-            key: 'DATA_ITEM_ALREADY_EXISTS',
-            description: 'Data item already taken.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      },
-      NOT_EXISTS: {
-        content: {
-          error: {
-            key: 'DATA_ITEM_NOT_EXISTS',
-            description: 'Data item does not exists.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      }
+      ALREADY_TAKEN: getAlreadyTakenError('DATA_ITEM'),
+      NOT_EXISTS: getNotExistsError('DATA_ITEM'),
     },
     TASK: {
-      ALREADY_TAKEN: {
-        content: {
-          error: {
-            key: 'TASK_ALREADY_EXISTS',
-            description: 'Task already taken.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      },
-      NOT_EXISTS: {
-        content: {
-          error: {
-            key: 'TASK_NOT_EXISTS',
-            description: 'Task does not exists.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      }
+      ALREADY_TAKEN: getAlreadyTakenError('TASK'),
+      NOT_EXISTS: getNotExistsError('TASK'),
     },
     FILE: {
       NOT_RECEIVED: {
@@ -59,47 +53,24 @@ const ERRORS = {
       }
     },
     ACTIVITY_TRACKER_ITEM: {
-      ALREADY_TAKEN: {
-        content: {
-          error: {
-            key: 'ACTIVITY_TRACKER_ITEM_ALREADY_EXISTS',
-            description: 'Activity tracker item already taken.',
-            message: 'Validation failed.'
-          }
-      }
-    },
-      NOT_EXISTS: {
-        content: {
-          error: {
-            key: 'ACTIVITY_TRACKER_ITEM_NOT_EXISTS',
-            description: 'Activity tracker item does not exists.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      }
+      ALREADY_TAKEN: getAlreadyTakenError('ACTIVITY_TRACKER_ITEM'),
+      NOT_EXISTS: getNotExistsError('ACTIVITY_TRACKER_ITEM'),
     },
     SETTINGS: {
-      NOT_EXISTS: {
-        content: {
-          error: {
-            key: 'SETTINGS_NOT_EXISTS',
-            description: 'Settings does not exists.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      },
-      ALREADY_TAKEN: {
-        content: {
-          error: {
-            key: 'SETTINGS_ALREADY_EXISTS',
-            description: 'Settings already taken.',
-            message: 'Validation failed.'
-          }
-        },
-        code: 406
-      },
+      NOT_EXISTS: getNotExistsError('SETTINGS'),
+      ALREADY_TAKEN: getAlreadyTakenError('SETTINGS'),
+    },
+    GENDER: {
+      NOT_EXISTS: getNotExistsError('GENDER'),
+      ALREADY_TAKEN: getAlreadyTakenError('GENDER'),
+    },
+    COUNTRY: {
+      NOT_EXISTS: getNotExistsError('COUNTRY'),
+      ALREADY_TAKEN: getAlreadyTakenError('COUNTRY'),
+    },
+    EXPERIENCE: {
+      NOT_EXISTS: getNotExistsError('EXPERIENCE'),
+      ALREADY_TAKEN: getAlreadyTakenError('EXPERIENCE'),
     }
   },
   INTERNAL_SERVER: {

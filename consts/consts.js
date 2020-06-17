@@ -4,7 +4,10 @@ const BASE_URL = {
     ATI: '/api/activity-tracker-item',
     DI: '/api/data-item',
     TASK: '/api/task',
-    SETTINGS: '/api/settings'
+    SETTINGS: '/api/settings',
+    GENDER: '/api/gender',
+    COUNTRY: '/api/country',
+    EXPERIENCE: '/api/experience'
 };
 
 // Todo: in the old version we use CODE name

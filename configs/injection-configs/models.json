@@ -5,19 +5,31 @@
   },
   {
     "name": "TaskDescription",
-    "path": "task-description"
+    "path": "task/task-description"
   },
   {
     "name": "Task",
-    "path": "task"
+    "path": "task/task"
   },
   {
     "name": "SettingsDescription",
-    "path": "settings-description"
+    "path": "settings/settings-description"
   },
   {
     "name": "Settings",
-    "path": "settings"
+    "path": "settings/settings"
+  },
+  {
+    "name": "Gender",
+    "path": "consts-lists/gender"
+  },
+  {
+    "name": "Country",
+    "path": "consts-lists/country"
+  },
+  {
+    "name": "Experience",
+    "path": "consts-lists/experience"
   },
   {
     "name": "ActivityTrackerItem",
