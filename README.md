@@ -30,39 +30,7 @@ Do the following steps:
 
 ## Usage
 
-The section describes the models and routes in the server. The full description see in the [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API). 
-
-### Task
-
-The model stores _tasks_ from the [codetracker](https://github.com/JetBrains-Research/codetracker) plugin.
-
-#### Model
-
-Field | Type | Description
----   | --- | ---
-**key**      |  String          | the task key. It must be unique
-**examples** |  List of objects | list of the examples of code. Each item has two fields: **input** (type - `String`) and input (**output** - `String`) 
-**en**       |  Object          | detail description for the task in English
-**...**      |  Object          | detail description for the task in the _different_ languages
-
-Available languages:
-
-- **en** - English
-- **ru** - Russian
-
-**Note**: you can add a new language. See [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API:-Task#add-new-language).
-
-#### Routes
-
-URL | Type | Description
----   | --- | --- 
-`/api/task`     | `POST`    | create a new task in the database
-`/api/task/all` | `GET`     | get all tasks
-`/api/task/:key`| `GET`     | get task by key
-`/api/task/:key`| `DELETE`  | delete task by key
-
-**Note**: you can see more information. See [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API:-Task#routes).
-
+The section describes the models and routes in the server. The full description for all models see in the [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API). 
 
 ### Data item
 
