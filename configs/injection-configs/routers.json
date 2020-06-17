@@ -18,5 +18,17 @@
   {
     "name": "SettingsRouter",
     "path": "settings-router"
+  },
+  {
+    "name": "GenderRouter",
+    "path": "consts-lists/gender-router"
+  },
+  {
+    "name": "CountryRouter",
+    "path": "consts-lists/country-router"
+  },
+  {
+    "name": "ExperienceRouter",
+    "path": "consts-lists/experience-router"
   }
 ]

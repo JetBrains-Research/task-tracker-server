@@ -2,9 +2,9 @@
 
 const intelLogger = require('intel');
 
-const taskDao = require('../daos/task-dao');
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-const taskDescriptionService = require('../services/task-description-service');
+const taskDao = require('../../daos/task/task-dao');
+const LOGGER_NAME = require('../../consts/consts').LOGGER_NAME;
+const taskDescriptionService = require('./task-description-service');
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
 

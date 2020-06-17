@@ -1,7 +1,7 @@
 // Copyright (c) 2020 Anastasiia Birillo
 
-const LANGUAGES = require('../consts/consts').LANGUAGES;
-const taskDescriptionDao = require('../daos/task-description-dao');
+const LANGUAGES = require('../../consts/consts').LANGUAGES;
+const taskDescriptionDao = require('../../daos/task/task-description-dao');
 
 const createTaskDescription = async (taskDescription, language) => {
     if (LANGUAGES.indexOf(language) === -1) {

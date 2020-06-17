@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const LANGUAGES = require('../consts/consts').LANGUAGES;
+const LANGUAGES = require('../../consts/consts').LANGUAGES;
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const TaskSchema = new Schema({

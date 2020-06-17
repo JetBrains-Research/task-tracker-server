@@ -2,9 +2,9 @@
 
 const intelLogger = require('intel');
 
-const settingsDao = require('../daos/settings-dao');
-const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-const settingsDescriptionService = require('../services/settings-description-service');
+const settingsDao = require('../../daos/settings/settings-dao');
+const LOGGER_NAME = require('../../consts/consts').LOGGER_NAME;
+const settingsDescriptionService = require('./settings-description-service');
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
 

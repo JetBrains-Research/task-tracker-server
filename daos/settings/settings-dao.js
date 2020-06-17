@@ -3,8 +3,8 @@
 const mongoose = require('mongoose');
 
 const Settings = mongoose.model('Settings');
-const LANGUAGES = require('../consts/consts').LANGUAGES;
-const settingsDescriptionDao = require('../daos/settings-description-dao');
+const LANGUAGES = require('../../consts/consts').LANGUAGES;
+const settingsDescriptionDao = require('./settings-description-dao');
 
 const createSettings = async (descriptions) => {
     const settings = new Settings({});

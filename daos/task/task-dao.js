@@ -3,8 +3,8 @@
 const mongoose = require('mongoose');
 
 const Task = mongoose.model('Task');
-const LANGUAGES = require('../consts/consts').LANGUAGES;
-const taskDescriptionDao = require('../daos/task-description-dao');
+const LANGUAGES = require('../../consts/consts').LANGUAGES;
+const taskDescriptionDao = require('./task-description-dao');
 
 const createTask = async (key, descriptions, examples) => {
     const task = new Task({

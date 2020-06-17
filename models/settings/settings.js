@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const LANGUAGES = require('../consts/consts').LANGUAGES;
+const LANGUAGES = require('../../consts/consts').LANGUAGES;
 
 const SettingsSchema = new Schema({
     en: { type: Schema.ObjectId, ref: 'SettingsDescription' },
