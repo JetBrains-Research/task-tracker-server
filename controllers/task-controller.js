@@ -20,7 +20,7 @@ const getTaskByKey = async (key) => {
     }
 
     logger.info(`${new Date()}: Task ${key} was received successfully`);
-    return await taskService.getTaskByKey(key);
+    return task;
 };
 
 const createTask = async (key, descriptions, examples) => {

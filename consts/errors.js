@@ -78,6 +78,28 @@ const ERRORS = {
         },
         code: 406
       }
+    },
+    SETTINGS: {
+      NOT_EXISTS: {
+        content: {
+          error: {
+            key: 'SETTINGS_NOT_EXISTS',
+            description: 'Settings does not exists.',
+            message: 'Validation failed.'
+          }
+        },
+        code: 406
+      },
+      ALREADY_TAKEN: {
+        content: {
+          error: {
+            key: 'SETTINGS_ALREADY_EXISTS',
+            description: 'Settings already taken.',
+            message: 'Validation failed.'
+          }
+        },
+        code: 406
+      },
     }
   },
   INTERNAL_SERVER: {

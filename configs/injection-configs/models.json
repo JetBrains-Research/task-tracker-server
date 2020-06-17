@@ -12,6 +12,14 @@
     "path": "task"
   },
   {
+    "name": "SettingsDescription",
+    "path": "settings-description"
+  },
+  {
+    "name": "Settings",
+    "path": "settings"
+  },
+  {
     "name": "ActivityTrackerItem",
     "path": "activity-tracker-item"
   }
