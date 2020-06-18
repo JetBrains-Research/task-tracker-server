@@ -28,7 +28,9 @@ dotenv.config();
 // Connect to database
 const MONGODB = process.env.MONGODB || 'mongodb://localhost/coding-assistant';
 mongoose.connect(MONGODB, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 // Set the uploads dir
