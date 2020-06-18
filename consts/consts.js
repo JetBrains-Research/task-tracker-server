@@ -8,7 +8,10 @@ const BASE_URL = {
     GENDER: '/api/gender',
     COUNTRY: '/api/country',
     EXPERIENCE: '/api/experience',
-    LANGUAGE: '/api/language'
+    LANGUAGE: '/api/language',
+    DATABASE_GENERATOR: {
+        CODING_ASSISTANT: `/api/database-generator/coding-assistant`
+    }
 };
 
 // Todo: in the old version we use CODE name
