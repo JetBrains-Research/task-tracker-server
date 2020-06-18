@@ -34,5 +34,10 @@
   {
     "name": "LanguageRouter",
     "path": "language-router"
+  },
+
+  {
+    "name": "CodingAssistantProjectRouter",
+    "path": "database-generator/coding-assistant-project-router"
   }
 ]
