@@ -24,8 +24,10 @@ module.exports = (app, upload) => {
             res.end();
         } else {
             let tasks = [];
-            response.forEach(async item => tasks.push(await item.getAsyncPublicData()));
-            res.json(await tasks);
+            for(const task of response){
+                tasks.push(await task.getAsyncPublicData());
+            }
+            res.json(tasks);
         }
     });
 
