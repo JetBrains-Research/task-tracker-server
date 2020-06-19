@@ -37,7 +37,7 @@ const getAtiByExternalId = async (externalId) => {
 
 const getAllAti = async () => {
     const atiList = await atiService.getAllAti();
-    logger.info(`${new Date()}: ${atiList.length} activity tracker items was received successfully`);
+    logger.info(`${new Date()}: ${atiList.length} activity tracker items were received successfully`);
     return atiList;
 };
 

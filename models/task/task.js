@@ -35,7 +35,7 @@ TaskSchema.methods.getAsyncPublicData = async function () {
     for(const language of LANGUAGES){
         const currentLang = await this.populate(language).execPopulate();
         if (currentLang[language]) {
-            data[language] = currentLang[language].getPublicData();
+            data["info"][language] = currentLang[language].getPublicData();
         }
     }
     return data;

@@ -51,7 +51,7 @@ const deleteGenderByKey = async (key) => {
 
 const getAllGenders = async () => {
     const genders = await genderService.getAllGenders();
-    logger.info(`${new Date()}: ${genders.length} genders was received successfully`);
+    logger.info(`${new Date()}: ${genders.length} genders were received successfully`);
     return genders;
 };
 

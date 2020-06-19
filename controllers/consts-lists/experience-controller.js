@@ -51,7 +51,7 @@ const deleteExperienceByKey = async (key) => {
 
 const getAllExperiences = async () => {
     const experiences = await experienceService.getAllExperiences();
-    logger.info(`${new Date()}: ${experiences.length} experiences was received successfully`);
+    logger.info(`${new Date()}: ${experiences.length} experiences were received successfully`);
     return experiences;
 };
 

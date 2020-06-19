@@ -51,7 +51,7 @@ const deleteCountryByKey = async (key) => {
 
 const getAllCountries = async () => {
     const countries = await countryService.getAllCountries();
-    logger.info(`${new Date()}: ${countries.length} countries was received successfully`);
+    logger.info(`${new Date()}: ${countries.length} countries were received successfully`);
     return countries;
 };
 

@@ -52,7 +52,7 @@ const deleteTaskByKey = async (key) => {
 
 const getAllTasks = async () => {
     const tasks = await taskService.getAllTasks();
-    logger.info(`${new Date()}: ${tasks.length} tasks was received successfully`);
+    logger.info(`${new Date()}: ${tasks.length} tasks were received successfully`);
     return tasks;
 };
 
