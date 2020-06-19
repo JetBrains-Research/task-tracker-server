@@ -32,10 +32,11 @@ TaskSchema.methods.getPublicData = function () {
 
 TaskSchema.methods.getAsyncPublicData = async function () {
     let data = this.getPublicData();
+    data['info'] = {};
     for(const language of LANGUAGES){
         const currentLang = await this.populate(language).execPopulate();
         if (currentLang[language]) {
-            data["info"][language] = currentLang[language].getPublicData();
+            data['info'][language] = currentLang[language].getPublicData();
         }
     }
     return data;
