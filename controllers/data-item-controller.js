@@ -36,7 +36,7 @@ const getDiByExternalId = async (externalId) => {
 
 const getAllDi = async () => {
     const dataItems = await diService.getAllDi();
-    logger.info(`${new Date()}: ${dataItems.length} data items was received successfully`);
+    logger.info(`${new Date()}: ${dataItems.length} data items were received successfully`);
     return dataItems;
 };
 
