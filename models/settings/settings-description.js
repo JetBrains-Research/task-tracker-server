@@ -7,7 +7,8 @@ const SettingsDescriptionSchema = new Schema({
     profile: {
         age: {type: String},
         experience: {type: String},
-        country: {type: String}
+        country: {type: String},
+        gender: {type: String}
     },
     actions: {
         returnToProfile: {type: String},

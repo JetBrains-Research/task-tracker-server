@@ -16,9 +16,13 @@ GenderSchema.methods.getPublicData = function () {
     const data = {
         key: this.key,
     };
+    data['translation'] = [];
     for(const language of LANGUAGES){
         if (this[language]) {
-            data[language] = this[language];
+            data['translation'].push({
+                'key': language
+            });
+            data['translation'].push(this[language]);
         }
     }
     return data;

@@ -7,7 +7,8 @@ const settings = {
                     'profile': {
                         'age': 'Age',
                         'experience': 'Programming experience',
-                        'country': 'Country'
+                        'country': 'Country',
+                        'gender': 'Gender'
                     },
                     'actions': {
                         'returnToProfile': 'Return to profile',
@@ -34,7 +35,8 @@ const settings = {
                     'profile': {
                         'age': 'Возраст',
                         'experience': 'Опыт программирования',
-                        'country': 'Страна'
+                        'country': 'Страна',
+                        'gender': 'Пол'
                     },
                     'actions': {
                         'returnToProfile': 'Вернуться к профилю',
