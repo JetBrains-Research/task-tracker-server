@@ -28,10 +28,6 @@
     "path": "consts-lists/country-router"
   },
   {
-    "name": "ExperienceRouter",
-    "path": "consts-lists/experience-router"
-  },
-  {
     "name": "LanguageRouter",
     "path": "language-router"
   },

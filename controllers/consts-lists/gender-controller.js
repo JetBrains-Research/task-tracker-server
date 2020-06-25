@@ -4,6 +4,7 @@ const intelLogger = require('intel');
 
 const ERRORS = require('../../consts/errors').ERRORS;
 const LOGGER_NAME = require('../../consts/consts').LOGGER_NAME;
+const MAX_GENDER_COUNT = require('../../consts/consts').MAX_GENDER_COUNT;
 const genderService = require('../../services/consts-lists/gender-service');
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
@@ -29,6 +30,14 @@ const createGender = async (key, descriptions) => {
         logger.error(`${new Date()}: Gender ${key} was not created`, new Error(`Gender ${key} is already taken`));
         return {
             error: ERRORS.VALIDATION.GENDER.ALREADY_TAKEN
+        }
+    }
+
+    const genders = await genderService.getAllGenders();
+    if (genders.length === MAX_GENDER_COUNT) {
+        logger.error(`${new Date()}: Gender ${key} was not created`, new Error(`Number of Genders values reached the maximum value: ${MAX_GENDER_COUNT}.`));
+        return {
+            error: ERRORS.VALIDATION.GENDER.MAX_LIMIT
         }
     }
 

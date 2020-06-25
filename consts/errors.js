@@ -63,6 +63,16 @@ const ERRORS = {
     GENDER: {
       NOT_EXISTS: getNotExistsError('GENDER'),
       ALREADY_TAKEN: getAlreadyTakenError('GENDER'),
+      MAX_LIMIT: {
+        content: {
+          error: {
+            key: 'GENDER_MAX_LIMIT',
+            description: 'Number of Gender values reached the maximum value.',
+            message: 'Validation failed.'
+          }
+        },
+        code: 406
+      }
     },
     COUNTRY: {
       NOT_EXISTS: getNotExistsError('COUNTRY'),
