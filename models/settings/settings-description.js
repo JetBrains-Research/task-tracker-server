@@ -4,38 +4,49 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const SettingsDescriptionSchema = new Schema({
-    profile: {
+    surveyPane: {
         age: {type: String},
+        gender: {type: String},
         experience: {type: String},
         country: {type: String},
-        gender: {type: String}
+        years: {type: String},
+        months: {type: String},
+        startSession: {type: String}
     },
-    actions: {
-        returnToProfile: {type: String},
-        returnToTasks: {type: String},
-        startNewTask: {type: String},
-        finishWork: {type: String},
+    taskChoosePane: {
         chooseTask: {type: String},
-        sendSolution: {type: String},
+        finishSession: {type: String},
+        startSolving: {type: String}
     },
-    task: {
-        name: {type: String},
-        input: {type: String},
-        output: {type: String},
+    taskPane: {
+        inputData: {type: String},
+        outputData: {type: String},
+        submit: {type: String},
+        // Todo: delete it
+        backToTasks: {type: String}
     },
-    finalScreen: {
-        header: {type: String},
-        notification: {type: String},
+    finishPane: {
+        praise: {type: String},
+        backToSurvey: {type: String},
+        finalMessage: {type: String},
+        // Todo: delete it
+        backToTasks: {type: String}
+    },
+    commonText: {
+        backToTasks: {type: String}
     }
 });
 
 SettingsDescriptionSchema.methods.getPublicData = function () {
-    return {
-        profile: this.profile,
-        actions: this.actions,
-        task: this.task,
-        finalScreen: this.finalScreen,
+    let data = {
+        surveyPane: this.surveyPane,
+        taskChoosePane: this.taskChoosePane,
+        taskPane: this.taskPane,
+        finishPane: this.finishPane,
     };
+    const backToTasksKeys = ['taskPane', 'finishPane'];
+    backToTasksKeys.map(key => data[key]['backToTasks'] = this.commonText.backToTasks);
+    return data;
 };
 
 module.exports = mongoose.model('SettingsDescription', SettingsDescriptionSchema);

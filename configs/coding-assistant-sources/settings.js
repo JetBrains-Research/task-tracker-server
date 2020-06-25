@@ -4,56 +4,64 @@ const settings = {
             {
                 'language': 'en',
                 'info': {
-                    'profile': {
+                    'surveyPane': {
                         'age': 'Age',
-                        'experience': 'Programming experience',
+                        'gender': 'Gender',
+                        'experience': 'Program experience',
                         'country': 'Country',
-                        'gender': 'Gender'
+                        'years': 'Full years',
+                        'months': 'Months',
+                        'startSession': 'Start the session'
                     },
-                    'actions': {
-                        'returnToProfile': 'Return to profile',
-                        'returnToTasks': 'Return to the tasks',
-                        'startNewTask': 'Start to solve a new task',
-                        'finishWork': 'Finish work',
-                        'chooseTask': 'Choose a task',
-                        'sendSolution': 'Send the solution'
+                    'taskChoosePane': {
+                        'chooseTask': 'Choose the task',
+                        'finishSession': 'Finish the session',
+                        'startSolving': 'Start solving'
                     },
-                    'task': {
-                        'name': 'Task name',
-                        'input': 'Input data',
-                        'output': 'Output data'
+                    'taskPane': {
+                        'inputData': 'Input data',
+                        'outputData': 'Output data',
+                        'submit': 'Submit',
                     },
-                    'finalScreen': {
-                        'header': 'Great job!',
-                        'notification': 'Do not forget to remove the plugin'
+                    'finishPane': {
+                        'praise': 'Nicely done!',
+                        'backToSurvey': 'Back to the survey',
+                        'finalMessage': 'Do not forget to remove the plugin',
+                    },
+                    'commonText': {
+                        'backToTasks': 'Back to the tasks'
                     }
                 }
             },
             {
                 'language': 'ru',
                 'info': {
-                    'profile': {
+                    'surveyPane': {
                         'age': 'Возраст',
+                        'gender': 'Пол',
                         'experience': 'Опыт программирования',
                         'country': 'Страна',
-                        'gender': 'Пол'
+                        'years': 'Полных лет',
+                        'months': 'Месяцев',
+                        'startSession': 'Начать работу'
                     },
-                    'actions': {
-                        'returnToProfile': 'Вернуться к профилю',
-                        'returnToTasks': 'Вернуться к задачам',
-                        'startNewTask': 'Выбрать новую задачу',
-                        'finishWork': 'Закончить работу',
+                    'taskChoosePane': {
                         'chooseTask': 'Выберите задачу',
-                        'sendSolution': 'Отправить решение'
+                        'finishSession': 'Закончить работу',
+                        'startSolving': 'Начать решение'
                     },
-                    'task': {
-                        'name': 'Название задачи',
-                        'input': 'Входные данные',
-                        'output': 'Выходные данные'
+                    'taskPane': {
+                        'inputData': 'Входные данные',
+                        'outputData': 'Выходные данные',
+                        'submit': 'Отправить решение',
                     },
-                    'finalScreen': {
-                        'header': 'Отличная работа!',
-                        'notification': 'Не забудьте удалить плагин'
+                    'finishPane': {
+                        'praise': 'Отличная работа!',
+                        'backToSurvey': 'Вернуться к анкете',
+                        'finalMessage': 'Не забудьте удалить плагин',
+                    },
+                    'commonText': {
+                        'backToTasks': 'Вернуться к задачам'
                     }
                 }
             }

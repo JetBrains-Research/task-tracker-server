@@ -5,12 +5,7 @@ const mongoose = require("mongoose");
 const SettingsDescription = mongoose.model("SettingsDescription");
 
 const createSettingsDescription = async (settingsDescription) => {
-    const sd = new SettingsDescription({
-        profile: settingsDescription.profile,
-        actions: settingsDescription.actions,
-        task: settingsDescription.task,
-        finalScreen: settingsDescription.finalScreen
-    });
+    const sd = new SettingsDescription(settingsDescription);
     return await sd.save();
 };
 

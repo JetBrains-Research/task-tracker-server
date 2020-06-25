@@ -17,13 +17,21 @@ SettingsSchema.methods.getPublicData = function () {
 
 SettingsSchema.methods.getAsyncPublicData = async function () {
     let data = this.getPublicData();
+    const keys = ['surveyPane', 'taskChoosePane', 'taskPane', 'finishPane'];
+    keys.map(key => data[key] = []);
     for(const language of LANGUAGES){
         const currentLang = await this.populate(language).execPopulate();
         if (currentLang[language]) {
-            data[language] = currentLang[language].getPublicData();
+            const publicData = currentLang[language].getPublicData();
+            keys.map(key => {
+                data[key].push({
+                    'key': language
+                });
+                data[key].push(publicData[key]);
+            });
         }
     }
-    return data;
+    return [data];
 };
 
 module.exports = mongoose.model('Settings', SettingsSchema);
