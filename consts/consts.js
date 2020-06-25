@@ -21,10 +21,13 @@ const LOGGER_NAME = 'logger';
 
 const LANGUAGES = ['en', 'ru'];
 
+const MAX_GENDER_COUNT = 6;
+
 module.exports = {
     BASE_URL,
     LANGUAGES,
     LOGGER_NAME,
     DI_UPLOADED_FILE,
-    ATI_UPLOADED_FILE
+    ATI_UPLOADED_FILE,
+    MAX_GENDER_COUNT
 };
