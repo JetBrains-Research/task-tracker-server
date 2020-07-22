@@ -1,5 +1,3 @@
-// Todo: add tasks
-
 const tasks = [
     {
         'key': 'pies',

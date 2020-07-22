@@ -11,13 +11,15 @@ const genderController = require('../consts-lists/gender-controller');
 const countryController = require('../consts-lists/country-controller');
 
 const createTasks = async () => {
-    TASKS.forEach(async task =>
-        await taskController.createTask(task.key, task.descriptions, task.examples));
+    for (const task of TASKS) {
+        await taskController.createTask(task.key, task.descriptions, task.examples);
+    }
 };
 
 const createGenders = async () => {
-    GENDERS.forEach(async gender =>
-        await genderController.createGender(gender.key, gender.descriptions));
+    for (const gender of GENDERS) {
+        await genderController.createGender(gender.key, gender.descriptions);
+    }
 };
 
 const createSettings = async () => {
@@ -25,8 +27,9 @@ const createSettings = async () => {
 };
 
 const createCountries = async () => {
-    COUNTRIES.forEach(async country =>
-        await countryController.createCountry(country.key, country.descriptions));
+    for (const country of COUNTRIES) {
+        await countryController.createCountry(country.key, country.descriptions);
+    }
 };
 
 
