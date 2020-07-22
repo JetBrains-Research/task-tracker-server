@@ -13,19 +13,19 @@ const SettingsDescriptionSchema = new Schema({
         months: {type: String},
         startSession: {type: String}
     },
-    taskChoosePane: {
+    taskChoosingPane: {
         chooseTask: {type: String},
         finishSession: {type: String},
         startSolving: {type: String}
     },
-    taskPane: {
+    taskSolvingPane: {
         inputData: {type: String},
         outputData: {type: String},
         submit: {type: String},
         // Todo: delete it
         backToTasks: {type: String}
     },
-    finishPane: {
+    finalPane: {
         praise: {type: String},
         backToSurvey: {type: String},
         finalMessage: {type: String},
@@ -40,12 +40,11 @@ const SettingsDescriptionSchema = new Schema({
 SettingsDescriptionSchema.methods.getPublicData = function () {
     let data = {
         surveyPane: this.surveyPane,
-        taskChoosePane: this.taskChoosePane,
-        taskPane: this.taskPane,
-        finishPane: this.finishPane,
+        taskChoosingPane: this.taskChoosingPane,
+        taskSolvingPane: this.taskSolvingPane,
+        finalPane: this.finalPane,
     };
-    const backToTasksKeys = ['taskPane', 'finishPane'];
-    backToTasksKeys.map(key => data[key]['backToTasks'] = this.commonText.backToTasks);
+    ['taskSolvingPane', 'finalPane'].map(key => data[key]['backToTasks'] = this.commonText.backToTasks);
     return data;
 };
 

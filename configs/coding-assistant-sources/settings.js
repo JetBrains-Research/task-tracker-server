@@ -13,17 +13,17 @@ const settings = {
                         'months': 'Months',
                         'startSession': 'Start the session'
                     },
-                    'taskChoosePane': {
+                    'taskChoosingPane': {
                         'chooseTask': 'Choose the task',
                         'finishSession': 'Finish the session',
                         'startSolving': 'Start solving'
                     },
-                    'taskPane': {
+                    'taskSolvingPane': {
                         'inputData': 'Input data',
                         'outputData': 'Output data',
                         'submit': 'Submit',
                     },
-                    'finishPane': {
+                    'finalPane': {
                         'praise': 'Nicely done!',
                         'backToSurvey': 'Back to the survey',
                         'finalMessage': 'Do not forget to remove the plugin',
@@ -45,17 +45,17 @@ const settings = {
                         'months': 'Месяцев',
                         'startSession': 'Начать работу'
                     },
-                    'taskChoosePane': {
+                    'taskChoosingPane': {
                         'chooseTask': 'Выберите задачу',
                         'finishSession': 'Закончить работу',
                         'startSolving': 'Начать решение'
                     },
-                    'taskPane': {
+                    'taskSolvingPane': {
                         'inputData': 'Входные данные',
                         'outputData': 'Выходные данные',
                         'submit': 'Отправить решение',
                     },
-                    'finishPane': {
+                    'finalPane': {
                         'praise': 'Отличная работа!',
                         'backToSurvey': 'Вернуться к анкете',
                         'finalMessage': 'Не забудьте удалить плагин',
