@@ -40,6 +40,10 @@ const ERRORS = {
       ALREADY_TAKEN: getAlreadyTakenError('TASK'),
       NOT_EXISTS: getNotExistsError('TASK'),
     },
+    DIALOG_TEXT: {
+      ALREADY_TAKEN: getAlreadyTakenError('DIALOG_TEXT'),
+      NOT_EXISTS: getNotExistsError('DIALOG_TEXT'),
+    },
     FILE: {
       NOT_RECEIVED: {
         content: {

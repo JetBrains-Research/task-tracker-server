@@ -4,6 +4,7 @@ const BASE_URL = {
     ATI: '/api/activity-tracker-item',
     DI: '/api/data-item',
     TASK: '/api/task',
+    DIALOG_TEXT: '/api/dialog-text',
     SETTINGS: '/api/settings',
     GENDER: '/api/gender',
     COUNTRY: '/api/country',

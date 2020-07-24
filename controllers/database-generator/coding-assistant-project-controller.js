@@ -4,9 +4,11 @@ const TASKS = require('../../configs/coding-assistant-sources/tasks');
 const GENDERS = require('../../configs/coding-assistant-sources/genders');
 const SETTINGS = require('../../configs/coding-assistant-sources/settings');
 const COUNTRIES = require('../../configs/coding-assistant-sources/countries');
+const DIALOG_TEXTS = require('../../configs/coding-assistant-sources/dialog-texts');
 
 const taskController = require('../task-controller');
 const settingsController = require('../settings-controller');
+const dialogTextController = require('../dialog-text-controller');
 const genderController = require('../consts-lists/gender-controller');
 const countryController = require('../consts-lists/country-controller');
 
@@ -32,12 +34,19 @@ const createCountries = async () => {
     }
 };
 
+const createDialogTexts = async () => {
+    for (const dialogText of DIALOG_TEXTS) {
+        await dialogTextController.createDialogText(dialogText.key, dialogText.descriptions);
+    }
+};
+
 
 const generateDatabase = async () => {
     await createSettings();
     await createGenders();
     await createCountries();
     await createTasks();
+    await createDialogTexts();
 };
 
 module.exports = {

@@ -16,14 +16,15 @@ const SettingsDescriptionSchema = new Schema({
     taskChoosingPane: {
         chooseTask: {type: String},
         finishSession: {type: String},
-        startSolving: {type: String}
+        startSolving: {type: String},
+        description: {type: String},
     },
     taskSolvingPane: {
         inputData: {type: String},
         outputData: {type: String},
         submit: {type: String},
         // Todo: delete it
-        backToTasks: {type: String}
+        backToTasks: {type: String},
     },
     finalPane: {
         praise: {type: String},

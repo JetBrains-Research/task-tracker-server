@@ -30,5 +30,13 @@
   {
     "name": "ActivityTrackerItem",
     "path": "activity-tracker-item"
+  },
+  {
+    "name": "DialogTextDescription",
+    "path": "dialog-text/dialog-text-description"
+  },
+  {
+    "name": "DialogText",
+    "path": "dialog-text/dialog-text"
   }
 ]

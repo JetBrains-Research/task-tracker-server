@@ -16,7 +16,10 @@ const settings = {
                     'taskChoosingPane': {
                         'chooseTask': 'Choose the task',
                         'finishSession': 'Finish the session',
-                        'startSolving': 'Start solving'
+                        'startSolving': 'Start solving',
+                        'description': 'После выбора задачи и нажатия на кнопку %s будет создан файл, в котором необходимо написать ее решение. После окончания решения для отправки данных нажмите кнопку %s.\n' +
+                            '\n' +
+                            'Важно: во время решения будут записываться изменения только в созданных плагином файлах. Остальные файлы не отслеживаются. Без нажатия на кнопку %s данные не отправляются.',
                     },
                     'taskSolvingPane': {
                         'inputData': 'Input data',
@@ -48,7 +51,10 @@ const settings = {
                     'taskChoosingPane': {
                         'chooseTask': 'Выберите задачу',
                         'finishSession': 'Закончить работу',
-                        'startSolving': 'Начать решение'
+                        'startSolving': 'Начать решение',
+                        'description': 'After you choose the task and press %s, a file will be created where you should write the code. When you are finished, press %s to submit your solution.\n' +
+                            '\n' +
+                            'Note: we only track the changes in the files created by the plugin, other files are not considered. The data will not be sent until you press %s.'
                     },
                     'taskSolvingPane': {
                         'inputData': 'Входные данные',
