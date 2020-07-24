@@ -411,7 +411,7 @@ const countries = [{
     'descriptions': [{'language': 'en', 'value': 'Pakistan'}, {'language': 'ru', 'value': 'Пакистан'}]
 }, {
     'key': 'palau',
-    'descriptions': [{'language': 'en', 'value': 'Palau'}, {'language': 'ru', 'value': 'Palau'}]
+    'descriptions': [{'language': 'en', 'value': 'Palau'}, {'language': 'ru', 'value': 'Палау'}]
 }, {
     'key': 'panama',
     'descriptions': [{'language': 'en', 'value': 'Panama'}, {'language': 'ru', 'value': 'Панама'}]
