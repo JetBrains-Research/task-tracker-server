@@ -12,9 +12,7 @@ const DialogTextSchema = new Schema({
 });
 
 DialogTextSchema.methods.getPublicData = function () {
-    return {
-        key: this.key,
-    };
+    return {};
 };
 
 DialogTextSchema.methods.getAsyncPublicData = async function () {
