@@ -18,6 +18,26 @@ const dialogTexts = [
                     }
                 }
             ]
+    },
+    {
+        'key': 'successful_submit',
+        'descriptions':
+            [
+                {
+                    'language': 'en',
+                    'info': {
+                        'header': 'Successful submit',
+                        'description': 'The data for the %s task was submitted successfully.'
+                    }
+                },
+                {
+                    'language': 'ru',
+                    'info': {
+                        'header': 'Успешная отправка',
+                        'description': 'Данные для задачи %s были успешно отправлены.'
+                    }
+                }
+            ]
     }
 ];
 
