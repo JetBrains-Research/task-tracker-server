@@ -33,6 +33,9 @@ const settings = {
                     },
                     'commonText': {
                         'backToTasks': 'Back to the tasks'
+                    },
+                    'successPane': {
+                        'successMessage': 'The data for the %s task has been submitted successfully.'
                     }
                 }
             },
@@ -68,6 +71,9 @@ const settings = {
                     },
                     'commonText': {
                         'backToTasks': 'Вернуться к задачам'
+                    },
+                    'successPane': {
+                        'successMessage': 'Данные для задачи %s были успешно отправлены.'
                     }
                 }
             }

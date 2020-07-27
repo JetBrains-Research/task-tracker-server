@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 
 const TaskDescription = mongoose.model("TaskDescription");
 
+const formatterService = require('../../services/formatter-service');
+
 const createTaskDescription = async (taskDescription) => {
     const td = new TaskDescription({
-        name: taskDescription.name,
+        name: formatterService.toCapitalize(taskDescription.name),
         description: taskDescription.description,
         input: taskDescription.input,
         output: taskDescription.output

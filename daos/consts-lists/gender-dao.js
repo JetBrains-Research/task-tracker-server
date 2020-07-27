@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 
 const Gender = mongoose.model('Gender');
 
+const formatterService = require('../../services/formatter-service');
+
 const createGender = async (key, descriptions) => {
     const gender = new Gender({
         key: key
     });
     for(const description of descriptions){
-        gender[description.language] = description.value;
+        gender[description.language] = formatterService.toLowerCase(description.value);
     }
     return await gender.save();
 };
