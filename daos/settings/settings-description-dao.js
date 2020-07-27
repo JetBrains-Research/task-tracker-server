@@ -40,14 +40,10 @@ const formatTaskSolvingPane = (settingsDescription) => {
     if (!settingsDescription.taskSolvingPane) {
         return settingsDescription;
     }
-    const forToLowerCase = ['submit', 'backToTasks'];
-    const forToLowerCaseWithColon = ['inputData', 'outputData'];
+    const forToLowerCase = Object.keys(settingsDescription.taskSolvingPane);
     settingsDescription.taskSolvingPane = formatterService.applyFormatter(settingsDescription.taskSolvingPane,
         forToLowerCase,
         formatterService.toLowerCase);
-    settingsDescription.taskSolvingPane = formatterService.applyFormatter(settingsDescription.taskSolvingPane,
-        forToLowerCaseWithColon,
-        formatterService.toLowerCaseWithColon);
     return settingsDescription
 };
 
