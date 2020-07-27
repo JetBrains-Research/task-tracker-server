@@ -58,6 +58,17 @@ const formatFinalPane = (settingsDescription) => {
     return settingsDescription
 };
 
+const formatSuccessPane = (settingsDescription) => {
+    if (!settingsDescription.successPane) {
+        return settingsDescription;
+    }
+    const forToLowerCase = ['backToTasks'];
+    settingsDescription.successPane = formatterService.applyFormatter(settingsDescription.successPane,
+        forToLowerCase,
+        formatterService.toLowerCase);
+    return settingsDescription
+};
+
 const formatCommonText = (settingsDescription) => {
     if (!settingsDescription.commonText) {
         return settingsDescription;
@@ -70,7 +81,8 @@ const formatCommonText = (settingsDescription) => {
 };
 
 const createSettingsDescription = async (settingsDescription) => {
-    const formats = [formatSurveyPane, formatTaskChoosingPane, formatTaskSolvingPane, formatFinalPane, formatCommonText];
+    const formats = [formatSurveyPane, formatTaskChoosingPane, formatTaskSolvingPane, formatFinalPane,
+        formatSuccessPane, formatCommonText];
     for(const format of formats) {
         settingsDescription = format(settingsDescription)
     }

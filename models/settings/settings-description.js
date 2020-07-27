@@ -35,6 +35,11 @@ const SettingsDescriptionSchema = new Schema({
     },
     commonText: {
         backToTasks: {type: String}
+    },
+    successPane: {
+        successMessage: {type: String},
+        // Todo: delete it
+        backToTasks: {type: String}
     }
 });
 
@@ -44,8 +49,9 @@ SettingsDescriptionSchema.methods.getPublicData = function () {
         taskChoosingPane: this.taskChoosingPane,
         taskSolvingPane: this.taskSolvingPane,
         finalPane: this.finalPane,
+        successPane: this.successPane
     };
-    ['taskSolvingPane', 'finalPane'].map(key => data[key]['backToTasks'] = this.commonText.backToTasks);
+    ['taskSolvingPane', 'finalPane', 'successPane'].map(key => data[key]['backToTasks'] = this.commonText.backToTasks);
     return data;
 };
 
