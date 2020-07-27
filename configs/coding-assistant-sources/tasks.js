@@ -112,7 +112,7 @@ const tasks = [
                     'language': 'en',
                     'info': {
                         'name': 'Brackets',
-                        'description': 'Place the opening and the cloning brackets into the input string like this:\nfor odd length example -> e(x(a(m)p)l)e,\nfor even length card -> c(ar)d, but not c(a()r)d.',
+                        'description': 'Place the opening and the cloning brackets into the input string like this:\nfor odd length example → e(x(a(m)p)l)e,\nfor even length card → c(ar)d, but not c(a()r)d.',
                         'input': 'The program receives a string of English letters (lowercase and uppercase) as an input.',
                         'output': 'Print out the string with the brackets added.'
                     }
