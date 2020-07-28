@@ -17,9 +17,9 @@ const settings = {
                         'chooseTask': 'Choose the task',
                         'finishSession': 'Finish the session',
                         'startSolving': 'Start solving',
-                        'description': 'После выбора задачи и нажатия на кнопку %s будет создан файл, в котором необходимо написать ее решение. После окончания решения для отправки данных нажмите кнопку %s.\n' +
+                        'description': 'After you choose the task and press %s, a file will be created where you should write the code. When you are finished, press %s to submit your solution.\n' +
                             '\n' +
-                            'Важно: во время решения будут записываться изменения только в созданных плагином файлах. Остальные файлы не отслеживаются. Без нажатия на кнопку %s данные не отправляются.',
+                            'Note: we only track the changes in the files created by the plugin, other files are not considered. The data will not be sent until you press %s.'
                     },
                     'taskSolvingPane': {
                         'inputData': 'Input data',
@@ -29,13 +29,13 @@ const settings = {
                     'finalPane': {
                         'praise': 'Nicely done!',
                         'backToSurvey': 'Back to the survey',
-                        'finalMessage': 'Do not forget to remove the plugin',
+                        'finalMessage': 'Do not forget to uninstall the Codetracker plugin',
                     },
                     'commonText': {
                         'backToTasks': 'Back to the tasks'
                     },
                     'successPane': {
-                        'successMessage': 'The data for the %s task has been submitted successfully.'
+                        'successMessage': 'The solution for the %s task has been submitted successfully'
                     }
                 }
             },
@@ -55,10 +55,10 @@ const settings = {
                         'chooseTask': 'Выберите задачу',
                         'finishSession': 'Закончить работу',
                         'startSolving': 'Начать решение',
-                        'description': 'After you choose the task and press %s, a file will be created where you should write the code. When you are finished, press %s to submit your solution.\n' +
+                        'description': 'После выбора задачи и нажатия на кнопку %s будет создан файл, в котором необходимо написать ее решение. После окончания решения для отправки данных нажмите кнопку %s.\n' +
                             '\n' +
-                            'Note: we only track the changes in the files created by the plugin, other files are not considered. The data will not be sent until you press %s.'
-                    },
+                            'Важно: во время решения будут записываться изменения только в созданных плагином файлах. Остальные файлы не отслеживаются. Без нажатия на кнопку %s данные не отправляются.',
+                       },
                     'taskSolvingPane': {
                         'inputData': 'Входные данные',
                         'outputData': 'Выходные данные',
@@ -67,13 +67,13 @@ const settings = {
                     'finalPane': {
                         'praise': 'Отличная работа!',
                         'backToSurvey': 'Вернуться к анкете',
-                        'finalMessage': 'Не забудьте удалить плагин',
+                        'finalMessage': 'Не забудьте удалить плагин Codetracker',
                     },
                     'commonText': {
                         'backToTasks': 'Вернуться к задачам'
                     },
                     'successPane': {
-                        'successMessage': 'Данные для задачи %s были успешно отправлены.'
+                        'successMessage': 'Решение задачи %s было успешно отправлено'
                     }
                 }
             }

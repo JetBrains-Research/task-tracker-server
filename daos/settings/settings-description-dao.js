@@ -62,7 +62,7 @@ const formatSuccessPane = (settingsDescription) => {
     if (!settingsDescription.successPane) {
         return settingsDescription;
     }
-    const forToLowerCase = ['backToTasks'];
+    const forToLowerCase = Object.keys(settingsDescription.successPane);
     settingsDescription.successPane = formatterService.applyFormatter(settingsDescription.successPane,
         forToLowerCase,
         formatterService.toLowerCase);
