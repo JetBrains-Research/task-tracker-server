@@ -73,7 +73,7 @@ const tasks = [
                     'language': 'en',
                     'info': {
                         'name': 'Voting',
-                        'description': 'Given three numbers, each of them being 1 or 0, determine, which one occurs more often — 1 or 0.',
+                        'description': 'Given three numbers, each of them being 1 or 0, determine which one occurs more often — 1 or 0.',
                         'input': 'The program receives three numbers as an input, each being 1 or 0.',
                         'output': 'Print out the number that occurs more often.'
                     }
