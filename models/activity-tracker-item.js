@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const AtiSchema = new Schema({
-    codePath: {type: String}
+    codePath: {type: String},
+    createdAt: { type: Date, default: Date.now }
 });
 
 AtiSchema.plugin(mongooseSequence, {inc_field: 'externalAtiId'});

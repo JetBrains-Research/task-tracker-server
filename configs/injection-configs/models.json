@@ -38,5 +38,9 @@
   {
     "name": "DialogText",
     "path": "dialog-text/dialog-text"
+  },
+  {
+    "name": "Student",
+    "path": "student"
   }
 ]

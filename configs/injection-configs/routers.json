@@ -35,6 +35,10 @@
     "name": "DialogTextRouter",
     "path": "dialog-text-router"
   },
+  {
+    "name": "StudentRouter",
+    "path": "student-router"
+  },
 
   {
     "name": "CodingAssistantProjectRouter",
