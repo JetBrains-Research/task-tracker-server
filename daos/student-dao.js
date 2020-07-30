@@ -8,10 +8,10 @@ const createStudent = async () => {
     return await student.save();
 };
 
-const addData = async (student, di, ati) => {
+const addData = async (student, diId, atiId) => {
     student.data.push({
-        activityTrackerKey: ati.getPublicData().id,
-        dataItemKey: di.getPublicData().id
+        activityTrackerKey: atiId,
+        dataItemKey: diId
     });
     return await student.save();
 };

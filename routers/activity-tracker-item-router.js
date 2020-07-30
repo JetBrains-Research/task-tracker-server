@@ -12,18 +12,7 @@ const logger = intelLogger.getLogger(LOGGER_NAME);
 
 module.exports = (app, upload) => {
 
-    app.route(`${BASE_URL.ATI}`).post(async (req, res, next) => {
-        const response = await atiController.createAti();
-        if (response.error) {
-            res.status(response.error.code);
-            res.json(response.error.content);
-            res.end();
-        } else {
-            res.json(response.getPublicData().id)
-        }
-    });
-
-    app.route(`${BASE_URL.ATI}/:id`).put(upload.single(consts.ATI_UPLOADED_FILE), async (req, res, next) => {
+    app.route(`${BASE_URL.ATI}`).post(upload.single(consts.ATI_UPLOADED_FILE), async (req, res, next) => {
         if (!req.file) {
             const error = ERRORS.VALIDATION.FILE.NOT_RECEIVED;
             logger.error(`${new Date()}: file was not received`, new Error('File was not received'));
@@ -32,13 +21,13 @@ module.exports = (app, upload) => {
             res.end();
         } else {
             const absolute_path = req.protocol + '://' + req.headers['host'] + '/' + req.file.path;
-            const response = await atiController.replaceCodePath(absolute_path, req.params.id);
+            const response = await atiController.createAti(absolute_path);
             if (response.error) {
                 res.status(response.error.code);
                 res.json(response.error.content);
                 res.end();
             } else {
-                res.json(response.getPublicData())
+                res.json(response.getPublicData().id)
             }
         }
     });

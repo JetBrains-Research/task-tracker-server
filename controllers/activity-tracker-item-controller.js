@@ -8,9 +8,11 @@ const atiService = require('../services/activity-tracker-item-service');
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
-const createAti = async () => {
+const createAti = async (codePath) => {
     try {
-        const ati = await atiService.createAti();
+        const ati = await atiService.createAti({
+            codePath: codePath
+        });
         logger.info(`${new Date()}: Activity tracker item was created successfully`);
         return ati;
     } catch (e) {
@@ -41,28 +43,8 @@ const getAllAti = async () => {
     return atiList;
 };
 
-const replaceCodePath = async (codePath, externalId) => {
-    let ati = await getAtiByExternalId(externalId);
-    if (ati.error) {
-        return ati;
-    }
-
-    try {
-        ati = await atiService.replaceCodePath(codePath, ati);
-        logger.info(`${new Date()}: Activity tracker item was updated successfully`);
-        return ati;
-    } catch (e) {
-        logger.error(`${new Date()}: Activity tracker item was not updated`, e);
-        return {
-            error: ERRORS.INTERNAL_SERVER
-        };
-    }
-
-};
-
 module.exports = {
     createAti,
     getAllAti,
-    replaceCodePath,
     getAtiByExternalId,
 };
