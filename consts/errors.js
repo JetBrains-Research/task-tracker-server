@@ -36,6 +36,13 @@ const ERRORS = {
       ALREADY_TAKEN: getAlreadyTakenError('DATA_ITEM'),
       NOT_EXISTS: getNotExistsError('DATA_ITEM'),
     },
+    STUDENT: {
+      ALREADY_TAKEN: getAlreadyTakenError('STUDENT'),
+      NOT_EXISTS: getNotExistsError('STUDENT'),
+      DATA: {
+        ALREADY_TAKEN: getAlreadyTakenError('STUDENT_DATA'),
+      }
+    },
     TASK: {
       ALREADY_TAKEN: getAlreadyTakenError('TASK'),
       NOT_EXISTS: getNotExistsError('TASK'),

@@ -7,7 +7,8 @@ const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const DiSchema = new Schema({
     codePath: {type: String},
-    activityTrackerKey: {type: String}
+    activityTrackerKey: {type: String},
+    createdAt: { type: Date, default: Date.now },
 });
 
 DiSchema.plugin(mongooseSequence, {inc_field: 'externalDiId'});
