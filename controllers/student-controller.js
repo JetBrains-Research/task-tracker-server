@@ -43,7 +43,7 @@ const getAllStudents = async () => {
 };
 
 const addData = async (studentId, diId, atiId) => {
-    const student = await getStudentExternalId(studentId);
+    let student = await getStudentExternalId(studentId);
     if (student.error) {
         return student
     }
@@ -53,12 +53,16 @@ const addData = async (studentId, diId, atiId) => {
         return di
     }
 
-    const ati = await atiController.getAtiByExternalId(atiId);
-    if (ati.error) {
-        return ati
+    if (atiId !== '-1') {
+        const ati = await atiController.getAtiByExternalId(atiId);
+        if (ati.error) {
+            return ati
+        }
     }
 
-    return await studentService.addData(student, di, ati)
+    student = await studentService.addData(student, diId, atiId);
+    logger.info(`${new Date()}: student ${studentId} was updates successfully. Added data: di ${diId}, ati ${atiId}`);
+    return student
 };
 
 module.exports = {

@@ -9,11 +9,6 @@ const createAti = async () => {
     return await ati.save();
 };
 
-const replaceCodePath = async (codePath, ati) => {
-    ati.codePath = codePath;
-    return await ati.save();
-};
-
 const getAtiByExternalId = async (externalId) => {
     return await ATI.findOne({
         externalAtiId: externalId
@@ -28,5 +23,4 @@ module.exports = {
     createAti,
     getAtiByExternalId,
     getAllAti,
-    replaceCodePath
 };

@@ -16,9 +16,7 @@ const getStudentByExternalId = async (externalId) => {
     return await studentDao.getStudentByExternalId(externalId);
 };
 
-const addData = async (student, di, ati) => {
-    const diId = String(di.getPublicData().id);
-    const atiId = String(ati.getPublicData().id);
+const addData = async (student, diId, atiId) => {
     const isExists = student.data.findIndex(item => (item.activityTrackerKey === atiId && item.dataItemKey ===diId)) !== -1;
     if (isExists) {
         const message = `Student with id ${student.externalStudentId} has data pair: di = ${diId} and ati = ${atiId}`;
@@ -27,7 +25,7 @@ const addData = async (student, di, ati) => {
             error: ERRORS.VALIDATION.STUDENT.DATA.ALREADY_TAKEN
         }
     }
-    return await studentDao.addData(student, di, ati)
+    return await studentDao.addData(student, diId, atiId)
 };
 
 const getAllStudents = async () => {
