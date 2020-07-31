@@ -40,7 +40,7 @@
     "path": "dialog-text/dialog-text"
   },
   {
-    "name": "Student",
-    "path": "student"
+    "name": "User",
+    "path": "user"
   }
 ]

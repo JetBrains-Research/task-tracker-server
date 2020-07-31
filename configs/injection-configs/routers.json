@@ -37,7 +37,7 @@
   },
   {
     "name": "StudentRouter",
-    "path": "student-router"
+    "path": "user-router"
   },
 
   {

@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
-const StudentSchema = new Schema({
+const UserSchema = new Schema({
     data: [
         {
             activityTrackerKey: {type: String},
@@ -14,9 +14,9 @@ const StudentSchema = new Schema({
     ]
 });
 
-StudentSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
+UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
-StudentSchema.methods.getPublicData = function () {
+UserSchema.methods.getPublicData = function () {
     let res = {
         id: this.externalStudentId,
         data: []
@@ -30,4 +30,4 @@ StudentSchema.methods.getPublicData = function () {
     return res;
 };
 
-module.exports = mongoose.model('Student', StudentSchema);
+module.exports = mongoose.model('User', UserSchema);

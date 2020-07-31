@@ -2,7 +2,7 @@
 
 const BASE_URL = {
     ATI: '/api/activity-tracker-item',
-    STUDENT: '/api/student',
+    USER: '/api/user',
     DI: '/api/data-item',
     TASK: '/api/task',
     DIALOG_TEXT: '/api/dialog-text',
