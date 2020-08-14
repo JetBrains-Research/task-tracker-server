@@ -15,7 +15,8 @@ AtiSchema.plugin(mongooseSequence, {inc_field: 'externalAtiId'});
 AtiSchema.methods.getPublicData = function () {
     return {
         codePath: this.codePath,
-        id: this.externalAtiId
+        id: this.externalAtiId,
+        createdAt: this.createdAt
     };
 };
 

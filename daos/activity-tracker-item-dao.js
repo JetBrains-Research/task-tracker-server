@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 
 const ATI = mongoose.model('ActivityTrackerItem');
 
-const createAti = async () => {
-    const ati = new ATI({});
+const createAti = async (atiData) => {
+    const ati = new ATI(atiData);
     return await ati.save();
 };
 
