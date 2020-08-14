@@ -4,6 +4,7 @@ const intelLogger = require('intel');
 
 const fileService = require('../services/file-service');
 const diService = require('../services/data-item-service');
+const userService = require('../services/user-service');
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
 const atiService = require('../services/activity-tracker-item-service');
 
@@ -14,33 +15,43 @@ const dataDownload = async () => {
     const rootDir = './data';
     fileService.initDirectory(rootDir);
 
-    logger.info(`${new Date()}: ...starting get all data items`);
-    const dataItems = await diService.getAllDi();
-    logger.info(`${new Date()}: ${dataItems.length} was received successfully`);
-    let countCopy = 0;
-    let countAti = 0;
-    let countDi = 0;
-    for(const di of dataItems) {
-        if (di.codePath) {
-            logger.info(`${new Date()}: ...starting handle data item with id ${di.externalDiId}`);
-            countDi += 1;
-            logger.debug(`${new Date()}: ...starting get activity tracker item`);
-            const atiPath = await getAtiPath(di);
-            const resultPath = await createResultDirectory(rootDir, di.externalDiId, di.activityTrackerKey, atiPath);
-            logger.debug(`${new Date()}: result directory was created successfully`);
-            logger.debug(`${new Date()}: ...is copying data item file with path ${di.codePath}`);
-            if (copyFile(di.codePath, resultPath)) {
-                countCopy += 1;
-            }
-            if (atiPath !== null) {
-                countAti += 1;
-                logger.debug(`${new Date()}: ...is copying activity tracker item file with path ${atiPath}`);
-                if (copyFile(atiPath, resultPath)) {
-                    countCopy += 1;
+    logger.info(`${new Date()}: ...starting get all users`);
+    const users = await userService.getAllUsers();
+    logger.info(`${new Date()}: ${users.length} users was received successfully`);
+    let countNotEmptyUsers = 0;
+    let countHandledUsers = 0;
+    for(const user of users) {
+        logger.info(`${new Date()}: ...starting handle user with id ${user.externalStudentId}`);
+        if (user.data && user.data.length > 0) {
+            countNotEmptyUsers += 1;
+            const userDirectory = `${rootDir}/user_${user.externalStudentId}`
+            fileService.createDirectory(userDirectory);
+            for(const data of user.data) {
+                const dataItem = await diService.getDiByExternalId(Number(data.dataItemKey));
+                if (!dataItem) {
+                    logger.info(`${new Date()}: data item with id ${data.dataItemKey} does not exist`);
+                    continue
+                }
+                const taskFullName = dataItem.codePath.split('/').pop();
+                const taskName = taskFullName.slice(0, taskFullName.indexOf('_'));
+                const currentPath = `${userDirectory}/${taskName}`;
+                fileService.createDirectory(currentPath);
+                copyFile(dataItem.codePath, currentPath);
+
+                const activityTrackerItem = await atiService.getAtiByExternalId(Number(data.activityTrackerKey));
+                if (!activityTrackerItem) {
+                    logger.info(`${new Date()}: activity tracker item with id ${data.activityTrackerKey} does not exist`);
+                } else {
+                    if (activityTrackerItem.codePath) {
+                        copyFile(activityTrackerItem.codePath, currentPath);
+                    }
                 }
             }
+
         }
+        countHandledUsers += 1;
     }
+
     logger.info(`${new Date()}: ...is creating archive`);
     const resultPath = await fileService.createArchive(APP_DIR + rootDir.substr(2));
     logger.info(`${new Date()}: ...is deleting tmp folder`);
@@ -48,7 +59,7 @@ const dataDownload = async () => {
 
     return {
         path: resultPath,
-        isAll: countAti + countDi === countCopy
+        isAll: countHandledUsers === users.length
     }
 };
 
@@ -63,37 +74,6 @@ const getFileSystemPath = (path, word) => {
     if (index !== -1)
         return APP_DIR + path.substr(index);
     return path;
-};
-
-const getAtiPath = async (di) => {
-    if (di.activityTrackerKey && di.activityTrackerKey !== -1) {
-        const ati = await atiService.getAtiByExternalId(di.activityTrackerKey);
-        if (ati) {
-            logger.debug(`${new Date()}: activity tracker item with id ${ati.externalAtiId} was received successfully`);
-            if (ati.codePath)
-                return ati.codePath;
-        } else {
-            logger.debug(`${new Date()}: activity tracker item was not received`);
-        }
-        return null
-    }
-    return null;
-};
-
-const createResultDirectory = async (dir, diId, atiId, atiPath) => {
-    let currentPath = getCurrentPathForDiAndAti(dir, diId, atiId, atiPath);
-    fileService.createDirectory(currentPath);
-    return currentPath;
-};
-
-const getCurrentPathForDiAndAti = (dir, diId, atiId, atiPath) => {
-    let currentPath = dir;
-    if (atiPath !== null) {
-        currentPath += '/ati_' + atiId;
-    } else {
-        currentPath += '/di_' + diId;
-    }
-    return currentPath
 };
 
 module.exports = {

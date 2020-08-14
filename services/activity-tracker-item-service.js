@@ -3,8 +3,8 @@
 const fileService = require('../services/file-service');
 const atiDao = require('../daos/activity-tracker-item-dao');
 
-const createAti = async () => {
-    return await atiDao.createAti();
+const createAti = async (atiData) => {
+    return await atiDao.createAti(atiData);
 };
 
 const getAtiByExternalId = async (externalId) => {
