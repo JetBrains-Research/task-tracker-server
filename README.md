@@ -22,7 +22,7 @@ The detail information see in the [documentation](https://github.com/nbirillo/co
 Do the following steps:
 
 1. Download the repository.
-2. Run [MongoDB](https://www.mongodb.com/). It can works on the `localhost:27017`.
+2. Run [MongoDB](https://www.mongodb.com/). It has to work on the `localhost:27017`.
 3. Run `npm install` command from the root folder to install the necessary packages.
 4. Run `npm start` command from the root folder. It will works on the `localhost:3000`.
 
