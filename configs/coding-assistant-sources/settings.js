@@ -11,7 +11,8 @@ const settings = {
                         'country': 'Country',
                         'years': 'Full years',
                         'months': 'Months',
-                        'startSession': 'Start the session'
+                        'startSession': 'Start the session',
+                        'programmingLanguage': 'Programming language'
                     },
                     'taskChoosingPane': {
                         'chooseTask': 'Choose the task',
@@ -49,7 +50,8 @@ const settings = {
                         'country': 'Страна',
                         'years': 'Полных лет',
                         'months': 'Месяцев',
-                        'startSession': 'Начать работу'
+                        'startSession': 'Начать работу',
+                        'programmingLanguage': 'Язык программирования'
                     },
                     'taskChoosingPane': {
                         'chooseTask': 'Выберите задачу',
