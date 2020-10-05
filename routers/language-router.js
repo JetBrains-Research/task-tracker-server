@@ -9,7 +9,7 @@ const logger = intelLogger.getLogger(consts.LOGGER_NAME);
 
 module.exports = (app) => {
 
-    app.route(`${BASE_URL.LANGUAGE}/all`).get(async (req, res, next) => {
+    app.route(`${BASE_URL.LANGUAGE}/all`).get( (req, res, next) => {
         logger.info(`${new Date()}: ${consts.LANGUAGES.length} languages were received successfully`);
         res.json(consts.LANGUAGES.map(lang => { return { 'key': lang} }));
     });

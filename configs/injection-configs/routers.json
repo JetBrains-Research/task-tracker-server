@@ -32,6 +32,10 @@
     "path": "language-router"
   },
   {
+    "name": "ProgrammingLanguageRouter",
+    "path": "programming-language-router"
+  },
+  {
     "name": "DialogTextRouter",
     "path": "dialog-text-router"
   },

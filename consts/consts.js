@@ -11,6 +11,7 @@ const BASE_URL = {
     COUNTRY: '/api/country',
     EXPERIENCE: '/api/experience',
     LANGUAGE: '/api/language',
+    PROGRAMMING_LANGUAGE: '/api/programming-language',
     DATABASE_GENERATOR: {
         CODING_ASSISTANT: `/api/database-generator/coding-assistant`
     }
@@ -22,6 +23,7 @@ const ATI_UPLOADED_FILE = 'activitytracker';
 const LOGGER_NAME = 'logger';
 
 const LANGUAGES = ['en', 'ru'];
+const PROGRAMMING_LANGUAGES = ['python', 'java', 'kotlin', 'c++']
 
 const MAX_GENDER_COUNT = 6;
 
@@ -31,5 +33,6 @@ module.exports = {
     LOGGER_NAME,
     DI_UPLOADED_FILE,
     ATI_UPLOADED_FILE,
-    MAX_GENDER_COUNT
+    MAX_GENDER_COUNT,
+    PROGRAMMING_LANGUAGES
 };

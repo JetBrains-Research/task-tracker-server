@@ -11,7 +11,8 @@ const SettingsDescriptionSchema = new Schema({
         country: {type: String},
         years: {type: String},
         months: {type: String},
-        startSession: {type: String}
+        startSession: {type: String},
+        programmingLanguage: {type: String}
     },
     taskChoosingPane: {
         chooseTask: {type: String},
