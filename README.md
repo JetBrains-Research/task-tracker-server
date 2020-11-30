@@ -1,6 +1,6 @@
 # Table of Contents
 
-- [Coding Assistant Server](#coding-assistant-server)
+- [TaskTracker Server](#tasktracker-server)
   - [Getting started](#getting-started)
   - [Usage](#usage)
     - [Task](#task)    
@@ -8,10 +8,9 @@
     - [Activity tracker item](#activity-tracker-item)    
 
 
-# Coding Assistant Server
+# TaskTracker Server
 
-A server for the [Coding Assistant](https://github.com/JetBrains-Research/codetracker-data) project. The main goal of 
-the server is data gathering for the [codetracker](https://github.com/JetBrains-Research/codetracker) plugin.
+A server for the [TaskTracker](https://github.com/JetBrains-Research/task-tracker-plugin) plugin.
 
 The detail information see in the [documentation](https://github.com/nbirillo/coding-assistant-server/wiki).
 
