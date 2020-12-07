@@ -3,7 +3,7 @@
 - [TaskTracker Server](#tasktracker-server)
   - [Getting started](#getting-started)
   - [Usage](#usage)
-    - [Task](#task)    
+  - [Models](#models)
     - [Data item](#data-item)    
     - [Activity tracker item](#activity-tracker-item)    
 
@@ -29,8 +29,17 @@ Do the following steps:
 
 ## Usage
 
+To generate a database for the [TaskTracker](https://github.com/JetBrains-Research/task-tracker-plugin) plugin
+send the `POST` query: `/api/database-generator/task-tracker`. 
+The data for the database can be found [here](/configs/task-tracker-sources). 
+You can change data before sending the query.
+
+---
+
+## Models
+
 The section describes the models and routes in the server. 
-The full description for all models see in the [documentation](https://github.com/nbirillo/task-tracker-server/wiki/API). 
+The full description for all models see in the [documentation](https://github.com/nbirillo/task-tracker-server/wiki/API).
 
 ### Data item
 
