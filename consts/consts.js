@@ -13,12 +13,12 @@ const BASE_URL = {
     LANGUAGE: '/api/language',
     PROGRAMMING_LANGUAGE: '/api/programming-language',
     DATABASE_GENERATOR: {
-        CODING_ASSISTANT: `/api/database-generator/coding-assistant`
+        TASK_TRACKER: `/api/database-generator/task-tracker`
     }
 };
 
 // Todo: in the old version we use CODE name
-const DI_UPLOADED_FILE = 'codetracker';
+const DI_UPLOADED_FILE = 'tasktracker';
 const ATI_UPLOADED_FILE = 'activitytracker';
 const LOGGER_NAME = 'logger';
 

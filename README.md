@@ -12,7 +12,7 @@
 
 A server for the [TaskTracker](https://github.com/JetBrains-Research/task-tracker-plugin) plugin.
 
-The detail information see in the [documentation](https://github.com/nbirillo/coding-assistant-server/wiki).
+The detail information see in the [documentation](https://github.com/nbirillo/task-tracker-server/wiki).
 
 ---
 
@@ -29,7 +29,8 @@ Do the following steps:
 
 ## Usage
 
-The section describes the models and routes in the server. The full description for all models see in the [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API). 
+The section describes the models and routes in the server. 
+The full description for all models see in the [documentation](https://github.com/nbirillo/task-tracker-server/wiki/API). 
 
 ### Data item
 
@@ -52,7 +53,7 @@ URL | Type | Description
 `/api/data-item/all`| `GET`  | get all data-items
 `/api/data-item/:id`| `GET`  | get data-item by external id
 
-**Note**: you can see more information. See [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API:-Data-item#routes).
+**Note**: you can see more information. See [documentation](https://github.com/nbirillo/task-tracker-server/wiki/API:-Data-item#routes).
 
 
 ### Activity tracker item
@@ -76,4 +77,4 @@ URL | Type | Description
 `/api/activity-tracker-item/:id`| `GET`  | get activity-tracker-item by external id
 `/api/activity-tracker-item/:id`| `PUT`  | replace activity-tracker `codePath`
 
-**Note**: you can see more information. See [documentation](https://github.com/nbirillo/coding-assistant-server/wiki/API:-Activity-tracker-item#routes).
+**Note**: you can see more information. See [documentation](https://github.com/nbirillo/task-tracker-server/wiki/API:-Activity-tracker-item#routes).

@@ -45,7 +45,7 @@
   },
 
   {
-    "name": "CodingAssistantProjectRouter",
-    "path": "database-generator/coding-assistant-project-router"
+    "name": "TaskTrackerProjectRouter",
+    "path": "database-generator/task-tracker-project-router"
   }
 ]

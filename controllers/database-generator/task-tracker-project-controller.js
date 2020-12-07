@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Anastasiia Birillo
 
-const TASKS = require('../../configs/coding-assistant-sources/tasks');
-const GENDERS = require('../../configs/coding-assistant-sources/genders');
-const SETTINGS = require('../../configs/coding-assistant-sources/settings');
-const COUNTRIES = require('../../configs/coding-assistant-sources/countries');
-const DIALOG_TEXTS = require('../../configs/coding-assistant-sources/dialog-texts');
+const TASKS = require('../../configs/task-tracker-sources/tasks');
+const GENDERS = require('../../configs/task-tracker-sources/genders');
+const SETTINGS = require('../../configs/task-tracker-sources/settings');
+const COUNTRIES = require('../../configs/task-tracker-sources/countries');
+const DIALOG_TEXTS = require('../../configs/task-tracker-sources/dialog-texts');
 
 const taskController = require('../task-controller');
 const settingsController = require('../settings-controller');
