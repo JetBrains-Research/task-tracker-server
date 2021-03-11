@@ -35,7 +35,7 @@ Do the following steps:
 
 If everything is done correctly, you will see the following message:
 
-<img src="./images/server_running.png" width="500">
+<img src="./images/server_running.png" width="800">
 
 ---
 
@@ -51,7 +51,7 @@ You can change data before sending the query.
 
 _Note:_ the query can be sent by using [Postman](https://www.postman.com/) tool. An example with the query is:
 
-<img src="./images/postman_example.png" width="500">
+<img src="./images/postman_example.png">
 
 ---
 
