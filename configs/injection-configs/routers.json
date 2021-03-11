@@ -43,6 +43,10 @@
     "name": "StudentRouter",
     "path": "user-router"
   },
+  {
+    "name": "HintItemRouter",
+    "path": "hint-item-router"
+  },
 
   {
     "name": "TaskTrackerProjectRouter",

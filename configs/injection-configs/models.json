@@ -42,5 +42,9 @@
   {
     "name": "User",
     "path": "user"
+  },
+  {
+    "name": "HintItem",
+    "path": "hint-item"
   }
 ]

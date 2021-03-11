@@ -4,6 +4,7 @@ const BASE_URL = {
     ATI: '/api/activity-tracker-item',
     USER: '/api/user',
     DI: '/api/data-item',
+    HINT_ITEM: '/api/hint-item',
     TASK: '/api/task',
     DIALOG_TEXT: '/api/dialog-text',
     SETTINGS: '/api/settings',
@@ -21,6 +22,7 @@ const BASE_URL = {
 const DI_UPLOADED_FILE = 'tasktracker';
 const ATI_UPLOADED_FILE = 'activitytracker';
 const LOGGER_NAME = 'logger';
+const HINT_ITEM_UPLOADED_FILE = 'hintitem';
 
 const LANGUAGES = ['en', 'ru'];
 const PROGRAMMING_LANGUAGES = ['python', 'java', 'kotlin', 'c++']
@@ -34,5 +36,6 @@ module.exports = {
     DI_UPLOADED_FILE,
     ATI_UPLOADED_FILE,
     MAX_GENDER_COUNT,
-    PROGRAMMING_LANGUAGES
+    PROGRAMMING_LANGUAGES,
+    HINT_ITEM_UPLOADED_FILE
 };
