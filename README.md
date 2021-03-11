@@ -35,7 +35,7 @@ Do the following steps:
 
 If everything is done correctly, you will see the following message:
 
-<img src="./images/server_running.png" width="800">
+<img src="images/server_running_example.png" width="800">
 
 ---
 
