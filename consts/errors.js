@@ -36,6 +36,10 @@ const ERRORS = {
       ALREADY_TAKEN: getAlreadyTakenError('DATA_ITEM'),
       NOT_EXISTS: getNotExistsError('DATA_ITEM'),
     },
+    HINT_ITEM: {
+      ALREADY_TAKEN: getAlreadyTakenError('HINT_ITEM'),
+      NOT_EXISTS: getNotExistsError('HINT_ITEM'),
+    },
     USER: {
       ALREADY_TAKEN: getAlreadyTakenError('USER'),
       NOT_EXISTS: getNotExistsError('USER'),
