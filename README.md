@@ -54,12 +54,13 @@ If everything is done correctly, you will see the following message:
 
 ## Database generation
 
-----The data for the database can be found [here](/configs/task-tracker-sources).
-You can change data before sending the query.
+<!---what are the exact steps of replacing files in the database? --->
+The data for the database can be found in [/configs/task-tracker-sources](/configs/task-tracker-sources).
+You can change the data for plugins before generating the database.
 
 To generate a database for the [TaskTracker](https://github.com/JetBrains-Research/task-tracker-plugin) plugin, send the `POST` request to`<path_to_your_server>/api/database-generator/task-tracker`.
 
-**Note:** the default `<path_to_your_server>` is `localhost:3000`.
+**Note:** The default `<path_to_your_server>` is `localhost:3000`.
 
 See an example using [Postman](https://www.postman.com/):
 
@@ -70,8 +71,8 @@ See an example using [Postman](https://www.postman.com/):
 ## Models
 
 <!---update tables--->
----The section describes the models and routes in the server. 
-The full description for all models see in the [documentation](https://github.com/JetBrains-Research/task-tracker-server/wiki/API).
+The section describes the models and routes in the server. 
+For a complete description of all models, see the [API reference](https://github.com/JetBrains-Research/task-tracker-server/wiki/API) in the wiki.
 
 ### Data item
 
@@ -94,7 +95,7 @@ URL | Type | Description
 `/api/data-item/all`| `GET`  | get all data-items
 `/api/data-item/:id`| `GET`  | get data-item by external id
 
-**Note**: For more information, see [documentation](https://github.com/JetBrains-Research/task-tracker-server/wiki/API:-Data-item#routes).
+**Note**: For more information, see [Data item operations](https://github.com/JetBrains-Research/task-tracker-server/wiki/API:-Data-item#routes) in the wiki.
 
 
 ### Activity tracker item
@@ -117,4 +118,4 @@ URL | Type | Description
 `/api/activity-tracker-item/all`| `GET`  | get all activity-tracker-items
 `/api/activity-tracker-item/:id`| `GET`  | get activity-tracker-item by external id
 
-**Note**: For more information, see [documentation](https://github.com/JetBrains-Research/task-tracker-server/wiki/API:-Activity-tracker-item#routes).
+  **Note**: For more information, see [Activity Tracker operations](https://github.com/JetBrains-Research/task-tracker-server/wiki/API:-Activity-tracker-item#routes) in the wiki.
