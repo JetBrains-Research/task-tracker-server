@@ -51,11 +51,11 @@ If everything is done correctly, you will see the following message:
 ## Database generation
 
 The data for the database can be found in [configs](/configs/task-tracker-sources).
-You can [change](https://github.com/JetBrains-Research/task-tracker-server/wiki/Modify-problem-solving-sessions-for-plugins) the data before generating the database. 
+You can [change the data](https://github.com/JetBrains-Research/task-tracker-server/wiki/Update-texts-and-tasks) before generating the database. 
 
 To generate a database for the [TaskTracker plugin](https://github.com/JetBrains-Research/task-tracker-plugin), send the `POST` request to `<path_to_your_server>/api/database-generator/task-tracker`.
 
-Every time you change the [configs](/configs/task-tracker-sources), re-generate the database.
+Every time you [change the configs](https://github.com/JetBrains-Research/task-tracker-server/wiki/Update-texts-and-tasks), re-generate the database.
 
 **Note**: The default `<path_to_your_server>` is `localhost:3000`.
 
@@ -72,7 +72,7 @@ For a complete description of all models, see the [API reference](https://github
 
 ### TaskTracker files
 
-The `data-item` model stores code snapshots of user solutions from associated [TaskTracker plugins](https://github.com/JetBrains-Research/task-tracker-plugin).
+The `data-item` model stores code snapshots of user solutions from the associated [TaskTracker plugin](https://github.com/JetBrains-Research/task-tracker-plugin).
 
 #### Model
 
@@ -96,7 +96,7 @@ Endpoint | Method | Description
 
 ### Activity Tracker files
 
-The `activity-tracker-item` model stores Activity Tracker logs with user actions from associated [TaskTracker plugins](https://github.com/JetBrains-Research/task-tracker-plugin).
+The `activity-tracker-item` model stores Activity Tracker logs with user actions from the associated [TaskTracker plugin](https://github.com/JetBrains-Research/task-tracker-plugin).
 
 #### Model
 
