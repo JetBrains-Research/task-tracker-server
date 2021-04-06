@@ -12,7 +12,7 @@
 
 TaskTracker server is part of the TaskTracker toolkit for collecting and processing data of student activity during problem-solving. TaskTracker server facilitates interaction with the [TaskTracker plugin](https://github.com/JetBrains-Research/task-tracker-plugin).
 
-The primary goal of this project is data collection. First, tracking and analysis of students’ coding behavior can be a valuable source of insight into the learning process: for example, help the teacher to improve their course and understand which topics and assignments may be more difficult for students. Second, such data may be used in computing education research. If you choose to share your problem-solving data with us, it will help our code completion studies.
+The primary goal of this project is data collection. First, tracking and analysis of students’ coding behavior can be a valuable source of insight into the learning process: for example, help the teacher to improve their course and understand which topics and assignments may be more difficult for students. Second, such data may be used in computing education research. If you choose to share your problem-solving data with us, it will help our studies in generating personalized hints during problem-solving.
 
 For more information about TaskTracker, consult the following resources:
 - [wiki](https://github.com/JetBrains-Research/task-tracker-server/wiki)
