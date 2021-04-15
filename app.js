@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config({ path: `${__dirname}/.env` });
 
 // Connect to database
 const MONGODB = process.env.MONGODB || 'mongodb://localhost/coding-assistant';
