@@ -101,14 +101,12 @@ const tasks = [
             [
                 {
                     'input': '3\n' +
-                        '9\n' +
                         '0\n' +
                         '1',
                     'output': 'YES'
                 },
                 {
                     'input': '3\n' +
-                        '9\n' +
                         '-15\n' +
                         '1',
                     'output': 'NO'
