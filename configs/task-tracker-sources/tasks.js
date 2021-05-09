@@ -69,7 +69,7 @@ const tasks = [
                 {
                     'input': '2\n' +
                         '1\n' +
-                        '1\n',
+                        '1',
                     'output': '1'
                 }
             ],
