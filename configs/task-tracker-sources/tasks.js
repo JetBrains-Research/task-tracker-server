@@ -51,6 +51,139 @@ const tasks = [
             ]
     },
     {
+        'key': 'max_3',
+        'examples':
+            [
+                {
+                    'input': '1\n' +
+                        '2\n' +
+                        '3',
+                    'output': '3'
+                },
+                {
+                    'input': '5\n' +
+                        '5\n' +
+                        '5',
+                    'output': '5'
+                },
+                {
+                    'input': '2\n' +
+                        '1\n' +
+                        '1\n',
+                    'output': '1'
+                }
+            ],
+        'descriptions':
+            [
+                {
+                    'language': 'en',
+                    'info': {
+                        'name': 'Max 3',
+                        'description': 'Print the largest of three numbers in the input.',
+                        'input': 'The program receives three numbers as an input',
+                        'output': 'Print the largest number. If there are several largest among the three numbers, print only one of them.'
+                    }
+                },
+                {
+                    'language': 'ru',
+                    'info': {
+                        'name': 'Большее из трёх',
+                        'description': 'Определите большее из трёх чисел.',
+                        'input': 'Программа получает на вход 3 целых числа, каждое записано в отдельной строке.',
+                        'output': 'Выведите одно число — наибольшее из данных трёх чисел. Если среди трёх чисел находится несколько наибольших, выведите только одно из них.'
+                    }
+                }
+            ]
+    },
+    {
+        'key': 'is_zero',
+        'examples':
+            [
+                {
+                    'input': '3\n' +
+                        '9\n' +
+                        '0\n' +
+                        '1',
+                    'output': 'YES'
+                },
+                {
+                    'input': '3\n' +
+                        '9\n' +
+                        '-15\n' +
+                        '1',
+                    'output': 'NO'
+                },
+                {
+                    'input': '2\n' +
+                        '0\n' +
+                        '0',
+                    'output': 'YES'
+                }
+            ],
+        'descriptions':
+            [
+                {
+                    'language': 'en',
+                    'info': {
+                        'name': 'Is zero',
+                        'description': 'Check if there are zeros among numbers in the input.',
+                        'input': 'The program receives several numbers as an input:\n' +
+                            'N - how many numbers do you need to input;\n' +
+                            'N numbers to check.',
+                        'output': 'Print YES if there are zeros among numbers in the input and NO otherwise. You must enter all N numbers and only after that the inscription YES or NO should appear.'
+                    }
+                },
+                {
+                    'language': 'ru',
+                    'info': {
+                        'name': 'Есть ли ноль',
+                        'description': 'Проверьте, есть ли среди данных N чисел нули.',
+                        'input': 'Программа получает на вход число N, а затем N чисел.',
+                        'output': 'Выведите YES, если среди введенных чисел есть хотя бы один ноль, или NO в противном случае. Пользователь должен ввести все N чисел и только после этого должна появиться надпись YES или NO.'
+                    }
+                }
+            ]
+    },
+    {
+        'key': 'max_digit',
+        'examples':
+            [
+                {
+                    'input': '11111111',
+                    'output': '1'
+                },
+                {
+                    'input': '123034655943',
+                    'output': '9'
+                },
+                {
+                    'input': '4',
+                    'output': '4'
+                }
+            ],
+        'descriptions':
+            [
+                {
+                    'language': 'en',
+                    'info': {
+                        'name': 'Max digit',
+                        'description': 'Given a string containing only digits, find and print the largest digit.',
+                        'input': 'The program receives a string containing only digits.',
+                        'output': 'Print the largest digit that occurs more often in the string.'
+                    }
+                },
+                {
+                    'language': 'ru',
+                    'info': {
+                        'name': 'Наибольшая цифра',
+                        'description': 'Найти наибольшую цифру в строке, состоящей из цифр.',
+                        'input': ' Программа получает на вход строку ненулевой длины, содержащую только десятичные цифры.',
+                        'output': 'Выведите максимальную цифру, которая встречается во введенной строке.'
+                    }
+                }
+            ]
+    },
+    {
         'key': 'voting',
         'examples':
             [
