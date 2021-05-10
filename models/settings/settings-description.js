@@ -24,6 +24,7 @@ const SettingsDescriptionSchema = new Schema({
         inputData: {type: String},
         outputData: {type: String},
         submit: {type: String},
+        hint: {type: String},
         // Todo: delete it
         backToTasks: {type: String},
     },

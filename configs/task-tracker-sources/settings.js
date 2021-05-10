@@ -26,6 +26,7 @@ const settings = {
                         'inputData': 'Input data',
                         'outputData': 'Output data',
                         'submit': 'Submit',
+                        'hint': 'Get a hint'
                     },
                     'finalPane': {
                         'praise': 'Nicely done!',
@@ -65,6 +66,7 @@ const settings = {
                         'inputData': 'Входные данные',
                         'outputData': 'Выходные данные',
                         'submit': 'Отправить решение',
+                        'hint': 'Получить подсказку'
                     },
                     'finalPane': {
                         'praise': 'Отличная работа!',
