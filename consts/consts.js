@@ -25,7 +25,8 @@ const LOGGER_NAME = 'logger';
 const HINT_ITEM_UPLOADED_FILE = 'hintitem';
 
 const LANGUAGES = ['en', 'ru'];
-const PROGRAMMING_LANGUAGES = ['python', 'java', 'kotlin', 'c++']
+// const PROGRAMMING_LANGUAGES = ['python', 'java', 'kotlin', 'c++']
+const PROGRAMMING_LANGUAGES = ['python']
 
 const MAX_GENDER_COUNT = 6;
 
