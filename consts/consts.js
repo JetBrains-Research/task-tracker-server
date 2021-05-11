@@ -24,7 +24,8 @@ const ATI_UPLOADED_FILE = 'activitytracker';
 const LOGGER_NAME = 'logger';
 const HINT_ITEM_UPLOADED_FILE = 'hintitem';
 
-const LANGUAGES = ['en', 'ru'];
+// const LANGUAGES = ['en', 'ru'];
+const LANGUAGES = ['ru', 'en'];
 // const PROGRAMMING_LANGUAGES = ['python', 'java', 'kotlin', 'c++']
 const PROGRAMMING_LANGUAGES = ['python']
 
