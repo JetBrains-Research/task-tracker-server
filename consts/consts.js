@@ -13,6 +13,7 @@ const BASE_URL = {
     EXPERIENCE: '/api/experience',
     LANGUAGE: '/api/language',
     PROGRAMMING_LANGUAGE: '/api/programming-language',
+    FEEDBACK: '/api/feedback',
     DATABASE_GENERATOR: {
         TASK_TRACKER: `/api/database-generator/task-tracker`
     }

@@ -11,14 +11,23 @@ const UserSchema = new Schema({
             activityTrackerKey: {type: String},
             dataItemKey: {type: String},
         }
-    ]
+    ],
+    group: {type: Number},
 });
 
 UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
+UserSchema.post('save', function(doc, next){
+    this.group = this.externalStudentId % 2
+    next();
+});
+
+
+
 UserSchema.methods.getPublicData = function () {
     let res = {
         id: this.externalStudentId,
+        group: this.group,
         data: []
     };
     for(const item of this.data) {

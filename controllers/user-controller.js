@@ -13,7 +13,7 @@ const logger = intelLogger.getLogger(LOGGER_NAME);
 const createUser = async () => {
     try {
         const user = await userService.createUser();
-        logger.info(`${new Date()}: User was created successfully`);
+        logger.info(`${new Date()}: User ${user} was created successfully`);
         return user;
     } catch (e) {
         logger.error(`${new Date()}: User was not created`, e);
@@ -64,6 +64,8 @@ const addData = async (userId, diId, atiId) => {
     logger.info(`${new Date()}: user ${userId} was updates successfully. Added data: di ${diId}, ati ${atiId}`);
     return user
 };
+
+
 
 module.exports = {
     addData,

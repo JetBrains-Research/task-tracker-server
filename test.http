@@ -1,0 +1,27 @@
+#POST localhost:3000/api/database-generator/task-tracker
+#
+#
+
+POST localhost:3000/api/user
+
+###
+GET localhost:3000/api/settings
+
+#POST localhost:3000/api/feedback?feedback=text&id=4
+###
+GET localhost:3000/api/feedback/4
+###
+GET localhost:3000/api/feedback/all
+
+###
+
+POST http://localhost:3000/api/feedback/
+Content-Type: application/json
+
+{
+  "feedback": "lop",
+  "id": "4"
+}
+
+###
+

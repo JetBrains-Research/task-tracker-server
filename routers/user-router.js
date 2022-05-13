@@ -52,4 +52,15 @@ module.exports = (app, upload) => {
             res.json(response.getPublicData())
         }
     });
+
+    // app.route(`${BASE_URL.USER}/:group`).get(async (req, res, next) => {
+    //     const response = await userController.getUserGroupByExternalId(req.params.id);
+    //     if (response.error) {
+    //         res.status(response.error.code);
+    //         res.json(response.error.content);
+    //         res.end();
+    //     } else {
+    //         res.json(response.getPublicData())
+    //     }
+    // });
 };

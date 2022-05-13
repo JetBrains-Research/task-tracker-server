@@ -51,5 +51,10 @@
   {
     "name": "TaskTrackerProjectRouter",
     "path": "database-generator/task-tracker-project-router"
+  },
+  {
+    "name": "Feedback",
+    "path": "feedback-router"
   }
+
 ]
