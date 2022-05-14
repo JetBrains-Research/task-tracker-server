@@ -8,9 +8,9 @@ const taskDescriptionService = require('./task-description-service');
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
 
-const createTask = async (key, descriptions, examples) => {
+const createTask = async (key, ideSettings, descriptions, examples) => {
     let preparedDescriptions = [];
-    for(const description of descriptions){
+    for (const description of descriptions) {
         const td = await taskDescriptionService.createTaskDescription(description.info, description.language);
         if (td) {
             preparedDescriptions.push({
@@ -20,12 +20,12 @@ const createTask = async (key, descriptions, examples) => {
         }
     }
     try {
-        const task = await taskDao.createTask(key, preparedDescriptions, examples);
+        const task = await taskDao.createTask(key, ideSettings, preparedDescriptions, examples);
         logger.info(`${new Date()}: Task ${key} was created successfully`);
         return task;
     } catch (e) {
         logger.error(`${new Date()}: Task ${key} was not created`, e);
-        for(const td of preparedDescriptions){
+        for (const td of preparedDescriptions) {
             await taskDescriptionService.deleteTaskDescription(td);
         }
         return {

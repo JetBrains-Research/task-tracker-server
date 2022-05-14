@@ -23,7 +23,7 @@ const getTaskByKey = async (key) => {
     return task;
 };
 
-const createTask = async (key, descriptions, examples) => {
+const createTask = async (key, ideSettings, descriptions, examples) => {
     const task = await taskService.getTaskByKey(key);
 
     if (task) {
@@ -33,7 +33,7 @@ const createTask = async (key, descriptions, examples) => {
         }
     }
 
-    return await taskService.createTask(key, descriptions, examples);
+    return await taskService.createTask(key, ideSettings, descriptions, examples);
 };
 
 const deleteTaskByKey = async (key) => {
