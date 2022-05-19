@@ -14,7 +14,7 @@ const countryController = require('../consts-lists/country-controller');
 
 const createTasks = async () => {
     for (const task of TASKS) {
-        await taskController.createTask(task.key, task.ideSettings, task.descriptions, task.examples);
+        await taskController.createTask(task.key,task.isExperimental, task.ideSettings, task.description);
     }
 };
 

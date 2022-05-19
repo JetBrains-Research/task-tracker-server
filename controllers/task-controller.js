@@ -4,7 +4,7 @@ const intelLogger = require('intel');
 
 const ERRORS = require('../consts/errors').ERRORS;
 const LOGGER_NAME = require('../consts/consts').LOGGER_NAME;
-const taskService = require('../services/task/task-service');
+const taskService = require('../services/task-service');
 
 const logger = intelLogger.getLogger(LOGGER_NAME);
 

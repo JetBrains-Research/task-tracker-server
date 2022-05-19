@@ -4,12 +4,8 @@
     "path": "data-item"
   },
   {
-    "name": "TaskDescription",
-    "path": "task/task-description"
-  },
-  {
     "name": "Task",
-    "path": "task/task"
+    "path": "task"
   },
   {
     "name": "SettingsDescription",
