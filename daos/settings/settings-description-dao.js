@@ -15,9 +15,9 @@ const formatSurveyPane = (settingsDescription) => {
     settingsDescription.surveyPane = formatterService.applyFormatter(settingsDescription.surveyPane,
         forToLowerCase,
         formatterService.toLowerCase);
-    settingsDescription.surveyPane = formatterService.applyFormatter(settingsDescription.surveyPane,
+    /*settingsDescription.surveyPane = formatterService.applyFormatter(settingsDescription.surveyPane,
         forToLowerCaseWithColon,
-        formatterService.toLowerCaseWithColon);
+        formatterService.toLowerCaseWithColon);*/
     return settingsDescription
 };
 
@@ -81,9 +81,8 @@ const formatCommonText = (settingsDescription) => {
 };
 
 const createSettingsDescription = async (settingsDescription) => {
-    const formats = [formatSurveyPane, formatTaskChoosingPane, formatTaskSolvingPane, formatFinalPane,
-        formatSuccessPane, formatCommonText];
-    for(const format of formats) {
+    const formats = [formatSurveyPane];
+    for (const format of formats) {
         settingsDescription = format(settingsDescription)
     }
     const sd = new SettingsDescription(settingsDescription);

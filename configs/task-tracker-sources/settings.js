@@ -1,87 +1,11 @@
 const settings = {
-    'descriptions':
-        [
-            {
-                'language': 'en',
-                'info': {
-                    'surveyPane': {
-                        'age': 'Age',
-                        'gender': 'Gender',
-                        'experience': 'Program experience',
-                        'country': 'Country',
-                        'years': 'Full years',
-                        'months': 'Months',
-                        'startSession': 'Start the session',
-                        'programmingLanguage': 'Programming language'
-                    },
-                    'taskChoosingPane': {
-                        'chooseTask': 'Choose the task',
-                        'finishSession': 'Finish the session',
-                        'startSolving': 'Start solving',
-                        'description': 'After you choose the task and press %s, a file will be created in the codding-assistant folder in the root of the project where you should write the code. When you are finished, press %s to submit your solution.\n' +
-                            '\n' +
-                            'Note: we only track the changes in the files created by the plugin, other files are not considered. The data will not be sent until you press %s.'
-                    },
-                    'taskSolvingPane': {
-                        'inputData': 'Input data',
-                        'outputData': 'Output data',
-                        'submit': 'Submit',
-                        'hint': 'Get a hint'
-                    },
-                    'finalPane': {
-                        'praise': 'Nicely done!',
-                        'backToSurvey': 'Back to the survey',
-                        'finalMessage': 'Do not forget to uninstall the Codetracker plugin',
-                    },
-                    'commonText': {
-                        'backToTasks': 'Back to the tasks'
-                    },
-                    'successPane': {
-                        'successMessage': 'The solution for the %s task has been submitted successfully'
-                    }
-                }
-            },
-            {
-                'language': 'ru',
-                'info': {
-                    'surveyPane': {
-                        'age': 'Возраст',
-                        'gender': 'Пол',
-                        'experience': 'Опыт программирования',
-                        'country': 'Страна',
-                        'years': 'Полных лет',
-                        'months': 'Месяцев',
-                        'startSession': 'Начать работу',
-                        'programmingLanguage': 'Язык программирования'
-                    },
-                    'taskChoosingPane': {
-                        'chooseTask': 'Выберите задачу',
-                        'finishSession': 'Закончить работу',
-                        'startSolving': 'Начать решение',
-                        'description': 'После выбора задачи и нажатия на кнопку %s будет создан файл в папке codding-assistant в корне вашего проекта, в котором необходимо написать ее решение. После окончания решения для отправки данных нажмите кнопку %s.\n' +
-                            '\n' +
-                            'Важно: во время решения будут записываться изменения только в созданных плагином файлах. Остальные файлы не отслеживаются. Без нажатия на кнопку %s данные не отправляются.',
-                       },
-                    'taskSolvingPane': {
-                        'inputData': 'Входные данные',
-                        'outputData': 'Выходные данные',
-                        'submit': 'Отправить решение',
-                        'hint': 'Получить подсказку'
-                    },
-                    'finalPane': {
-                        'praise': 'Отличная работа!',
-                        'backToSurvey': 'Вернуться к анкете',
-                        'finalMessage': 'Не забудьте удалить плагин Codetracker',
-                    },
-                    'commonText': {
-                        'backToTasks': 'Вернуться к задачам'
-                    },
-                    'successPane': {
-                        'successMessage': 'Решение задачи %s было успешно отправлено'
-                    }
-                }
+    'descriptions': [{
+        'language': 'en', 'info': {
+            'surveyPane': {
+                'questions': ["1. Procrastinate or put off doing things until the last minute", "2. Can't seem to hold in mind things I need to remember to do", "3. Not motivated to prepare in advance for things I know I am supposed to do", "4. Have trouble doing what I tell myself to do", "5. Have trouble learning new or complex activities as well as others", "6. Have difficulty explaining things in their proper order or sequence", "7. Unable to \"think on my feet\" or respond as effectively as others to unexpected events", "8. I don't seem to process information as quickly or as accurately as others", "9. Unable to inhibit my reactions or responses to events or others", "10. Make impulsive comments to others", "11. Likely to do things without considering the consequences for doing them", "12. Fail to consider past relevant events or past personal experience before responding to situations (I act without thinking)", "13. Do not put as much effort into my work as I should or than others are able to do", "14. Others tell me I am lazy or unmotivated", "15. Inconsistent in the quality or quantity of my work performance", "16. Unable to work as well as others without supervision or frequent instruction", "17. Have trouble calming myself down once I am emotionally upset", "18. Cannot seem to regain emotional control and become more reasonable once I am emotional", "19. Cannot seem to distract myself away from whatever is upsetting me emotionally to help calm me down. I can't refocus my mind to a more positive framework", "20. I remain emotional or upset longer than others"],
             }
-        ]
+        }
+    }]
 };
 
 module.exports = settings;

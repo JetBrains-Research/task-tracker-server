@@ -17,7 +17,7 @@ SettingsSchema.methods.getPublicData = function () {
 
 SettingsSchema.methods.getAsyncPublicData = async function () {
     let data = this.getPublicData();
-    const keys = ['surveyPane', 'taskChoosingPane', 'taskSolvingPane', 'finalPane', 'successPane'];
+    const keys = ['surveyPane'];
     keys.map(key => data[key] = []);
     for(const language of LANGUAGES){
         const currentLang = await this.populate(language).execPopulate();
