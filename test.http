@@ -5,6 +5,9 @@ POST localhost:3000/api/database-generator/task-tracker
 POST localhost:3000/api/user
 
 ###
+GET localhost:3000/api/user/all
+
+###
 GET localhost:3000/api/settings
 
 #POST localhost:3000/api/feedback?feedback=text&id=4

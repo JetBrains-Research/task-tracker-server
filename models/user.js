@@ -5,6 +5,14 @@ const Schema = mongoose.Schema;
 
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
+const taskOrder = {
+    0: [4,0,3,7],
+    1: [0,4,7,3],
+    2: [1,5,2,6],
+    3: [5,1,6,2],
+}
+
+
 const UserSchema = new Schema({
     data: [
         {
@@ -13,21 +21,30 @@ const UserSchema = new Schema({
         }
     ],
     group: {type: Number},
+    taskOrder: {type: Object}
 });
 
 UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
 UserSchema.post('save', function(doc, next){
-    this.group = this.externalStudentId % 2
+    if (this.group)
+        {console.log('lop')}
+
+    else
+    {
+        this.group = this.externalStudentId % 2
+        this.taskOrder = taskOrder[this.group]
+        doc.save();
+    }
     next();
 });
-
 
 
 UserSchema.methods.getPublicData = function () {
     let res = {
         id: this.externalStudentId,
         group: this.group,
+        taskOrder: this.taskOrder,
         data: []
     };
     for(const item of this.data) {
