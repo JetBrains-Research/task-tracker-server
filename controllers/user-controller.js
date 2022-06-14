@@ -14,7 +14,7 @@ const createUser = async () => {
     try {
         const user = await userService.createUser();
         logger.info(`${new Date()}: User ${user} was created successfully`);
-        return user;
+        return user
     } catch (e) {
         logger.error(`${new Date()}: User was not created`, e);
         return {

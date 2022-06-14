@@ -12,7 +12,7 @@ module.exports = (app, upload) => {
             res.json(response.error.content);
             res.end();
         } else {
-            res.json(response.getPublicData().id)
+            res.json(response.getPublicData())
         }
     });
 

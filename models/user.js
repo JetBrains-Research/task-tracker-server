@@ -28,7 +28,7 @@ UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
 UserSchema.post('save', function(doc, next){
     if (this.group)
-        {console.log('lop')}
+        {console.log('user already have a group')}
 
     else
     {

@@ -566,7 +566,7 @@ const tasks = [
     {
         'key': 5,
         'shortDescription':'first debugging non-exp',
-        'isExperimental': fale,
+        'isExperimental': false,
         'ideSettings':{},
         'description':
             {
