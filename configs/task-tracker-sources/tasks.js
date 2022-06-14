@@ -4,7 +4,7 @@ const tasks = [
         'shortDescription':'first coding exp',
         'isExperimental': true,
         'ideSettings':{
-            "actionsToToggle": ["ZenMode"],
+            "actionsToToggle": ["ToggleZenMode"],
             "parameters": {
                 "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
                 "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
