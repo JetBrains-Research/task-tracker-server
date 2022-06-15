@@ -5,6 +5,14 @@ const Schema = mongoose.Schema;
 
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
+const taskOrder = {
+    0: [4,0,3,7],
+    1: [0,4,7,3],
+    2: [1,5,2,6],
+    3: [5,1,6,2],
+}
+
+
 const UserSchema = new Schema({
     data: [
         {
@@ -19,14 +27,6 @@ const UserSchema = new Schema({
 UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
 UserSchema.post('save', function(doc, next){
-
-    const taskOrder = {
-        0: [4,0,3,7],
-        1: [0,4,7,3],
-        2: [1,5,2,6],
-        3: [5,1,6,2],
-    }
-
 
     if (this.group)
         {console.log('user already have a group')}
