@@ -160,7 +160,7 @@ const tasks = [
         'shortDescription':'second coding exp',
         'isExperimental': true,
         'ideSettings':{
-            "actionsToToggle": ["ZenMode"],
+            "actionsToToggle": ["ToggleZenMode"],
             "parameters": {
                 "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
                 "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
@@ -315,7 +315,7 @@ const tasks = [
         'shortDescription':'first debugging exp',
         'isExperimental': true,
         'ideSettings':{
-            "actionsToToggle": ["ZenMode"],
+            "actionsToToggle": ["ToggleZenMode"],
             "parameters": {
                 "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
                 "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
@@ -814,7 +814,7 @@ const tasks = [
         'shortDescription':'second debugging exp',
         'isExperimental': true,
         'ideSettings':{
-            "actionsToToggle": ["ZenMode"],
+            "actionsToToggle": ["ToggleZenMode"],
             "parameters": {
                 "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
                 "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
