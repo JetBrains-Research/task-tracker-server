@@ -178,7 +178,7 @@ const tasks = [
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
-                            '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{1/2n}} $$ \n',
+                            '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 1/2*y^m)} $$ \n',
                             'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen. '
                         ],
                         'metadata': {
@@ -252,7 +252,7 @@ const tasks = [
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
-                            '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{1/2n}} $$ \n',
+                            '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 1/2*y^m)} $$ \n',
                             'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen. '
                         ],
                         'metadata': {
