@@ -24,7 +24,7 @@ const tasks = [
                             '\n',
                             '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{1/2n}} $$ \n',
                             'The $\\sum_{n=0}^{100}$ symbol denotes the sum of what is written in brackets with substituted values from n to 100. \n',
-                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen. '
+                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen.'
                         ],
                         'metadata': {
                             'collapsed': false,
@@ -88,7 +88,7 @@ const tasks = [
                             '\n',
                             '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{1/2n}} $$ \n',
                             'The $\\sum_{n=0}^{100}$ symbol denotes the sum of what is written in brackets with substituted values from n to 100. \n',
-                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen. '
+                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen.'
                         ],
                         'metadata': {
                             'collapsed': false,
@@ -158,7 +158,7 @@ const tasks = [
                             '\n',
                             '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 1/2*y^m)} $$ \n',
                             'The $\\prod_{n=0}^{100}$ symbol denotes the product of what is written in brackets with substituted values from n to 100. \n',
-                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen. '
+                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen.'
                         ],
                         'metadata': {
                             'collapsed': false,
@@ -219,7 +219,7 @@ const tasks = [
                             '\n',
                             '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 1/2*y^m)} $$ \n',
                             'The $\\prod_{n=0}^{100}$ symbol denotes the product of what is written in brackets with substituted values from n to 100. \n',
-                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen. '
+                            'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen.'
                         ],
                         'metadata': {
                             'collapsed': false,
@@ -282,8 +282,9 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source": [
-                            "Please find and fix typos and formatting errors in the code below:\n",
-                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
+                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
+                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
                         "metadata": {
                             "collapsed": false,
@@ -525,9 +526,10 @@ const tasks = [
                 "cells": [
                     {
                         "cell_type": "markdown",
-                        "source": [
-                            "Please find and fix typos and formatting errors in the code below:\n",
-                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
+                        "source":  [
+                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
+                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
                         "metadata": {
                             "collapsed": false,
@@ -789,8 +791,9 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source": [
-                            "Please find and fix typos and formatting errors in the code below:\n",
-                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
+                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
+                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
                         "metadata": {
                             "collapsed": false,
@@ -1055,8 +1058,10 @@ const tasks = [
                 "cells": [
                     {
                         "cell_type": "markdown",
-                        "source": [
-                            "Please find and fix typos and formatting errors in the code below:"
+                        "source":  [
+                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
+                            "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
                         "metadata": {
                             "collapsed": false,
