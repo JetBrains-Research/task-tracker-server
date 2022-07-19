@@ -22,7 +22,7 @@ const tasks = [
                             'Please transform the following formula into a Python function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
-                            '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{1/2n}} $$ \n',
+                            '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{0.5n}} $$ \n',
                             'The $\\sum_{n=0}^{100}$ symbol denotes the sum of what is written in brackets with substituted values of n from 0 to 100. \n',
                             'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just move your cursor to the top of the screen.'
                         ],
@@ -86,7 +86,7 @@ const tasks = [
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
-                            '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{1/2n}} $$ \n',
+                            '$$f(x,y,m,n)= \\sum_{n=0}^{100} \\dfrac{(x  + 2 y)^m}{n^{0.5n}} $$ \n',
                             'The $\\sum_{n=0}^{100}$ symbol denotes the sum of what is written in brackets with substituted values of n from 0 to 100. \n',
                             'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just move your cursor to the top of the screen.'
                         ],
@@ -156,7 +156,7 @@ const tasks = [
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
-                            '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 1/2*y^m)} $$ \n',
+                            '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 0.5*y^m)} $$ \n',
                             'The $\\prod_{n=0}^{100}$ symbol denotes the product of what is written in brackets with substituted values of n from 0 to 100. \n',
                             'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just move your cursor to the top of the screen.'
                         ],
@@ -217,7 +217,7 @@ const tasks = [
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
-                            '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 1/2*y^m)} $$ \n',
+                            '$$f(x,y,m,n) = x - \\prod_{n=0}^{100}{(\\sqrt{18m} - 0.5*y^m)} $$ \n',
                             'The $\\prod_{n=0}^{100}$ symbol denotes the product of what is written in brackets with substituted values of n from 0 to 100. \n',
                             'When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just move your cursor to the top of the screen.'
                         ],
@@ -282,7 +282,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source": [
-                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
@@ -300,7 +300,7 @@ const tasks = [
                         "source":[
                             "\"\"\"An optimized implementation of Suffix-Tree.\"\"\"\n",
                             "\n",
-                            "# For more information about the comments you can read http://web.stanford.edu/~mjkay/gusfield.pdf\n",
+                            "# For more information about the comments you can read \n",
                             "from operator importt attrgetter\n",
                             "\n",
                             "leafEnd = -1\n",
@@ -527,7 +527,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source":  [
-                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
@@ -545,7 +545,7 @@ const tasks = [
                         "source":[
                             "\"\"\"An optimized implementation of Suffix-Tree.\"\"\"\n",
                             "\n",
-                            "# For more information about the comments you can read http://web.stanford.edu/~mjkay/gusfield.pdf\n",
+                            "# For more information about the comments you can read \n",
                             "from operator importt attrgetter\n",
                             "\n",
                             "leafEnd = -1\n",
@@ -791,7 +791,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source": [
-                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
@@ -1059,7 +1059,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source":  [
-                            "Please find and fix typos and formatting errors in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
