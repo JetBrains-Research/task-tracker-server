@@ -17,8 +17,6 @@ const tasks = [
                     {
                         'cell_type': 'markdown',
                         'source': [
-                            '# Task №1\n',
-                            '\n',
                             'Please transform the following formula into a Python function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
@@ -81,8 +79,6 @@ const tasks = [
                     {
                         'cell_type': 'markdown',
                         'source': [
-                            '# Task №1\n',
-                            '\n',
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
@@ -151,8 +147,6 @@ const tasks = [
                     {
                         'cell_type': 'markdown',
                         'source': [
-                            '# Task №1\n',
-                            '\n',
                             'Please transform the following formula into a Pythonic function f(x,y,m.n). \n',
                             'Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking:\n',
                             '\n',
@@ -282,7 +276,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source": [
-                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and tabulation errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
@@ -527,7 +521,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source":  [
-                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and tabulation errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
@@ -791,7 +785,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source": [
-                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and tabulation errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
@@ -1059,7 +1053,7 @@ const tasks = [
                     {
                         "cell_type": "markdown",
                         "source":  [
-                            "Please find and fix **typos and formatting errors** in the code below. All errors are NOT about code logic.\n",
+                            "Please find and fix **typos and tabulation errors** in the code below. All errors are NOT about code logic.\n",
                             "Note that there is no need or possibility to run the code. We won’t check if the code works, we only need to see your way of thinking.",
                             "When the answer is ready to be submitted, please go to the upper toolbar and press “Next Task” which goes right after “Help”. If the bar is not visible at the moment, just please move your cursor to the top of the screen."
                         ],
