@@ -33,8 +33,8 @@ UserSchema.post('save', function(doc, next){
     //
     if (this.user_group === 5)
     {
-        this.group = this.externalStudentId % 4
-        this.taskOrder = taskOrder[this.group]
+        this.user_group = this.externalStudentId % 4
+        this.taskOrder = taskOrder[this.user_group]
         doc.save();
     }
     else{
@@ -47,7 +47,7 @@ UserSchema.post('save', function(doc, next){
 UserSchema.methods.getPublicData = function () {
     let res = {
         id: this.externalStudentId,
-        group: this.group,
+        user_group: this.user_group,
         taskOrder: this.taskOrder,
         data: []
     };
