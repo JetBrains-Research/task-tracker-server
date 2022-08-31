@@ -28,15 +28,17 @@ UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
 UserSchema.post('save', function(doc, next){
 
-    if (this.group)
-        {console.log('user already have a group')}
-
-    else
-    {
-        this.group = this.externalStudentId % 4
-        this.taskOrder = taskOrder[this.group]
-        doc.save();
-    }
+    this.group = [5,1,6,2]
+    //
+    // if (this.group)
+    //     {console.log('user already have a group')}
+    //
+    // else
+    // {
+    //     this.group = this.externalStudentId % 4
+    //     this.taskOrder = taskOrder[this.group]
+    //     doc.save();
+    // }
     next();
 });
 

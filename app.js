@@ -9,7 +9,7 @@ const fs = require('fs');
 
 const multer = require('multer');
 const body_parser = require('body-parser');
-
+mongoose.set('useFindAndModify', false);
 app.use(body_parser.json({limit: '50mb'}));
 app.use(body_parser.urlencoded({extended: true, limit: '50mb'}));
 app.use('/uploads', express.static('uploads'));
