@@ -53,7 +53,7 @@ const injector = require('./injector');
 injector.injectModels();
 injector.injectRouters(app, upload);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
     logger.info(`${new Date()}: Server is listening on port ${PORT}`);
 });
