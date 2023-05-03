@@ -26,6 +26,10 @@ const UserSchema = new Schema({
 
 UserSchema.plugin(mongooseSequence, {inc_field: 'externalStudentId'});
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 UserSchema.post('save', function(doc, next){
 
     // this.group = 4
@@ -34,7 +38,16 @@ UserSchema.post('save', function(doc, next){
     if (this.user_group === 5)
     {
         this.user_group = this.externalStudentId % 4
-        this.taskOrder = taskOrder[this.user_group]
+        // this.taskOrder = taskOrder[this.user_group]
+        this.taskOrder = [getRandomInt(2), 2 + getRandomInt(2)]
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
+        console.log(getRandomInt(2))
         doc.save();
     }
     else{
