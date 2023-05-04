@@ -6,10 +6,10 @@ const Schema = mongoose.Schema;
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const taskOrder = {
-    0: [0, 2],
-    1: [1, 2],
-    2: [0, 3],
-    3: [1, 3],
+    0: [0, 2, 4],
+    1: [1, 2, 4],
+    2: [0, 3, 4],
+    3: [1, 3, 4],
 }
 
 

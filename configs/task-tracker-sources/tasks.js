@@ -525,6 +525,74 @@ const tasks = [
             '    }\n' +
             '}\n'
     },
+    {
+        'key': 4,
+        'shortDescription':'first coding exp',
+        'isExperimental': true,
+        'ideSettings':{
+            "actionsToToggle": ["ToggleZenMode"],
+            "parameters": {
+                "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
+                "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
+                "AFTER___DISTRACTION___MODE___EDITOR_TAB_PLACEMENT": "0",
+            }
+        },
+        'description': 'package com.example;\n' +
+            '\n' +
+            'import java.util.Stack;\n' +
+            'import java.util.TreeMap;\n' +
+            '\n' +
+            'public class TrieImpl {\n' +
+            '    private static class TrieNode {\n' +
+            '        final TreeMap<Character, TrieNode> children = new TreeMap<>();\n' +
+            '        Boolean isTerminal = false;\n' +
+            '        int size = 0;\n' +
+            '    }\n' +
+            '\n' +
+            '    private final TrieNode root = new TrieNode();\n' +
+            '\n' +
+            '    public boolean add(String element) throws IllegalArgumentException {\n' +
+            '        if (element == null) {\n' +
+            '            throw new IllegalArgumentException("Cannot add \'null\' to a trie!");\n' +
+            '        }\n' +
+            '        Stack<TrieNode> s = new Stack<>();\n' +
+            '        s.add(root);\n' +
+            '        // go through the element character by character, adding missing nodes to the trie\n' +
+            '        for (int i = 0; i < element.length(); i++) {\n' +
+            '            TrieNode node = s.peek();\n' +
+            '            Character currChar = element.charAt(i);\n' +
+            '            if (!node.children.containsKey(currChar)) {\n' +
+            '                node.children.put(currChar, new TrieNode());\n' +
+            '            }\n' +
+            '            s.push(node.children.get(currChar));\n' +
+            '        }\n' +
+            '        // if the last node became terminal then the sizes of all nodes on the path increase by 1\n' +
+            '        if (!s.peek().isTerminal) {\n' +
+            '            s.peek().isTerminal = true;\n' +
+            '            while (!s.empty()) {\n' +
+            '                s.pop().size += 1;\n' +
+            '            }\n' +
+            '            return true;\n' +
+            '        }\n' +
+            '        return false;\n' +
+            '    }\n' +
+            '\n' +
+            '    public boolean contains(String element) throws IllegalArgumentException {\n' +
+            '        if (element == null) {\n' +
+            '            throw new IllegalArgumentException("Trie cannot contain \'null\'!");\n' +
+            '        }\n' +
+            '        TrieNode node = root;\n' +
+            '        for (int i = 0; i < element.length(); i++) {\n' +
+            '            Character currChar = element.charAt(i);\n' +
+            '            if (!node.children.containsKey(currChar)) {\n' +
+            '                return false;\n' +
+            '            }\n' +
+            '            node = node.children.get(currChar);\n' +
+            '        }\n' +
+            '        return node.isTerminal;\n' +
+            '    }\n' +
+            '}'
+    },
 ];
 
 module.exports = tasks;
