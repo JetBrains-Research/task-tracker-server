@@ -3,14 +3,7 @@ const tasks = [
         'key': 0,
         'shortDescription':'first coding exp',
         'isExperimental': true,
-        'ideSettings':{
-            "actionsToToggle": ["ToggleZenMode"],
-            "parameters": {
-                "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___EDITOR_TAB_PLACEMENT": "0",
-            }
-        },
+        'ideSettings':{},
         'description': 'package com.example.avl;\n' +
             '\n' +
             'public class AVL {\n' +
@@ -105,14 +98,7 @@ const tasks = [
         'key': 1,
         'shortDescription':'first coding exp',
         'isExperimental': true,
-        'ideSettings':{
-            "actionsToToggle": ["ToggleZenMode"],
-            "parameters": {
-                "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___EDITOR_TAB_PLACEMENT": "0",
-            }
-        },
+        'ideSettings':{},
         'description': 'package com.example.avl;\n' +
             '\n' +
             'public class AVL {\n' +
@@ -229,14 +215,7 @@ const tasks = [
         'key': 2,
         'shortDescription':'first coding exp',
         'isExperimental': true,
-        'ideSettings':{
-            "actionsToToggle": ["ToggleZenMode"],
-            "parameters": {
-                "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___EDITOR_TAB_PLACEMENT": "0",
-            }
-        },
+        'ideSettings':{},
         'description': 'package com.example.treap;\n' +
             '\n' +
             'import java.util.Random;\n' +
@@ -402,14 +381,7 @@ const tasks = [
         'key': 3,
         'shortDescription':'first coding exp',
         'isExperimental': true,
-        'ideSettings':{
-            "actionsToToggle": ["ToggleZenMode"],
-            "parameters": {
-                "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___EDITOR_TAB_PLACEMENT": "0",
-            }
-        },
+        'ideSettings':{},
         'description': 'package com.example.treap;\n' +
             '\n' +
             'import java.util.Random;\n' +
@@ -529,14 +501,7 @@ const tasks = [
         'key': 4,
         'shortDescription':'first coding exp',
         'isExperimental': true,
-        'ideSettings':{
-            "actionsToToggle": ["ToggleZenMode"],
-            "parameters": {
-                "AFTER___DISTRACTION___MODE___ARE_GUTTER_ICONS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___ARE_LINE_NUMBERS_SHOWN": "false",
-                "AFTER___DISTRACTION___MODE___EDITOR_TAB_PLACEMENT": "0",
-            }
-        },
+        'ideSettings':{},
         'description': 'package com.example;\n' +
             '\n' +
             'import java.util.Stack;\n' +
