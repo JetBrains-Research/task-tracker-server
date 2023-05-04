@@ -423,7 +423,7 @@ const tasks = [
             '    /**\n' +
             '     * Constructor\n' +
             '     **/\n' +
-            '    public TreapTree() {\n' +
+            '    public Treap() {\n' +
             '        root = nil;\n' +
             '    }\n' +
             '\n' +

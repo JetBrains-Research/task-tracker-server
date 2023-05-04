@@ -6,10 +6,10 @@ const Schema = mongoose.Schema;
 const mongooseSequence = require('mongoose-sequence')(mongoose);
 
 const taskOrder = {
-    0: [4,0,3,7],
-    1: [0,4,7,3],
-    2: [1,5,2,6],
-    3: [5,1,6,2],
+    0: [0, 2],
+    1: [1, 2],
+    2: [0, 3],
+    3: [1, 3],
 }
 
 
@@ -38,16 +38,8 @@ UserSchema.post('save', function(doc, next){
     if (this.user_group === 5)
     {
         this.user_group = this.externalStudentId % 4
-        // this.taskOrder = taskOrder[this.user_group]
-        this.taskOrder = [getRandomInt(2), 2 + getRandomInt(2)]
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
-        console.log(getRandomInt(2))
+        this.taskOrder = taskOrder[this.user_group]
+        // this.taskOrder = [getRandomInt(2), 2 + getRandomInt(2)]
         doc.save();
     }
     else{
