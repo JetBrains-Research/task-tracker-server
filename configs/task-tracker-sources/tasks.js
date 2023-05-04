@@ -5,6 +5,12 @@ const tasks = [
         'isExperimental': true,
         'ideSettings':{},
         'description': 'package com.example.avl;\n' +
+            '/*\n' +
+            '\n' +
+            'TASK DESCRIPTION: There is a bug in one method in class below.\n' +
+            'Please, try to find and fix it.\n' +
+            '\n' +
+            ' */\n' +
             '\n' +
             'public class AVL {\n' +
             '    private InnerAvl root = null;\n' +
@@ -100,6 +106,12 @@ const tasks = [
         'isExperimental': true,
         'ideSettings':{},
         'description': 'package com.example.avl;\n' +
+            '/*\n' +
+            '\n' +
+            'TASK DESCRIPTION: There is a bug in one method in class below.\n' +
+            'Please, try to find and fix it.\n' +
+            '\n' +
+            ' */\n' +
             '\n' +
             'public class AVL {\n' +
             '    private static final Node nil = new Node();\n' +
@@ -217,6 +229,12 @@ const tasks = [
         'isExperimental': true,
         'ideSettings':{},
         'description': 'package com.example.treap;\n' +
+            '/*\n' +
+            '\n' +
+            'TASK DESCRIPTION: There is a bug in one method in class below.\n' +
+            'Please, try to find and fix it.\n' +
+            '\n' +
+            ' */\n' +
             '\n' +
             'import java.util.Random;\n' +
             '\n' +
@@ -383,6 +401,12 @@ const tasks = [
         'isExperimental': true,
         'ideSettings':{},
         'description': 'package com.example.treap;\n' +
+            '/*\n' +
+            '\n' +
+            'TASK DESCRIPTION: There is a bug in one method in class below.\n' +
+            'Please, try to find and fix it.\n' +
+            '\n' +
+            ' */\n' +
             '\n' +
             'import java.util.Random;\n' +
             '\n' +
@@ -503,6 +527,12 @@ const tasks = [
         'isExperimental': true,
         'ideSettings':{},
         'description': 'package com.example;\n' +
+            '/*\n' +
+            '\n' +
+            'TASK DESCRIPTION: Please, look at the following code \n' +
+            'and make refactoring where you think it is necessary\n' +
+            '\n' +
+            ' */\n' +
             '\n' +
             'import java.util.Stack;\n' +
             'import java.util.TreeMap;\n' +
