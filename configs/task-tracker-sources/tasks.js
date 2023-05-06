@@ -293,7 +293,7 @@ const tasks = [
             '        return R;\n' +
             '    }\n' +
             '\n' +
-            '    private static TreapNode rotateLeftIfNecessary(TreapNode node) {\n' +
+            '    private static TreapNode checkAndRotateLeft(TreapNode node) {\n' +
             '        if (node.right != nil && node.right.priority > node.priority) {\n' +
             '            return rotateLeft(node);\n' +
             '        }\n' +
@@ -325,13 +325,17 @@ const tasks = [
             '    }\n' +
             '\n' +
             '    private TreapNode insert(int element, TreapNode node) {\n' +
+            '        if (node == nil) {\n' +
+            '            return new TreapNode(element);\n' +
+            '        }\n' +
+            '\n' +
             '        if (element == node.element) {\n' +
             '            return node;\n' +
             '        }\n' +
             '\n' +
             '        if (element < node.element) {\n' +
             '            node.left = insert(element, node.left);\n' +
-            '            node = rotateLeftIfNecessary(node);\n' +
+            '            node = checkAndRotateLeft(node);\n' +
             '        } else {\n' +
             '            node.right = insert(element, node.right);\n' +
             '            node = checkAndRotateRight(node);\n' +
@@ -449,6 +453,9 @@ const tasks = [
             '    }\n' +
             '\n' +
             '    private TreapNode insert(int X, TreapNode node) {\n' +
+            '        if (node == nil) {\n' +
+            '            return new TreapNode(X);\n' +
+            '        }\n' +
             '        if (X < node.elementValue) {\n' +
             '            node.leftChild = insert(X, node.leftChild);\n' +
             '            if (node.rightChild.priorityValue < node.priorityValue) {\n' +
